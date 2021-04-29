@@ -3,7 +3,7 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "montserrat";
+  font-family: 'Montserrat', sans-serif;
 }
 
 header {
@@ -80,7 +80,6 @@ h1, h2 {
 
 h1{
   color: #04c0ff;
-  opacity: 1;
 }
 
 .triangle {

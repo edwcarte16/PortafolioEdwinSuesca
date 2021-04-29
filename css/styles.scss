@@ -41,11 +41,14 @@ nav{
     justify-content: center;
 }
 h1, h2{
-    color: white;
-    font-weight: 400;
+    color: $color2;
+    font-weight: 300;
     text-align: center;
     opacity: 0.4;
     text-shadow: 0 0 4px rgb(0, 0, 0);
+}
+H2{
+    color:white
 }
 
 .triangle{

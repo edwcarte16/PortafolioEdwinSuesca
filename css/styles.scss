@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "montserrat";
+}
+
+$color1: #d932d2;
+$color2: #04c0ff;
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    background-image: url(/images/background1.png);
+    background-size: cover;
+}
+nav{
+    display: flex;
+    width: 100%;
+}
+
+#videoBox{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: fit-content;
+    max-height: 65vh;
+    background-color: #00000056;
+    clip-path: circle(30px at 50% 50%);
+    transition: 700ms;  
+}
+
+#titleName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1, h2{
+    color: white;
+    font-weight: 400;
+    text-align: center;
+    opacity: 0.4;
+    text-shadow: 0 0 4px rgb(0, 0, 0);
+}
+
+.triangle{
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border-left: 17px solid #ffffff42;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+}
+
+#videoDesigner1{
+    opacity: 0;
+    height: 100%;
+    max-width: 95%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.616);
+    border-radius: 20px;
+}
+
+#videoBox:hover{
+    clip-path: circle(200% at 50% 50%);
+    background-color: transparent;
+}
+
+#videoBox:hover .triangle{
+    display: none;
+}
+
+#videoBox:hover #videoDesigner1{
+    opacity: 1;
+}
+
+
+
+nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+.boxLogo svg{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+#edwins, #pathSlogan{
+    fill: white;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    opacity: 1; 
+}
+
+#pathBlue{
+    animation: animateBlue 2.5s;
+    fill: $color2;
+    stroke-width: 2px;
+    stroke: $color2;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 251;
+}
+
+#pathMagenta{
+    animation: animateMagenta 2.5s;
+    fill: $color1;
+    stroke-width: 2px;
+    stroke: $color1;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+}
+
+@media (max-width: 720px){
+    nav ul li{
+        display: none;
+    }
+}
+@keyframes animateBlue{
+    0%{
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    50%{
+        fill: transparent;
+        stroke: $color1;
+    }
+
+    100%{
+        stroke-dashoffset: 700;
+        fill: $color2;
+        stroke: transparent;
+    }
+}
+
+@keyframes animateMagenta{
+    0%{
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    50%{
+       
+        fill: transparent;
+        stroke: $color2;
+    }
+
+    100%{
+        stroke-dashoffset: 700;
+        fill: $color1;
+        stroke: transparent;
+    }
+}

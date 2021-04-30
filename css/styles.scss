@@ -31,9 +31,9 @@ nav{
     justify-content: center;
     height: fit-content;
     max-height: 65vh;
-    background-color: #00000056;
+    max-width: fit-content;
     clip-path: circle(30px at 50% 50%);
-    transition: 700ms;  
+    transition: clip-path 700ms;  
 }
 
 #titleName{
@@ -53,7 +53,7 @@ h1, h2{
 
 h2{color: white;}
 
-.triangle{
+#triangle{
     position: absolute;
     height: 0px;
     width: 0px;
@@ -66,8 +66,21 @@ h2{color: white;}
     transform: translate(-30%, -50%);
 }
 
+#circle{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: #00000056;
+    border-radius: 100%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #videoDesigner1{
     opacity: 0;
+    transition: opacity 1.3s;
     height: 100%;
     max-width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.616);
@@ -79,7 +92,7 @@ h2{color: white;}
     background-color: transparent;
 }
 
-#videoBox:hover .triangle{
+#videoBox:hover .playButton{
     display: none;
 }
 

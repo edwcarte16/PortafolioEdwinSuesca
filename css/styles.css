@@ -23,7 +23,7 @@ header {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 100vh;
-  background-image: url("/images/background1.png");
+  background-image: url("https://edwcarte16.github.io/PortafolioEdwins/images/background1.png");
   background-size: cover;
 }
 
@@ -82,10 +82,6 @@ h1 {
 
 h2 {
   color: white;
-  font-weight: 300;
-  text-align: center;
-  opacity: 0.4;
-  text-shadow: 0 0 4px black;
 }
 
 .triangle {

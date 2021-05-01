@@ -38,7 +38,7 @@
 
     <nav>
 
-      <ul class="menuList">
+      <ul class="menuList" id="menuListNav">
         <li class="liNav"><a class="aNav" href="#">Sobre Mí</a></li>
         <li class="liNav"><a class="aNav" href="#">Proyectos</a></li>
         <div class="boxLogo"  onmouseover="hoverLogo()">
@@ -62,16 +62,18 @@
         </div>
         <li class="liNav"><a class="aNav" href="#">Servicios</a></li>
         <li class="liNav"><a class="aNav" href="#">Contáctame</a></li>
+      </ul>
 
         <div class="burgerMenuBox" onclick="openMenu()">
-          <svg onclick="openMenu()">
-            <rect ry="3" width="25" height="6" id="rect2" x="0" y="0" />
-            <rect ry="3" width="25" height="6" id="rect6" x="0" y="10" />
+          <svg id="svgBurger">
+            <rect id="rectBurgerMenu1" ry="3" width="26" height="6" id="rect2" x="0" y="0" />
+            <rect id="rectBurgerMenu2" ry="3" width="26" height="6" id="rect6" x="0" y="10" />
           </svg>
         </div>
 
-      </ul>
-    </nav>
+      </nav>
+      
+
 
     <div class="searchBar">
       <input type="search" placeholder="Buscar">

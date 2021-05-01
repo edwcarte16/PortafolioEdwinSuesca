@@ -11,8 +11,8 @@ function pauseFunction() {
 
 function openMenu(){
 
-  if (document.getElementById("menuListNav").style.clipPath != "circle(1000px at 100% 0%)") {
-    document.getElementById("menuListNav").style.clipPath = "circle(1000px at 100% 0%)";
+  if (document.getElementById("menuListNav").style.clipPath != "circle(1500px at 100% 0%)") {
+    document.getElementById("menuListNav").style.clipPath = "circle(1500px at 100% 0%)";
 
     document.getElementById("svgBurger").style = "height:22px; width:26px";
 

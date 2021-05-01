@@ -37,6 +37,10 @@ header {
   display: none;
 }
 
+#boxAllIcons {
+  display: none;
+}
+
 .searchBar {
   position: absolute;
   top: 30vh;
@@ -132,6 +136,8 @@ nav {
 }
 
 #titleName {
+  position: absolute;
+  bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -513,18 +519,14 @@ nav ul li {
   .burgerMenuBox svg:hover rect {
     fill: #d932d2;
   }
-  header .menuList {
+  header nav {
     position: absolute;
-    background-color: #272727;
+    background: linear-gradient(45deg, #272727, #3f1955, #272727);
     height: 100vh;
     top: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -536,16 +538,69 @@ nav ul li {
     transition: clip-path 650ms;
     transition: clip-path 650ms, -webkit-clip-path 650ms;
   }
-  header ul div:nth-child(3) {
+  header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+    width: 60%;
+    padding-top: 100px;
+  }
+  header nav ul li {
+    margin: 20px 0;
+  }
+  header nav ul li a {
+    font-size: 1.5em;
+  }
+  header nav ul .boxLogo {
     position: absolute;
     top: 45px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
     margin-bottom: 50px;
   }
-  header ul li {
-    margin: 20px;
+  header nav #boxAllIcons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+    background-color: transparent;
+    width: 40%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 100px;
   }
-  header ul li a {
-    font-size: 1.5em;
+  header nav #boxAllIcons div {
+    background-color: blue;
+    border: 1px solid white;
+    margin: 15px 20px;
+  }
+  header nav #boxAllIcons div svg {
+    background-color: green;
+    height: 30px;
+    width: 30px;
   }
 }
 

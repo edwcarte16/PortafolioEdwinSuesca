@@ -1,6 +1,5 @@
 var video = document.getElementById("videoDesigner1");
 var element = document.getElementById('videoDesigner1');
-var burgerMenu = document.getElementByClass('burgerMenuBox');
 
 function playFunction() {  
     video.play();
@@ -25,8 +24,6 @@ function openMenu(){
 
   else {
     document.getElementById("menuListNav").style.clipPath = "circle(0 at 100% 0%)";
-
-    document.getElementsByClassName("burgerMenuBox").style = "height:22px; width:26px";
 
     document.getElementById("svgBurger").style = "height:22px; width:26px";
     

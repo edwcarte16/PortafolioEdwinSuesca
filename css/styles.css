@@ -569,6 +569,10 @@ nav ul li {
   header nav .boxLogo {
     display: none;
   }
+  header #boxAllIcons div:last-child svg {
+    height: 35px;
+    width: 37px;
+  }
   header #boxAllIcons {
     position: absolute;
     display: -webkit-box;

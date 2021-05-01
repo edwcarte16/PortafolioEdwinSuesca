@@ -366,6 +366,11 @@ nav ul li{
             }
         }
 
+        #boxAllIcons div:last-child svg{
+            height: 35px;
+            width: 37px;
+        }
+
         #boxAllIcons{
         position: absolute;
         display: flex;

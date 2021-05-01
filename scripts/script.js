@@ -9,8 +9,15 @@ function pauseFunction() {
   video.pause();
 }
 
-function openMenu(){
+function hoverList(icon){
+  document.getElementById(icon).style = "fill:#d932d2"}
 
+function noHoverList(icon){
+  document.getElementById(icon).style = "fill:#ffffff93"}
+
+
+
+function openMenu(){
   if (document.getElementById("menuListNav").style.clipPath != "circle(1500px at 100% 0%)") {
     document.getElementById("menuListNav").style.clipPath = "circle(1500px at 100% 0%)";
 
@@ -19,7 +26,6 @@ function openMenu(){
     document.getElementById("rectBurgerMenu1").style = "rotate:-45deg; x:-12.999996px; y:11.246504px";
 
     document.getElementById("rectBurgerMenu2").style = "rotate:45deg; x:1.2465px; y:-3px";
-
   }
 
   else {

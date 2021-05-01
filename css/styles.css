@@ -519,6 +519,11 @@ nav ul li {
   .burgerMenuBox svg:hover rect {
     fill: #d932d2;
   }
+  header .boxLogoMedia {
+    display: block;
+    position: absolute;
+    z-index: 7;
+  }
   header nav {
     position: absolute;
     background: linear-gradient(45deg, #272727, #3f1955, #272727);
@@ -539,38 +544,49 @@ nav ul li {
     transition: clip-path 650ms, -webkit-clip-path 650ms;
   }
   header nav ul {
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100vh;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    top: 300px;
     width: 60%;
-    padding-top: 100px;
+    left: 40%;
+    padding-left: 7px;
   }
   header nav ul li {
-    margin: 20px 0;
+    margin: 30px 0 0 0;
   }
   header nav ul li a {
     font-size: 1.5em;
   }
-  header nav ul .boxLogo {
-    position: absolute;
-    top: 45px;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-    margin-bottom: 50px;
+  header nav .boxLogo {
+    display: none;
   }
-  header nav #boxAllIcons {
+  header #boxAllIcons {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-right: 7px;
+    top: 296px;
+    width: 40%;
+    right: 60%;
+  }
+  header #boxAllIcons div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -580,27 +596,16 @@ nav ul li {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: 100vh;
-    background-color: transparent;
-    width: 40%;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    padding-top: 100px;
+    margin: 29px 0 0 0;
   }
-  header nav #boxAllIcons div {
-    background-color: blue;
-    border: 1px solid white;
-    margin: 15px 20px;
-  }
-  header nav #boxAllIcons div svg {
-    background-color: green;
+  header #boxAllIcons svg {
     height: 30px;
-    width: 30px;
+    width: 37px;
+  }
+  header #boxAllIcons svg path {
+    fill: #ffffff93;
+    -webkit-transition: ease 500ms;
+    transition: ease 500ms;
   }
 }
 

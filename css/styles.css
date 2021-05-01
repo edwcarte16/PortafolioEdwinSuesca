@@ -529,8 +529,8 @@ nav ul li {
         -ms-flex-pack: center;
             justify-content: center;
     z-index: 3;
-    -webkit-clip-path: circle(70px at 100% 0%);
-            clip-path: circle(70px at 100% 0%);
+    -webkit-clip-path: circle(0px at 100% 0%);
+            clip-path: circle(0px at 100% 0%);
     -webkit-transition: -webkit-clip-path 650ms;
     transition: -webkit-clip-path 650ms;
     transition: clip-path 650ms;

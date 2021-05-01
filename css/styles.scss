@@ -330,7 +330,7 @@ nav ul li{
         flex-direction: column;
         justify-content: center;
         z-index: 3;
-        clip-path: circle(70px at 100% 0%);
+        clip-path: circle(0px at 100% 0%);
         transition: clip-path 650ms;
     }
 

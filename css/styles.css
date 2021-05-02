@@ -37,10 +37,6 @@ header {
   display: none;
 }
 
-#boxAllIcons {
-  display: none;
-}
-
 .searchBar {
   position: absolute;
   top: 30vh;
@@ -107,6 +103,77 @@ nav {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 721px) {
+  nav #boxAllIcons {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  nav #boxAllIcons .boxIconListNav {
+    position: absolute;
+    width: 40px;
+    height: 65px;
+  }
+  nav #boxAllIcons .boxIconListNav svg {
+    position: absolute;
+    width: 40px;
+    height: 65px;
+    -webkit-transition: ease-in 300ms;
+    transition: ease-in 300ms;
+  }
+  nav #boxAllIcons .boxIconListNav svg path {
+    opacity: 0;
+    fill: #ffffff00;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: ease-out 300ms;
+    transition: ease-out 300ms;
+  }
+}
+
+nav ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+  z-index: 5;
+}
+
+nav ul li a {
+  color: #ffffff93;
+  text-decoration: none;
+  font-size: 1.4em;
+  -webkit-animation: animateBlur 2s 1s;
+          animation: animateBlur 2s 1s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+nav ul li:hover {
+  color: white;
+  text-decoration: none;
+  -webkit-animation: animateList 1s;
+          animation: animateList 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 nav .imgsNavBackground {
@@ -137,6 +204,7 @@ nav .imgsNavBackground {
   transition: -webkit-clip-path 700ms;
   transition: clip-path 700ms;
   transition: clip-path 700ms, -webkit-clip-path 700ms;
+  z-index: 2;
 }
 
 #titleName {
@@ -281,42 +349,6 @@ h2 {
 
 #videoBox:hover #videoDesigner1 {
   opacity: 1;
-}
-
-nav ul {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-nav ul li a {
-  color: #ffffff93;
-  text-decoration: none;
-  font-size: 1.2em;
-  -webkit-animation: animateBlur 2s 1s;
-          animation: animateBlur 2s 1s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-}
-
-nav ul li:hover {
-  color: white;
-  text-decoration: none;
-  -webkit-animation: animateList 1s;
-          animation: animateList 1s;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-}
-
-nav ul li {
-  list-style: none;
 }
 
 .aNav:hover {
@@ -503,7 +535,7 @@ nav ul li {
             align-items: center;
     position: absolute;
     top: 3vh;
-    right: 2vw;
+    right: 3vw;
     z-index: 4;
   }
   header .burgerMenuBox svg {
@@ -599,7 +631,7 @@ nav ul li {
   header nav .imgsNavBackground {
     position: absolute;
     display: block;
-    max-width: 100vw;
+    width: 100vw;
     bottom: 0;
     opacity: 0.4;
     z-index: -1;

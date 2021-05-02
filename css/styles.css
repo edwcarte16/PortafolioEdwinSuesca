@@ -588,8 +588,8 @@ h2 {
         -ms-flex-align: start;
             align-items: flex-start;
     top: 270px;
-    width: 60%;
-    left: 40%;
+    width: 65%;
+    left: 35%;
     padding-left: 7px;
   }
   header nav ul li {
@@ -633,7 +633,7 @@ h2 {
     display: block;
     width: 100vw;
     bottom: 0;
-    opacity: 0.4;
+    opacity: 0;
     z-index: -1;
     -webkit-transition: opacity 500ms;
     transition: opacity 500ms;
@@ -656,8 +656,8 @@ h2 {
             align-items: flex-end;
     padding-right: 7px;
     top: 266px;
-    width: 40%;
-    right: 60%;
+    width: 35%;
+    right: 65%;
   }
   header #boxAllIcons div {
     display: -webkit-box;

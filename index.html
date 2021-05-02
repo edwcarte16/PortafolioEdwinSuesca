@@ -46,8 +46,14 @@
     <nav id="menuListNav">
 
       <ul class="menuList" >
-        <li id="liNav1" onmouseover="hoverList('avatar')" onmouseout="noHoverList('avatar')"><a class="aNav" href="#">Sobre Mí</a></li>
-        <li id="liNav2" onmouseover="hoverList('bag')" onmouseout="noHoverList('bag')"><a class="aNav" href="#">Proyectos</a></li>
+        <li id="liNav1" onmouseover="hoverList('avatar')" onmouseout="noHoverList('avatar')">
+          <a class="aNav" href="#">Sobre Mí</a>
+        </li>
+
+        <li id="liNav2" onmouseover="hoverList('bag')" onmouseout="noHoverList('bag')">
+          <a class="aNav" href="#">Proyectos</a>
+        </li>
+
         <div class="boxLogo">
           <svg class=logoSvg viewBox="-5 -5 110 103">
             <g>
@@ -67,8 +73,15 @@
             </g>
           </svg>
         </div>
-        <li id="liNav3" onmouseover="hoverList('book')" onmouseout="noHoverList('book')"><a class="aNav" href="#">Servicios</a></li>
-        <li id="liNav4" onmouseover="hoverList('chat')" onmouseout="noHoverList('chat')"><a class="aNav" href="#">Contáctame</a></li>
+
+        <li id="liNav3" onmouseover="hoverList('book', 'service')" onmouseout="noHoverList('book')">
+          <a class="aNav" href="#">Servicios</a>
+        </li>
+
+        <li id="liNav4" onmouseover="hoverList('chat', 'imgChatBackground')" onmouseout="noHoverList('chat', 'imgChatBackground')">
+          <a class="aNav" href="#">Contáctame</a>
+        </li>
+
       </ul>
 
       <div id="boxAllIcons">
@@ -104,6 +117,8 @@
         </svg>
         </div>
       </div>
+
+      <img id="imgChatBackground" class="imgsNavBackground" src="images/chatBackground.png" alt="">
     </nav>
       
       <div class="searchBar">

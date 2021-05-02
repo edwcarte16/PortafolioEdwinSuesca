@@ -9,11 +9,15 @@ function pauseFunction() {
   video.pause();
 }
 
-function hoverList(icon){
-  document.getElementById(icon).style = "fill:#d932d2"}
+function hoverList(icon, imageBg){
+  document.getElementById(icon).style = "fill:#d932d2"
+  document.getElementById(imageBg).style = "opacity:0.4"
+}
 
-function noHoverList(icon){
-  document.getElementById(icon).style = "fill:#ffffff93"}
+function noHoverList(icon, imageBg){
+  document.getElementById(icon).style = "fill:#ffffff93"
+  document.getElementById(imageBg).style = "opacity:0"
+}
 
 
 

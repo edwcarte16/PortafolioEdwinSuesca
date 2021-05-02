@@ -77,6 +77,10 @@ header{
 nav{
     display: flex;
     width: 100%;
+
+    .imgsNavBackground{
+        display: none;
+    }
 }
 
 #videoBox{
@@ -295,61 +299,57 @@ nav ul li{
 
 @media (max-width: 720px){
 
-    header .boxLogoMedia{
-        position: absolute;
-        top: 45px;
-        display: block;
-    }
 
-    .burgerMenuBox{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 3vh;
-        right: 2vw;
-        z-index: 4;
-
-        svg{
-            width: 26px;
-            height: 22px;
-
-            rect{
-                fill:$color2;
-                transition: ease-in 300ms;
-            }
-        }
-        svg:hover{        
-            rect{
-                fill:$color1;
-            }
-        }
-    }
 
     header{
+        .burgerMenuBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 3vh;
+            right: 2vw;
+            z-index: 4;
+    
+            svg{
+                width: 26px;
+                height: 22px;
+    
+                rect{
+                    fill:$color2;
+                    transition: ease-in 300ms;
+                }
+            }
+            svg:hover{        
+                rect{
+                    fill:$color1;
+                }
+            }
+        }
         .boxLogoMedia{
             display: block;
             position: absolute;
             z-index: 7;
+            top: 45px;
         }
 
         nav{
-        position: absolute;
-        background:linear-gradient(45deg, #272727, #3f1955, #272727);
-        height: 100vh;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        z-index: 3;
-        clip-path: circle(0px at 100% 0%);
-        transition: clip-path 650ms;
+            position: absolute;
+            background:linear-gradient(45deg, #272727, #3f1955, #272727);
+            height: 100vh;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+            clip-path: circle(0px at 100% 0%);
+            transition: clip-path 650ms;
 
             ul{
                 position: absolute;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                top: 300px;
+                top: 270px;
                 width: 60%;
                 left: 40%;
                 padding-left: 7px;
@@ -364,6 +364,41 @@ nav ul li{
             .boxLogo{
                 display: none;
             }
+
+                .burgerMenuBox{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 3vh;
+                    right: 2vw;
+                    z-index: 4;
+
+                svg{
+                    width: 26px;
+                    height: 22px;
+
+                    rect{
+                        fill:$color2;
+                        transition: ease-in 300ms;
+                    }
+                }
+                svg:hover{        
+                    rect{
+                        fill:$color1;
+                    }
+                }
+            }
+
+            .imgsNavBackground{
+                position: absolute;
+                display: block;
+                max-width: 100vw;
+                bottom: 0;
+                opacity: 0.4;
+                z-index: -1;
+                transition: opacity 500ms;
+            }
         }
 
         #boxAllIcons div:last-child svg{
@@ -377,7 +412,7 @@ nav ul li{
         flex-direction: column;
         align-items:flex-end;
         padding-right: 7px;
-        top: 296px;
+        top: 266px;
         width: 40%;
         right: 60%;
 

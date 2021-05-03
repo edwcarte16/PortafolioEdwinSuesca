@@ -9,26 +9,6 @@
 body {
   background: -webkit-gradient(linear, left top, left bottom, from(#263444), to(white));
   background: linear-gradient(#263444, white);
-  overflow-x: hidden;
-}
-
-body #BackgroundHeader {
-  position: absolute;
-  width: 1000px;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  z-index: -1;
-}
-
-@media (min-width: 1000px) {
-  body #BackgroundHeader {
-    position: absolute;
-    width: 100vw;
-    top: 0;
-    z-index: -1;
-  }
 }
 
 header {
@@ -49,6 +29,9 @@ header {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 100vh;
+  background-image: url(/images/background1.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .boxLogoMedia {
@@ -222,8 +205,8 @@ nav .imgsNavBackground {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  -webkit-clip-path: circle(30px at 50% 10%);
-          clip-path: circle(30px at 50% 10%);
+  -webkit-clip-path: circle(30px at 50% 50%);
+          clip-path: circle(30px at 50% 50%);
   -webkit-transition: -webkit-clip-path 700ms;
   transition: -webkit-clip-path 700ms;
   transition: clip-path 700ms;
@@ -239,7 +222,7 @@ nav .imgsNavBackground {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 15vh;
+  bottom: 30vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -266,7 +249,7 @@ nav .imgsNavBackground {
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
   z-index: 2;
-  top: 10%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-30%, -50%);
           transform: translate(-30%, -50%);
@@ -303,7 +286,7 @@ nav .imgsNavBackground {
   stroke-dashoffset: 151;
   fill: #0000002c;
   z-index: 1;
-  top: 10%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);

@@ -7,25 +7,6 @@
 
 body{
     background: linear-gradient(#263444, white);
-    overflow-x: hidden;
-    #BackgroundHeader{
-        position: absolute;
-        width: 1000px;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
-        z-index: -1;
-    }
-
-    @media (min-width: 1000px) {
-
-        #BackgroundHeader{
-            position: absolute;
-            width: 100vw;
-            top: 0;
-            z-index: -1;
-        }
-    }
 }
 
 $color1: #d932d2;
@@ -40,6 +21,9 @@ header{
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
+    background-image: url(/images/background1.png);
+    background-position: center;
+    background-size: cover;
 }
 .boxLogoMedia{
     display: none;
@@ -162,7 +146,7 @@ nav{
     height: fit-content;
     max-height: 50vh;
     max-width: fit-content;
-    clip-path: circle(30px at 50% 10%);
+    clip-path: circle(30px at 50% 50%);
     transition: clip-path 700ms;
     z-index: 2;
 }
@@ -171,7 +155,7 @@ nav{
     position: absolute;
     display: flex;
     align-items: center;
-    margin-top: 15vh;
+    bottom: 30vh;
     flex-direction: column;
 
     h1, h2{
@@ -195,7 +179,7 @@ nav{
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     z-index: 2;
-    top: 10%;
+    top: 50%;
     left: 50%;
     transform: translate(-30%, -50%);
     animation: animateTrianglePlay 350ms 2.3s;
@@ -219,7 +203,7 @@ nav{
     stroke-dashoffset: 151;
     fill: #0000002c;
     z-index: 1;
-    top: 10%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: animateCirclePlay 1s 1.5s;

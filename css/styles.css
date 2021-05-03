@@ -6,6 +6,31 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#263444), to(white));
+  background: linear-gradient(#263444, white);
+  overflow-x: hidden;
+}
+
+body #BackgroundHeader {
+  position: absolute;
+  width: 1000px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: -1;
+}
+
+@media (min-width: 1000px) {
+  body #BackgroundHeader {
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    z-index: -1;
+  }
+}
+
 header {
   position: relative;
   overflow-x: hidden;
@@ -24,9 +49,6 @@ header {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 100vh;
-  background-image: url("https://edwcarte16.github.io/PortafolioEdwins/images/background1.png");
-  background-size: cover;
-  background-position: 50% 50%;
 }
 
 .boxLogoMedia {
@@ -99,6 +121,7 @@ header {
 }
 
 nav {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,6 +130,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  top: 55px;
 }
 
 @media (min-width: 721px) {
@@ -158,7 +182,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #ffffff93;
+  color: #ffffffb4;
   text-decoration: none;
   font-size: 1.4em;
   -webkit-animation: animateBlur 2s 1s;
@@ -194,12 +218,12 @@ nav .imgsNavBackground {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  max-height: 65vh;
+  max-height: 50vh;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  -webkit-clip-path: circle(30px at 50% 50%);
-          clip-path: circle(30px at 50% 50%);
+  -webkit-clip-path: circle(30px at 50% 10%);
+          clip-path: circle(30px at 50% 10%);
   -webkit-transition: -webkit-clip-path 700ms;
   transition: -webkit-clip-path 700ms;
   transition: clip-path 700ms;
@@ -209,32 +233,29 @@ nav .imgsNavBackground {
 
 #titleName {
   position: absolute;
-  bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-h1, h2 {
+#titleName h1, #titleName h2 {
   color: #04c0ff;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   opacity: 0.6;
-  text-shadow: 0 0 4px black;
 }
 
-h2 {
-  color: white;
+#titleName h2 {
+  color: #ffffffc4;
+  font-weight: 300;
 }
 
 #triangle {
@@ -245,7 +266,7 @@ h2 {
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
   z-index: 2;
-  top: 50%;
+  top: 10%;
   left: 50%;
   -webkit-transform: translate(-30%, -50%);
           transform: translate(-30%, -50%);
@@ -282,7 +303,7 @@ h2 {
   stroke-dashoffset: 151;
   fill: #0000002c;
   z-index: 1;
-  top: 50%;
+  top: 10%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -684,6 +705,15 @@ h2 {
     fill: #ffffff93;
     -webkit-transition: ease 500ms;
     transition: ease 500ms;
+  }
+  #titleName {
+    bottom: 55px;
+  }
+  #titleName h1 {
+    color: #04c0ff;
+  }
+  #titleName h2 {
+    color: #1f1f1f;
   }
 }
 

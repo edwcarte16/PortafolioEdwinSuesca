@@ -5,6 +5,29 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    background: linear-gradient(#263444, white);
+    overflow-x: hidden;
+    #BackgroundHeader{
+        position: absolute;
+        width: 1000px;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: -1;
+    }
+
+    @media (min-width: 1000px) {
+
+        #BackgroundHeader{
+            position: absolute;
+            width: 100vw;
+            top: 0;
+            z-index: -1;
+        }
+    }
+}
+
 $color1: #d932d2;
 $color2: #04c0ff;
 
@@ -17,9 +40,6 @@ header{
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
-    background-image: url("https://edwcarte16.github.io/PortafolioEdwins/images/background1.png");
-    background-size: cover;
-    background-position: 50% 50%;
 }
 .boxLogoMedia{
     display: none;
@@ -27,7 +47,6 @@ header{
 .burgerMenuBox{
     display: none;
 }
-
 
 .searchBar{
     position: absolute;
@@ -73,9 +92,11 @@ header{
 
 
 nav{
+    position: absolute;
     display: flex;
     width: 100%;
     flex-direction: column;
+    top: 55px;
     @media (min-width: 721px){
         #boxAllIcons{
             position: absolute;
@@ -113,7 +134,7 @@ nav{
             list-style: none;
             z-index: 5;
             a{
-                color: #ffffff93;
+                color: #ffffffb4;
                 text-decoration: none;
                 font-size: 1.4em;
                 animation: animateBlur 2s 1s;
@@ -139,31 +160,32 @@ nav{
     align-items: flex-end;
     justify-content: center;
     height: fit-content;
-    max-height: 65vh;
+    max-height: 50vh;
     max-width: fit-content;
-    clip-path: circle(30px at 50% 50%);
+    clip-path: circle(30px at 50% 10%);
     transition: clip-path 700ms;
     z-index: 2;
 }
 
 #titleName{
     position: absolute;
-    bottom: 40px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
+    margin-top: 15vh;
+    flex-direction: column;
 
-h1, h2{
-    color: $color2;
-    font-weight: 300;
-    text-align: center;
-    opacity: 0.6;
-    text-shadow: 0 0 4px rgb(0, 0, 0);
+    h1, h2{
+        color: $color2;
+        font-weight: 400;
+        text-align: center;
+        opacity: 0.6;
+    }
+    
+    h2{
+        color: #ffffffc4;
+        font-weight: 300;
+    }
 }
-
-h2{color: white;}
 
 #triangle{
     position: absolute;
@@ -173,7 +195,7 @@ h2{color: white;}
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     z-index: 2;
-    top: 50%;
+    top: 10%;
     left: 50%;
     transform: translate(-30%, -50%);
     animation: animateTrianglePlay 350ms 2.3s;
@@ -197,7 +219,7 @@ h2{color: white;}
     stroke-dashoffset: 151;
     fill: #0000002c;
     z-index: 1;
-    top: 50%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: animateCirclePlay 1s 1.5s;
@@ -457,6 +479,17 @@ h2{color: white;}
                     transition: ease 500ms;
                     }
                 }
+            }
+        }
+
+        #titleName{
+            bottom: 55px;
+            h1{
+                color: $color2;
+            }
+
+            h2{
+                color: #1f1f1f;
             }
         }
     }

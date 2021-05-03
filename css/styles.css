@@ -7,8 +7,7 @@
 }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#263444), to(white));
-  background: linear-gradient(#263444, white);
+  background-color: white;
 }
 
 header {
@@ -762,5 +761,37 @@ nav .imgsNavBackground {
     fill: #d932d2;
     stroke: transparent;
   }
+}
+
+article {
+  padding: 0 2vw;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (minmax(20em, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  gap: 25px;
+}
+
+article section {
+  padding: 30px 20px;
+  background-color: white;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 15px #00000052;
+          box-shadow: 0 0 15px #00000052;
+}
+
+article h2 {
+  color: #1f1f1f98;
+  font-weight: 300;
+  text-align: center;
+}
+
+article p {
+  margin-top: 50px;
+  text-align: justify;
+  color: #333333;
 }
 /*# sourceMappingURL=styles.css.map */

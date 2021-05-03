@@ -29,7 +29,7 @@ header {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   height: 100vh;
-  background-image: url(/images/background1.png);
+  background-image: url("https://raw.githubusercontent.com/edwcarte16/PortafolioEdwins/main/images/background1.png");
   background-position: center;
   background-size: cover;
 }

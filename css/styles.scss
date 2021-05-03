@@ -247,11 +247,13 @@ h2{color: white;}
 
 .aNav:hover{color:$color1;}
 
-.boxLogo svg{
+.boxLogo{
+    cursor:pointer;
+    svg{
     width: 100px;
     height: 100px;
     animation: animateSvg 2.5s;
-    animation-fill-mode: backwards;
+    animation-fill-mode: backwards;}
 }
 
 @keyframes animateList {
@@ -324,11 +326,9 @@ h2{color: white;}
 }
 
 @media (max-width: 720px){
-
-
-
     header{
         .burgerMenuBox{
+            cursor:pointer;
             display: flex;
             justify-content: center;
             align-items: center;

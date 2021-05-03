@@ -355,6 +355,10 @@ h2 {
   color: #d932d2;
 }
 
+.boxLogo {
+  cursor: pointer;
+}
+
 .boxLogo svg {
   width: 100px;
   height: 100px;
@@ -524,6 +528,7 @@ h2 {
 
 @media (max-width: 720px) {
   header .burgerMenuBox {
+    cursor: pointer;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

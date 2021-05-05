@@ -41,13 +41,11 @@ function hoverList(icon, imageBg){
   }
 
   if(windowWidth<720 && icon == "book"){
-    iconList4.style.marginTop = "150px"
-    console.log(icon);
+    iconList4.style.marginTop = "151px"
   }
 
   if(windowWidth<720 && icon != "book"){
     iconList4.style.marginTop = "29px"
-    console.log(icon);
   }
 }
 
@@ -61,7 +59,6 @@ function noHoverList(icon, imageBg){
 
   if(windowWidth<720){
     iconList4.style.marginTop = "29px"
-    console.log(icon);
   }
 }
 

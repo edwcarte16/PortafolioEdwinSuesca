@@ -39,6 +39,16 @@ function hoverList(icon, imageBg){
     left4 = itemList4.getBoundingClientRect().left+47
     iconList4.style = `left: ${left4}px`;
   }
+
+  if(windowWidth<720 && icon == "book"){
+    iconList4.style.marginTop = "150px"
+    console.log(icon);
+  }
+
+  if(windowWidth<720 && icon != "book"){
+    iconList4.style.marginTop = "29px"
+    console.log(icon);
+  }
 }
 
 function noHoverList(icon, imageBg){
@@ -47,6 +57,11 @@ function noHoverList(icon, imageBg){
 
   if(windowWidth>720){
     document.getElementById(icon).style = "fill:transparent"
+  }
+
+  if(windowWidth<720){
+    iconList4.style.marginTop = "29px"
+    console.log(icon);
   }
 }
 

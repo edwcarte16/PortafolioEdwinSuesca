@@ -11,6 +11,9 @@ body{
 
 $color1: #d932d2;
 $color2: #04c0ff;
+$colorDarkMin: #353535;
+$colorDarkMidle: #2e2e2e;
+$colorDarkMax: #202020;
 
 header{
     position: relative;
@@ -60,7 +63,7 @@ header{
             }
         }
     
-        ul{
+        .menuList{
             width: 100%;
             display: flex;
             justify-content: space-evenly;
@@ -83,6 +86,52 @@ header{
                 animation: animateList 1s;
                 animation-fill-mode: both;
             }
+
+            #liNav3{
+                position: relative;
+                margin-bottom: 12px;
+                .popUpList{
+                    height: 0;
+                    background-color: transparent;
+                    position: absolute;
+                    overflow: hidden;
+                    border: none;
+                    transition: 500ms;
+                    border-radius: 10px;
+
+                    li{
+                        a{
+                            color: #ffffffb7;
+                        }
+                    }
+                }
+            }
+
+            #liNav3:hover{
+                animation: none;
+                .popUpList{
+                    animation: none;
+                    width:max-content;
+                    height: fit-content;
+                    background-color: $colorDarkMin;
+                    position: absolute;
+                    border: 1px solid $color1;
+                    top: 30px;
+                    padding: 17px;
+                    
+                    li{
+                        animation: none;
+                        a{
+                            color: #ffffffb7;
+                            
+                        }
+
+                        a:hover{
+                            color:$color1;
+                        }
+                    }
+                }
+            }
         }
     
         .imgsNavBackground{
@@ -99,6 +148,7 @@ header{
         background-color:#242424;
         border-radius: 100%;
         box-shadow: 0 0 18px #0000001e;
+        transition: 200ms;
 
         img{
             position: absolute;
@@ -106,7 +156,22 @@ header{
             left: 50%;
             transform: translate(-50%, -55%);
             height: 80%;
+            transition: 200ms;
+        }
+    }
 
+    #perfilImageBox:hover{
+        cursor: pointer;
+        background-color: #1a1a1a;
+        overflow: visible;
+
+        img{
+            position: absolute;
+            top:45%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            height: 110%;
+            z-index: 3;
         }
     }
 
@@ -248,7 +313,6 @@ header{
             position: absolute;
             top: initial;
             bottom: 17vh;
-
         }
 
         .burgerMenuBox{
@@ -294,7 +358,7 @@ header{
             clip-path: circle(0px at 100% 0%);
             transition: clip-path 650ms;
 
-            ul{
+            .menuList{
                 position: absolute;
                 display: flex;
                 flex-direction: column;
@@ -304,10 +368,27 @@ header{
                 left: 35%;
                 padding-left: 7px;
 
-                li{
+                #liNav3, li{
                     margin:30px 0 0 0;
+
                     a{
-                        font-size: 1.5em;}
+                        font-size: 1.5em;
+                    }
+                }
+
+                #liNav3:hover{
+                    position: relative;
+                    .popUpList{
+                        position:static;
+                        bottom: 0;
+                        background-color: $colorDarkMax;
+                        position: block;
+                        z-index: 2000;
+
+                        li{
+                            margin: auto;
+                        }
+                    }
                 }
             }
 
@@ -371,6 +452,7 @@ header{
                 justify-content: center;
                 align-items: center;
                 margin:29px 0 0 0;
+                transition: margin-top 350ms ease-out;
             }
 
                 svg{
@@ -431,7 +513,7 @@ main{
         gap: 25px;
         section{
             padding: 20px;
-            background-color: rgb(32, 32, 32);
+            background-color: #202020;
             border-radius: 12px;
             box-shadow: 5px 5px 18px #00000028;
         }

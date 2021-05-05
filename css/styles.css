@@ -80,7 +80,7 @@ header nav {
   }
 }
 
-header nav ul {
+header nav .menuList {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -93,12 +93,12 @@ header nav ul {
           align-items: center;
 }
 
-header nav ul li {
+header nav .menuList li {
   list-style: none;
   z-index: 5;
 }
 
-header nav ul li a {
+header nav .menuList li a {
   color: #ffffffb4;
   text-decoration: none;
   font-size: 1.4em;
@@ -108,13 +108,67 @@ header nav ul li a {
           animation-fill-mode: backwards;
 }
 
-header nav ul li:hover {
+header nav .menuList li:hover {
   color: white;
   text-decoration: none;
   -webkit-animation: animateList 1s;
           animation: animateList 1s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
+}
+
+header nav .menuList #liNav3 {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+header nav .menuList #liNav3 .popUpList {
+  height: 0;
+  background-color: transparent;
+  position: absolute;
+  overflow: hidden;
+  border: none;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+  border-radius: 10px;
+}
+
+header nav .menuList #liNav3 .popUpList li a {
+  color: #ffffffb7;
+}
+
+header nav .menuList #liNav3:hover {
+  -webkit-animation: none;
+          animation: none;
+}
+
+header nav .menuList #liNav3:hover .popUpList {
+  -webkit-animation: none;
+          animation: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #353535;
+  position: absolute;
+  border: 1px solid #d932d2;
+  top: 30px;
+  padding: 17px;
+}
+
+header nav .menuList #liNav3:hover .popUpList li {
+  -webkit-animation: none;
+          animation: none;
+}
+
+header nav .menuList #liNav3:hover .popUpList li a {
+  color: #ffffffb7;
+}
+
+header nav .menuList #liNav3:hover .popUpList li a:hover {
+  color: #d932d2;
 }
 
 header nav .imgsNavBackground {
@@ -131,6 +185,8 @@ header #perfilImageBox {
   border-radius: 100%;
   -webkit-box-shadow: 0 0 18px #0000001e;
           box-shadow: 0 0 18px #0000001e;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
 header #perfilImageBox img {
@@ -140,6 +196,24 @@ header #perfilImageBox img {
   -webkit-transform: translate(-50%, -55%);
           transform: translate(-50%, -55%);
   height: 80%;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+header #perfilImageBox:hover {
+  cursor: pointer;
+  background-color: #1a1a1a;
+  overflow: visible;
+}
+
+header #perfilImageBox:hover img {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -55%);
+          transform: translate(-50%, -55%);
+  height: 110%;
+  z-index: 3;
 }
 
 header #titleName {
@@ -432,7 +506,7 @@ header #titleName h2 {
     transition: clip-path 650ms;
     transition: clip-path 650ms, -webkit-clip-path 650ms;
   }
-  header nav ul {
+  header nav .menuList {
     position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -449,11 +523,24 @@ header #titleName h2 {
     left: 35%;
     padding-left: 7px;
   }
-  header nav ul li {
+  header nav .menuList #liNav3, header nav .menuList li {
     margin: 30px 0 0 0;
   }
-  header nav ul li a {
+  header nav .menuList #liNav3 a, header nav .menuList li a {
     font-size: 1.5em;
+  }
+  header nav .menuList #liNav3:hover {
+    position: relative;
+  }
+  header nav .menuList #liNav3:hover .popUpList {
+    position: static;
+    bottom: 0;
+    background-color: #202020;
+    position: block;
+    z-index: 2000;
+  }
+  header nav .menuList #liNav3:hover .popUpList li {
+    margin: auto;
   }
   header nav .boxLogo {
     display: none;
@@ -527,6 +614,8 @@ header #titleName h2 {
         -ms-flex-align: center;
             align-items: center;
     margin: 29px 0 0 0;
+    -webkit-transition: margin-top 350ms ease-out;
+    transition: margin-top 350ms ease-out;
   }
   header #boxAllIcons svg {
     height: 30px;

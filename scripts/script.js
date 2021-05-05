@@ -1,6 +1,3 @@
-var video = document.getElementById("videoDesigner1");
-var element = document.getElementById('videoDesigner1');
-
 var itemList1 = document.getElementById("liNav1");
 var itemList2 = document.getElementById("liNav2");
 var itemList3 = document.getElementById("liNav3");
@@ -17,14 +14,6 @@ var left3;
 var left4;
 
 var windowWidth = window.innerWidth;
-
-function playFunction() {  
-    video.play();
-}
-
-function pauseFunction() {  
-  video.pause();
-}
 
 var icon;
 var imageBg;

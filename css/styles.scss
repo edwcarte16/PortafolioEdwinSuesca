@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: white;
+    background-color:#353535;
 }
 
 $color1: #d932d2;
@@ -20,235 +20,120 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 100vh;
-    background-image: url("https://raw.githubusercontent.com/edwcarte16/PortafolioEdwins/main/images/background1.png");
-    background-position: center;
-    background-size: cover;
+    height:max-content;
+
+    #backgroundHeader{
+        width: 100vw;
+        opacity: 0.3;
+    }
+
+    nav{
+        position: absolute;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        top: 55px;
+        @media (min-width: 721px){
+            #boxAllIcons{
+                position: absolute;
+                display: flex;
+                width: 100%;
+                .boxIconListNav{
+                    position: absolute;
+                    width: 40px;
+                    height: 65px;
+    
+                    svg{
+                        position: absolute;
+                        width: 40px;
+                        height: 65px;
+                        transition: ease-in 300ms;
+                        
+                        path{
+                            opacity: 0;
+                            fill: #ffffff00;
+                            transform:translateY(0);
+                            transition: ease-out 300ms;
+                        }
+                    }
+                }
+            }
+        }
+    
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+    
+            li {
+                list-style: none;
+                z-index: 5;
+                a{
+                    color: #ffffffb4;
+                    text-decoration: none;
+                    font-size: 1.4em;
+                    animation: animateBlur 2s 1s;
+                    animation-fill-mode: backwards;}
+            }
+    
+            li:hover{
+                color: white;
+                text-decoration: none;
+                animation: animateList 1s;
+                animation-fill-mode: both;
+            }
+        }
+    
+        .imgsNavBackground{
+            display: none;
+        }
+    }
+
+    #perfilImageBox{
+        position: absolute;
+        bottom: 140px;
+        height: 170px;
+        width: 170px;
+        overflow: hidden;
+        background-color:#242424;
+        border-radius: 100%;
+        box-shadow: 0 0 18px #0000001e;
+
+        img{
+            position: absolute;
+            top:60%;
+            left: 50%;
+            transform: translate(-50%, -55%);
+            height: 80%;
+
+        }
+    }
+
+    #titleName{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        bottom: 50px;
+        flex-direction: column;
+    
+        h1, h2{
+            color: $color2;
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        h2{
+            color: #ffffffc4;
+            font-weight: 300;
+        }
+    }
 }
 .boxLogoMedia{
     display: none;
 }
 .burgerMenuBox{
     display: none;
-}
-
-.searchBar{
-    position: absolute;
-    top: 30vh;
-    display: flex;
-    background-color: #ffffff1a;
-    border-radius: 25px;
-    backdrop-filter: blur(10px);
-    input{
-        background-color: transparent;
-        border-style: none;
-        height: 33px;
-        width: 30vw;
-        min-width: 200px;
-        max-width: 300px;
-
-        padding: 0 10px;
-        color: #ffffffb4;
-        font-size: 1rem;
-    }
-
-    input::placeholder{
-        text-align: center;
-        color: #ffffff2a;
-    }
-
-    button{
-        height: 33px;
-        width: 33px;
-        background-color: transparent;
-        border-style: none;
-        border-radius: 25px;
-        
-        svg{
-            height: 100%;
-            width: 100%;
-            path{
-                fill:#ffffff2a
-            }
-        }
-    }
-}
-
-
-nav{
-    position: absolute;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    top: 55px;
-    @media (min-width: 721px){
-        #boxAllIcons{
-            position: absolute;
-            display: flex;
-            width: 100%;
-            .boxIconListNav{
-                position: absolute;
-                width: 40px;
-                height: 65px;
-
-                svg{
-                    position: absolute;
-                    width: 40px;
-                    height: 65px;
-                    transition: ease-in 300ms;
-                    
-                    path{
-                        opacity: 0;
-                        fill: #ffffff00;
-                        transform:translateY(0);
-                        transition: ease-out 300ms;
-                    }
-                }
-            }
-        }
-    }
-
-    ul{
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        li {
-            list-style: none;
-            z-index: 5;
-            a{
-                color: #ffffffb4;
-                text-decoration: none;
-                font-size: 1.4em;
-                animation: animateBlur 2s 1s;
-                animation-fill-mode: backwards;}
-        }
-
-        li:hover{
-            color: white;
-            text-decoration: none;
-            animation: animateList 1s;
-            animation-fill-mode: both;
-        }
-    }
-
-    .imgsNavBackground{
-        display: none;
-    }
-}
-
-#videoBox{
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    height: fit-content;
-    max-height: 50vh;
-    max-width: fit-content;
-    clip-path: circle(30px at 50% 50%);
-    transition: clip-path 700ms;
-    z-index: 2;
-}
-
-#titleName{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    bottom: 30vh;
-    flex-direction: column;
-
-    h1, h2{
-        color: $color2;
-        font-weight: 400;
-        text-align: center;
-        opacity: 0.6;
-    }
-    
-    h2{
-        color: #ffffffc4;
-        font-weight: 300;
-    }
-}
-
-#triangle{
-    position: absolute;
-    height: 0px;
-    width: 0px;
-    border-left: 17px solid #ffffff1f;
-    border-top: 11px solid transparent;
-    border-bottom: 11px solid transparent;
-    z-index: 2;
-    top: 50%;
-    left: 50%;
-    transform: translate(-30%, -50%);
-    animation: animateTrianglePlay 350ms 2.3s;
-    animation-fill-mode: backwards;
-}
-@keyframes animateTrianglePlay {
-    0%{
-        border-left: 1px solid transparent;
-    }
-
-    100%{
-        border-left: 17px solid #ffffff1f;
-    }
-}
-#circle{
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    stroke-width: 2px;
-    stroke-dasharray: 151;
-    stroke-dashoffset: 151;
-    fill: #0000002c;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: animateCirclePlay 1s 1.5s;
-    animation-fill-mode: backwards;
-}
-
-@keyframes animateCirclePlay {
-    0%{
-        stroke-dashoffset: 0;
-        fill: transparent;
-        
-    }
-
-    10%{
-        stroke: $color2;
-    }
-    50%{
-        stroke: $color1;
-    }
-    100%{
-        stroke-dashoffset: 700;
-        stroke: transparent;
-    }
-}
-
-#videoDesigner1{
-    opacity: 0;
-    transition: opacity 1.3s;
-    height: 100%;
-    max-width: 100%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.616);
-    border-radius: 20px;
-}
-
-#videoBox:hover{
-    clip-path: circle(200% at 50% 50%);
-    background-color: transparent;
-}
-
-#videoBox:hover .playButton{
-    display: none;
-}
-
-#videoBox:hover #videoDesigner1{
-    opacity: 1;
 }
 
 .aNav:hover{color:$color1;}
@@ -331,8 +216,41 @@ nav{
     stroke-dashoffset: 314;
 }
 
+@media (min-width: 1000px){
+    header{
+
+        #perfilImageBox{
+            top: 50vh;
+        }
+
+        #titleName{
+            top: 75vh;
+            bottom: initial;
+        }
+    }
+}
+
 @media (max-width: 720px){
     header{
+        height: 100vh;
+        position: relative;
+        #backgroundHeader{
+            position: absolute;
+            top: 0;
+        }
+
+        #perfilImageBox{
+            top: 47vh;
+        }
+
+        #titleName{
+            height: initial;
+            position: absolute;
+            top: initial;
+            bottom: 17vh;
+
+        }
+
         .burgerMenuBox{
             cursor:pointer;
             display: flex;
@@ -465,17 +383,6 @@ nav{
                 }
             }
         }
-
-        #titleName{
-            bottom: 55px;
-            h1{
-                color: $color2;
-            }
-
-            h2{
-                color: #1f1f1f;
-            }
-        }
     }
 @keyframes animateBlue{
     0%{
@@ -514,27 +421,30 @@ nav{
     }
 }
 
-article{
-    padding: 0 2vw;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-    gap: 25px;
-    section{
-        padding: 30px 20px;
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 0 15px #00000052;
-    }
-
-    h2{
-        color: #1f1f1f98;
-        font-weight: 300;
-        text-align: center;
-    }
-    p{
-        margin-top: 50px;
-        text-align: justify;
-        color: rgb(51, 51, 51);
+main{
+    margin-top: 15px;
+    article{
+        padding: 0 2vw;
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+        gap: 25px;
+        section{
+            padding: 20px;
+            background-color: rgb(32, 32, 32);
+            border-radius: 12px;
+            box-shadow: 5px 5px 18px #00000028;
+        }
+    
+        h2{
+            color: $color2;
+            font-weight: 300;
+            text-align: center;
+        }
+        p{
+            margin-top: 20px;
+            text-align: justify;
+            color: rgb(93, 93, 93);
+        }
     }
 }

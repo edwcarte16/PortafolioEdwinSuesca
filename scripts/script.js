@@ -115,6 +115,8 @@ function openMenu(){
     document.getElementById("rectBurgerMenu1").style = "rotate:-45deg; x:-12.999996px; y:11.246504px";
 
     document.getElementById("rectBurgerMenu2").style = "rotate:45deg; x:1.2465px; y:-3px";
+
+    document.getElementById("rectBurgerMenu2").style.transform = "rotate: 45deg";
   }
 
   else {

@@ -541,10 +541,45 @@ main{
             font-weight: 300;
             text-align: center;
         }
+
         p{
             margin-top: 20px;
             text-align: justify;
             color: rgb(93, 93, 93);
+        }
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $colorDarkMax;
+    padding: 20px;
+    .boxLogo{
+        svg{
+            width:50px;
+            height:50px;
+            animation: none;
+            #pathSlogan{
+                display: none;
+            }
+        }
+    }
+
+    section{
+        margin-top: 20px;
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        background-color: $colorDarkMax;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
+        gap: 20px;
+        a, span{
+            color: #ffffff5d;
+            text-align: center;
         }
     }
 }

@@ -747,4 +747,52 @@ main article p {
   text-align: justify;
   color: #5d5d5d;
 }
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #181818;
+  padding: 20px;
+}
+
+footer .boxLogo svg {
+  width: 50px;
+  height: 50px;
+  -webkit-animation: none;
+          animation: none;
+}
+
+footer .boxLogo svg #pathSlogan {
+  display: none;
+}
+
+footer section {
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #181818;
+  width: 100%;
+  -ms-grid-columns: (minmax(15em, 2fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
+  gap: 20px;
+}
+
+footer section a, footer section span {
+  color: #ffffff5d;
+  text-align: center;
+}
 /*# sourceMappingURL=styles.css.map */

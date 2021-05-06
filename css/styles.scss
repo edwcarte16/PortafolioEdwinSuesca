@@ -145,11 +145,10 @@ header{
         height: 170px;
         width: 170px;
         overflow: hidden;
-        background-color:#242424;
+        background: linear-gradient(to bottom, #111111, #242424);
         border-radius: 100%;
-        box-shadow: 0 0 18px #0000001e;
         transition: 200ms;
-
+        
         img{
             position: absolute;
             top:60%;
@@ -162,7 +161,6 @@ header{
 
     #perfilImageBox:hover{
         cursor: pointer;
-        background-color: #1a1a1a;
         overflow: visible;
 
         img{
@@ -182,15 +180,34 @@ header{
         bottom: 50px;
         flex-direction: column;
     
-        h1, h2{
-            color: $color2;
-            font-weight: 400;
+        h1{
+            background: linear-gradient(to right, $color2, $color1);
+            -webkit-background-clip: text;
+            color: transparent; 
+            z-index: 2;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        p{
+            position: absolute;
+            z-index: 1;
+            top: 14px;
+            filter: blur(3px);
+            color: #00000083; 
+            font-weight: 800;
+            font-size: 24pt;
             text-align: center;
         }
         
         h2{
-            color: #ffffffc4;
-            font-weight: 300;
+            text-shadow: 0 5px 12px#00000054;
+            font-weight: 800;
+            text-align: center;
+            position: relative;
+            top: -11px;
+            width: 100%;
+            color: #ffffff;
         }
     }
 }

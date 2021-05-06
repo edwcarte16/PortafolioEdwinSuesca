@@ -17,13 +17,11 @@ $colorDarkMax: #181818;
 
 header{
     position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height:max-content;
+    height:300px;
 
     #backgroundHeader{
         width: 100vw;

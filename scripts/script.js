@@ -39,7 +39,7 @@ function hoverList(icon, imageBg){
     left4 = itemList4.getBoundingClientRect().left+47
     iconList4.style = `left: ${left4}px`;
   }
-
+//Movimiento de ícono hacia abajo//
   if(windowWidth<720 && icon == "book"){
     iconList4.style.marginTop = "151px"
   }

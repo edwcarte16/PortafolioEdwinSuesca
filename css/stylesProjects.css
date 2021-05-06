@@ -12,8 +12,6 @@ body {
 
 header {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,9 +25,7 @@ header {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  height: 300px;
 }
 
 header #backgroundHeader {
@@ -747,4 +743,4 @@ main article p {
   text-align: justify;
   color: #5d5d5d;
 }
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=stylesProjects.css.map */

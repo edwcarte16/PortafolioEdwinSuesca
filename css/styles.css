@@ -521,7 +521,7 @@ header #titleName h2 {
 
 @media (max-width: 720px) {
   header {
-    height: 100vh;
+    height: 94vh;
     position: relative;
   }
   header #backgroundHeader {
@@ -535,7 +535,7 @@ header #titleName h2 {
     height: initial;
     position: absolute;
     top: initial;
-    bottom: 17vh;
+    bottom: 10vh;
   }
   header .burgerMenuBox {
     cursor: pointer;

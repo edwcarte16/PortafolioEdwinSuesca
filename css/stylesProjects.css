@@ -277,10 +277,6 @@ header #titleName h2 {
 .boxLogo svg {
   width: 100px;
   height: 100px;
-  -webkit-animation: animateSvg 2.5s;
-          animation: animateSvg 2.5s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
 }
 
 @-webkit-keyframes animateList {
@@ -345,100 +341,16 @@ header #titleName h2 {
   }
 }
 
-@-webkit-keyframes animateSvg {
-  0% {
-    width: 200px;
-    height: 200px;
-  }
-  100% {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@keyframes animateSvg {
-  0% {
-    width: 200px;
-    height: 200px;
-  }
-  100% {
-    width: 100px;
-    height: 100px;
-  }
-}
-
-@-webkit-keyframes animateBlur {
-  0% {
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes animateBlur {
-  0% {
-    -webkit-filter: blur(5px);
-            filter: blur(5px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
-}
-
 #edwins, #pathSlogan {
   fill: white;
-  -webkit-animation: animateSlogan 3s;
-          animation: animateSlogan 3s;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-  -webkit-animation-fill-mode: backwards;
-          animation-fill-mode: backwards;
-}
-
-@-webkit-keyframes animateSlogan {
-  0% {
-    fill: #00000000;
-  }
-  100% {
-    fill: white;
-  }
-}
-
-@keyframes animateSlogan {
-  0% {
-    fill: #00000000;
-  }
-  100% {
-    fill: white;
-  }
 }
 
 #pathBlue {
-  -webkit-animation: animateBlue 2.5s;
-          animation: animateBlue 2.5s;
   fill: #04c0ff;
-  stroke-width: 2px;
-  stroke: #04c0ff;
-  stroke-dasharray: 251;
-  stroke-dashoffset: 251;
 }
 
 #pathMagenta {
-  -webkit-animation: animateMagenta 2.5s;
-          animation: animateMagenta 2.5s;
   fill: #d932d2;
-  stroke-width: 2px;
-  stroke: #d932d2;
-  stroke-dasharray: 314;
-  stroke-dashoffset: 314;
 }
 
 @media (min-width: 1000px) {
@@ -644,103 +556,39 @@ header #titleName h2 {
   }
 }
 
-@-webkit-keyframes animateBlue {
-  0% {
-    fill: transparent;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    fill: transparent;
-    stroke: #d932d2;
-  }
-  100% {
-    stroke: transparent;
-    stroke-dashoffset: 700;
-    fill: #04c0ff;
-  }
+main .projectsArticle {
+  padding: 25px 2vw;
+  display: -ms-grid;
+  display: grid;
+  gap: 25px;
+  background-color: #00000020;
 }
 
-@keyframes animateBlue {
-  0% {
-    fill: transparent;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    fill: transparent;
-    stroke: #d932d2;
-  }
-  100% {
-    stroke: transparent;
-    stroke-dashoffset: 700;
-    fill: #04c0ff;
-  }
+main .projectsArticle .titleArticles {
+  width: 100%;
+  padding: 10px;
 }
 
-@-webkit-keyframes animateMagenta {
-  0% {
-    stroke-dashoffset: 0;
-    fill: transparent;
-  }
-  50% {
-    fill: transparent;
-    stroke: #04c0ff;
-  }
-  100% {
-    stroke-dashoffset: 700;
-    fill: #d932d2;
-    stroke: transparent;
-  }
-}
-
-@keyframes animateMagenta {
-  0% {
-    stroke-dashoffset: 0;
-    fill: transparent;
-  }
-  50% {
-    fill: transparent;
-    stroke: #04c0ff;
-  }
-  100% {
-    stroke-dashoffset: 700;
-    fill: #d932d2;
-    stroke: transparent;
-  }
-}
-
-main {
-  margin: 15px 0;
-}
-
-main article {
-  padding: 0 2vw;
+main .projectsArticle .feedbackCards {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (minmax(20em, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  -ms-grid-columns: (minmax(20em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   gap: 25px;
 }
 
-main article section {
+main .projectsArticle .feedbackCards section {
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
   padding: 20px;
   background-color: #202020;
   border-radius: 12px;
-  -webkit-box-shadow: 5px 5px 18px #00000028;
-          box-shadow: 5px 5px 18px #00000028;
-}
-
-main article h2 {
-  color: #04c0ff;
-  font-weight: 300;
-  text-align: center;
-}
-
-main article p {
-  margin-top: 20px;
-  text-align: justify;
-  color: #5d5d5d;
+  -webkit-box-shadow: 0 0 15px #00000050;
+          box-shadow: 0 0 15px #00000050;
+  justify-items: center;
 }
 /*# sourceMappingURL=stylesProjects.css.map */

@@ -1,3 +1,4 @@
+@import "colorsDark";
 *{
     padding: 0;
     margin: 0;
@@ -11,9 +12,9 @@ body{
 
 $color1: #d932d2;
 $color2: #04c0ff;
-$colorDarkMin: #353535;
-$colorDarkMidle: #2e2e2e;
-$colorDarkMax: #181818;
+$colorDark1: #353535;
+$colorDark2: #2e2e2e;
+$colorDark3: #181818;
 
 header{
     position: relative;
@@ -112,7 +113,7 @@ header{
                     animation: none;
                     width:max-content;
                     height: fit-content;
-                    background-color: $colorDarkMax;
+                    background-color: $colorDark3;
                     position: absolute;
                     border: 1px solid $color1;
                     top: 30px;
@@ -222,10 +223,9 @@ header{
 .boxLogo{
     cursor:pointer;
     svg{
-    width: 100px;
-    height: 100px;
-    animation: animateSvg 2.5s;
-    animation-fill-mode: backwards;}
+        width: 100px;
+        height: 100px;
+    }
 }
 
 @keyframes animateList {
@@ -238,63 +238,17 @@ header{
     100%{transform: rotate(0deg);}
 }
 
-@keyframes animateSvg {
-    0%{
-        width: 200px;
-        height: 200px;
-    }
-
-    100%{
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@keyframes animateBlur {
-    0%{
-        filter: blur(5px);
-        opacity: 0;
-    }
-
-    100%{
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
 #edwins, #pathSlogan{
     fill: white;
-    animation: animateSlogan 3s;
-    animation-delay: 1.5s;
-    animation-fill-mode: backwards;
 }
 
-@keyframes animateSlogan {
-    0%{
-        fill: #00000000;
-    }
-
-    100%{
-        fill: white;
-    }
-}
 
 #pathBlue{
-    animation: animateBlue 2.5s;
     fill: $color2;
-    stroke-width: 2px;
-    stroke: $color2;
-    stroke-dasharray: 251;
-    stroke-dashoffset: 251;
 }
 
 #pathMagenta{
-    animation: animateMagenta 2.5s;
     fill: $color1;
-    stroke-width: 2px;
-    stroke: $color1;
-    stroke-dasharray: 314;
-    stroke-dashoffset: 314;
 }
 
 @media (min-width: 1000px){
@@ -397,7 +351,7 @@ header{
                     .popUpList{
                         position:static;
                         bottom: 0;
-                        background-color: $colorDarkMax;
+                        background-color: $colorDark3;
                         position: block;
                         z-index: 2000;
 
@@ -482,67 +436,33 @@ header{
             }
         }
     }
-@keyframes animateBlue{
-    0%{
-        fill: transparent;
-        stroke-dashoffset: 0;
-    }
-
-    50%{
-        fill: transparent;
-        stroke: $color1;
-    }
-
-    100%{
-        stroke: transparent;
-        stroke-dashoffset: 700;
-        fill: $color2;
-    }
-}
-
-@keyframes animateMagenta{
-    0%{
-        stroke-dashoffset: 0;
-        fill: transparent;
-    }
-
-    50%{
-       
-        fill: transparent;
-        stroke: $color2;
-    }
-
-    100%{
-        stroke-dashoffset: 700;
-        fill: $color1;
-        stroke: transparent;
-    }
-}
 
 main{
-    margin: 15px 0;
-    article{
-        padding: 0 2vw;
+    .projectsArticle{
+        padding: 25px 2vw;
         display: grid;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
         gap: 25px;
-        section{
-            padding: 20px;
-            background-color: #202020;
-            border-radius: 12px;
-            box-shadow: 5px 5px 18px #00000028;
+        background-color: #00000020;
+
+        .titleArticles{
+            width: 100%;
+            padding: 10px;
         }
-    
-        h2{
-            color: $color2;
-            font-weight: 300;
-            text-align: center;
-        }
-        p{
-            margin-top: 20px;
-            text-align: justify;
-            color: rgb(93, 93, 93);
+        .feedbackCards{
+            
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+            gap: 25px;
+            section{
+                display: grid;
+                gap: 20px;
+                padding: 20px;
+                background-color: #202020;
+                border-radius: 12px;
+                box-shadow: 0 0 15px #00000050;
+                justify-items: center;
+            }
         }
     }
 }

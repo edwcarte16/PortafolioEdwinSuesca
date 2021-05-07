@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #353535;
+  background-color: #373737;
 }
 
 body button {
@@ -25,7 +25,7 @@ body button {
 body button a {
   text-transform: uppercase;
   text-decoration: none;
-  color: #272727;
+  color: #181818;
 }
 
 body button:hover {
@@ -98,7 +98,7 @@ header nav {
   }
   header nav #boxAllIcons .boxIconListNav svg path {
     opacity: 0;
-    fill: #ffffff00;
+    fill: transparent;
     -webkit-transform: translateY(0);
             transform: translateY(0);
     -webkit-transition: ease-out 300ms;
@@ -125,7 +125,7 @@ header nav .menuList li {
 }
 
 header nav .menuList li a {
-  color: #ffffffb4;
+  color: #afafaf;
   text-decoration: none;
   font-size: 1.4em;
   -webkit-animation: animateBlur 2s 1s;
@@ -135,7 +135,6 @@ header nav .menuList li a {
 }
 
 header nav .menuList li:hover {
-  color: white;
   text-decoration: none;
   -webkit-animation: animateList 1s;
           animation: animateList 1s;
@@ -161,7 +160,7 @@ header nav .menuList #liNav3 .popUpList {
 }
 
 header nav .menuList #liNav3 .popUpList li a {
-  color: #ffffffb7;
+  color: #afafaf;
 }
 
 header nav .menuList #liNav3:hover {
@@ -178,7 +177,7 @@ header nav .menuList #liNav3:hover .popUpList {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #181818;
+  background-color: #303030;
   position: absolute;
   border: 1px solid #d932d2;
   top: 30px;
@@ -191,7 +190,7 @@ header nav .menuList #liNav3:hover .popUpList li {
 }
 
 header nav .menuList #liNav3:hover .popUpList li a {
-  color: #ffffffb7;
+  color: #afafaf;
 }
 
 header nav .menuList #liNav3:hover .popUpList li a:hover {
@@ -213,6 +212,8 @@ header #perfilImageBox {
   border-radius: 100%;
   -webkit-transition: 200ms;
   transition: 200ms;
+  -webkit-animation: flipInX 2s;
+          animation: flipInX 2s;
 }
 
 header #perfilImageBox img {
@@ -224,6 +225,30 @@ header #perfilImageBox img {
   height: 80%;
   -webkit-transition: 200ms;
   transition: 200ms;
+  -webkit-animation: avatar 1.2s;
+          animation: avatar 1.2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes avatar {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 80%;
+  }
+}
+
+@keyframes avatar {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 80%;
+  }
 }
 
 header #perfilImageBox:hover {
@@ -261,21 +286,30 @@ header #titleName h1 {
   background: linear-gradient(to right, #04c0ff, #d932d2);
   -webkit-background-clip: text;
   color: transparent;
+  font-size: 28pt;
   z-index: 2;
   font-weight: 800;
   text-align: center;
+  -webkit-animation: slideInDown 1.5s;
+          animation: slideInDown 1.5s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 
 header #titleName p {
   position: absolute;
   z-index: 1;
-  top: 14px;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
+  top: 12px;
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
   color: #00000083;
   font-weight: 800;
-  font-size: 24pt;
+  font-size: 28pt;
   text-align: center;
+  -webkit-animation: slideInDown 1.5s;
+          animation: slideInDown 1.5s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 
 header #titleName h2 {
@@ -283,9 +317,13 @@ header #titleName h2 {
   font-weight: 800;
   text-align: center;
   position: relative;
-  top: -11px;
+  top: -13px;
   width: 100%;
-  color: #ffffff;
+  color: #c6c6c6;
+  -webkit-animation: slideInDown 1.5s;
+          animation: slideInDown 1.5s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
 }
 
 .boxLogoMedia {
@@ -535,8 +573,8 @@ header #titleName h2 {
   }
   header nav {
     position: absolute;
-    background: -webkit-gradient(linear, left top, left bottom, from(#3f1955), to(#353535));
-    background: linear-gradient(#3f1955, #353535);
+    background: -webkit-gradient(linear, left top, left bottom, from(#3f1955), to(#373737));
+    background: linear-gradient(#3f1955, #373737);
     height: 100vh;
     top: 0;
     display: -webkit-box;
@@ -582,7 +620,7 @@ header #titleName h2 {
   header nav .menuList #liNav3:hover .popUpList {
     position: static;
     bottom: 0;
-    background-color: #181818;
+    background-color: #303030;
     position: block;
     z-index: 2000;
   }
@@ -669,7 +707,7 @@ header #titleName h2 {
     width: 37px;
   }
   header #boxAllIcons svg path {
-    fill: #ffffff93;
+    fill: #afafaf;
     -webkit-transition: ease 500ms;
     transition: ease 500ms;
   }
@@ -746,7 +784,7 @@ main h2 {
 }
 
 main h3 {
-  color: white;
+  color: #c6c6c6;
   font-weight: 400;
   text-align: center;
 }
@@ -759,7 +797,7 @@ main h4 {
 
 main p {
   text-align: justify;
-  color: #5d5d5d;
+  color: #6a6a6a;
 }
 
 main .projectsMain {
@@ -773,9 +811,10 @@ main .projectsMain {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 2vw;
-  margin: 25px 0;
+  padding: 50px 2vw;
+  margin: 50px 0;
   gap: 25px;
+  background-color: #303030;
 }
 
 main .projectsMain .videoBox {
@@ -792,8 +831,8 @@ main .projectsMain .videoBox {
 main .projectsMain .videoBox video {
   max-width: 90%;
   border-radius: 12px;
-  -webkit-box-shadow: 0 0 15px #00000050;
-          box-shadow: 0 0 15px #00000050;
+  -webkit-box-shadow: 5px 5px 15px #00000075;
+          box-shadow: 5px 5px 15px #00000075;
   -webkit-transform: rotateY(7deg);
           transform: rotateY(7deg);
 }
@@ -812,12 +851,12 @@ main .feedback {
   display: -ms-grid;
   display: grid;
   gap: 25px;
+  background-color: #303030;
 }
 
 main .feedback .titleArticles {
   width: 100%;
   padding: 10px;
-  background-color: #2e2e2e;
 }
 
 main .feedback .feedbackCards {
@@ -836,10 +875,10 @@ main .feedback .feedbackCards section {
   display: grid;
   gap: 20px;
   padding: 20px;
-  background-color: #202020;
+  background-color: #242424;
   border-radius: 12px;
-  -webkit-box-shadow: 0 0 15px #00000050;
-          box-shadow: 0 0 15px #00000050;
+  -webkit-box-shadow: 5px 5px 10px #00000075;
+          box-shadow: 5px 5px 10px #00000075;
   justify-items: center;
 }
 
@@ -879,7 +918,6 @@ footer section {
   justify-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  background-color: #181818;
   width: 100%;
   -ms-grid-columns: (minmax(15em, 2fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
@@ -887,7 +925,7 @@ footer section {
 }
 
 footer section a, footer section span {
-  color: #ffffff5d;
+  color: #545454;
   text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

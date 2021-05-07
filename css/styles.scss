@@ -1,3 +1,5 @@
+@import "colorsDark";
+
 *{
     padding: 0;
     margin: 0;
@@ -5,21 +7,15 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-$color1: #d932d2;
-$color2: #04c0ff;
-$colorDarkMin: #353535;
-$colorDarkMidle: #2e2e2e;
-$colorDarkMax: #181818;
-
 body{
-    background-color:#353535;
+    background-color:$colorBackground;
 
     button{
-        background-color: $color2;
+        background-color: $colorCorp2;
         border-radius: 10px;
         padding: 10px;
         width: fit-content;
-        border: 1px solid $color2;
+        border: 1px solid $colorCorp2;
         
         cursor: pointer;
         font-weight: 600;
@@ -27,14 +23,14 @@ body{
         a{
             text-transform: uppercase;
             text-decoration: none;
-            color: #272727;
+            color: $colorDark1;
         }
     }
 
     button:hover{
-        background-color: $colorDarkMax;
+        background-color: $colorDark1;
         a{
-            color: $color2;
+            color: $colorCorp2;
         }
     }
 }
@@ -78,7 +74,7 @@ header{
                         
                         path{
                             opacity: 0;
-                            fill: #ffffff00;
+                            fill: transparent;
                             transform:translateY(0);
                             transition: ease-out 300ms;
                         }
@@ -97,7 +93,7 @@ header{
                 list-style: none;
                 z-index: 5;
                 a{
-                    color: #ffffffb4;
+                    color: $colorLight2;
                     text-decoration: none;
                     font-size: 1.4em;
                     animation: animateBlur 2s 1s;
@@ -105,7 +101,6 @@ header{
             }
     
             li:hover{
-                color: white;
                 text-decoration: none;
                 animation: animateList 1s;
                 animation-fill-mode: both;
@@ -126,7 +121,7 @@ header{
 
                     li{
                         a{
-                            color: #ffffffb7;
+                            color: $colorLight2;
                         }
                     }
                 }
@@ -138,21 +133,21 @@ header{
                     animation: none;
                     width:max-content;
                     height: fit-content;
-                    background-color: $colorDarkMax;
+                    background-color: $colorDark3;
                     position: absolute;
-                    border: 1px solid $color1;
+                    border: 1px solid $colorCorp1;
                     top: 30px;
                     padding: 17px;
                     
                     li{
                         animation: none;
                         a{
-                            color: #ffffffb7;
+                            color: $colorLight2;
                             
                         }
 
                         a:hover{
-                            color:$color1;
+                            color:$colorCorp1;
                         }
                     }
                 }
@@ -173,6 +168,7 @@ header{
         background: linear-gradient(to bottom, #111111, #242424);
         border-radius: 100%;
         transition: 200ms;
+        animation: flipInX 2s;
         
         img{
             position: absolute;
@@ -181,6 +177,19 @@ header{
             transform: translate(-50%, -55%);
             height: 80%;
             transition: 200ms;
+            animation: avatar 1.2s;
+            animation-timing-function: ease;
+            animation-fill-mode: backwards;
+        }
+
+        @keyframes avatar {
+            0%{
+                height: 0;
+            }
+
+            100%{
+                height: 80%;
+            }
         }
     }
 
@@ -206,23 +215,28 @@ header{
         flex-direction: column;
     
         h1{
-            background: linear-gradient(to right, $color2, $color1);
+            background: linear-gradient(to right, $colorCorp2, $colorCorp1);
             -webkit-background-clip: text;
-            color: transparent; 
+            color: transparent;
+            font-size: 28pt;
             z-index: 2;
             font-weight: 800;
             text-align: center;
+            animation: slideInDown 1.5s;
+            animation-fill-mode: backwards;
         }
 
         p{
             position: absolute;
             z-index: 1;
-            top: 14px;
-            filter: blur(3px);
+            top: 12px;
+            filter: blur(4px);
             color: #00000083; 
             font-weight: 800;
-            font-size: 24pt;
+            font-size: 28pt;
             text-align: center;
+            animation: slideInDown 1.5s;
+            animation-fill-mode: backwards;
         }
         
         h2{
@@ -230,9 +244,11 @@ header{
             font-weight: 800;
             text-align: center;
             position: relative;
-            top: -11px;
+            top: -13px;
             width: 100%;
-            color: #ffffff;
+            color: $colorLight1;
+            animation: slideInDown 1.5s;
+            animation-fill-mode: backwards;
         }
     }
 }
@@ -243,7 +259,7 @@ header{
     display: none;
 }
 
-.aNav:hover{color:$color1;}
+.aNav:hover{color:$colorCorp1;}
 
 .boxLogo{
     cursor:pointer;
@@ -301,24 +317,24 @@ header{
     }
 
     100%{
-        fill: white;
+        fill: $colorLogo;
     }
 }
 
 #pathBlue{
     animation: animateBlue 2.5s;
-    fill: $color2;
+    fill: $colorCorp2;
     stroke-width: 2px;
-    stroke: $color2;
+    stroke: $colorCorp2;
     stroke-dasharray: 251;
     stroke-dashoffset: 251;
 }
 
 #pathMagenta{
     animation: animateMagenta 2.5s;
-    fill: $color1;
+    fill: $colorCorp1;
     stroke-width: 2px;
-    stroke: $color1;
+    stroke: $colorCorp1;
     stroke-dasharray: 314;
     stroke-dashoffset: 314;
 }
@@ -372,13 +388,13 @@ header{
                 height: 22px;
     
                 rect{
-                    fill:$color2;
+                    fill:$colorCorp2;
                     transition: ease-in 300ms;
                 }
             }
             svg:hover{        
                 rect{
-                    fill:$color1;
+                    fill:$colorCorp1;
                 }
             }
         }
@@ -391,7 +407,7 @@ header{
 
         nav{
             position: absolute;
-            background:linear-gradient( #3f1955, #353535);
+            background:linear-gradient( $colorAcento, $colorBackground);
             height: 100vh;
             top: 0;
             display: flex;
@@ -423,7 +439,7 @@ header{
                     .popUpList{
                         position:static;
                         bottom: 0;
-                        background-color: $colorDarkMax;
+                        background-color: $colorDark3;
                         position: block;
                         z-index: 2000;
 
@@ -452,13 +468,13 @@ header{
                     height: 22px;
 
                     rect{
-                        fill:$color2;
+                        fill:$colorCorp2;
                         transition: ease-in 300ms;
                     }
                 }
                 svg:hover{        
                     rect{
-                        fill:$color1;
+                        fill:$colorCorp1;
                     }
                 }
             }
@@ -501,7 +517,7 @@ header{
                     height: 30px;
                     width: 37px;
                     path{
-                    fill: #ffffff93;
+                    fill: $colorLight2;
                     transition: ease 500ms;
                     }
                 }
@@ -516,13 +532,13 @@ header{
 
     50%{
         fill: transparent;
-        stroke: $color1;
+        stroke: $colorCorp1;
     }
 
     100%{
         stroke: transparent;
         stroke-dashoffset: 700;
-        fill: $color2;
+        fill: $colorCorp2;
     }
 }
 
@@ -535,12 +551,12 @@ header{
     50%{
        
         fill: transparent;
-        stroke: $color2;
+        stroke: $colorCorp2;
     }
 
     100%{
         stroke-dashoffset: 700;
-        fill: $color1;
+        fill: $colorCorp1;
         stroke: transparent;
     }
 }
@@ -548,26 +564,26 @@ header{
 main{
 
     h2{
-        color: $color2;
+        color: $colorCorp2;
         font-weight: 400;
         text-align: center;
     }
 
     h3{
-        color: white;
+        color: $colorLight1;
         font-weight: 400;
         text-align: center;
     }
 
     h4{
-        color: $color2;
+        color: $colorCorp2;
         font-weight: 300;
         text-align: center;
     }
 
     p{
         text-align: justify;
-        color: rgb(93, 93, 93);
+        color: $colorLight5;
     }
 
     .projectsMain{
@@ -575,9 +591,10 @@ main{
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         justify-content: center;
         align-items: center;
-        padding: 0 2vw;
-        margin: 25px 0;
+        padding: 50px 2vw;
+        margin: 50px 0;
         gap: 25px;
+        background-color: $colorDark3;
 
         .videoBox{
             perspective: none;
@@ -586,7 +603,7 @@ main{
             video{
                 max-width: 90%;
                 border-radius: 12px;
-                box-shadow: 0 0 15px #00000050;
+                box-shadow: 5px 5px 15px $colorShadow;
                 transform: rotateY(7deg);
             }
         }
@@ -603,11 +620,11 @@ main{
         padding: 25px 2vw;
         display: grid;
         gap: 25px;
+        background-color: $colorDark3;
 
         .titleArticles{
             width: 100%;
             padding: 10px;
-            background-color: $colorDarkMidle;
         }
         .feedbackCards{
             
@@ -619,9 +636,9 @@ main{
                 display: grid;
                 gap: 20px;
                 padding: 20px;
-                background-color: #202020;
+                background-color: $colorDark2;
                 border-radius: 12px;
-                box-shadow: 0 0 15px #00000050;
+                box-shadow: 5px 5px 10px $colorShadow;
                 justify-items: center;
             }
         }
@@ -633,7 +650,7 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: $colorDarkMax;
+    background-color: $colorDark1;
     padding: 20px;
     .boxLogo{
         svg{
@@ -651,12 +668,11 @@ footer{
         display: grid;
         justify-items: center;
         align-content: center;
-        background-color: $colorDarkMax;
         width: 100%;
         grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
         gap: 20px;
         a, span{
-            color: #ffffff5d;
+            color:$colorLight6;
             text-align: center;
         }
     }

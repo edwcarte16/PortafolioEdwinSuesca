@@ -5,15 +5,39 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
-    background-color:#353535;
-}
-
 $color1: #d932d2;
 $color2: #04c0ff;
 $colorDarkMin: #353535;
 $colorDarkMidle: #2e2e2e;
 $colorDarkMax: #181818;
+
+body{
+    background-color:#353535;
+
+    button{
+        background-color: $color2;
+        border-radius: 10px;
+        padding: 10px;
+        width: fit-content;
+        border: 1px solid $color2;
+        
+        cursor: pointer;
+        font-weight: 600;
+        
+        a{
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #272727;
+        }
+    }
+
+    button:hover{
+        background-color: $colorDarkMax;
+        a{
+            color: $color2;
+        }
+    }
+}
 
 header{
     position: relative;
@@ -367,7 +391,7 @@ header{
 
         nav{
             position: absolute;
-            background:linear-gradient(45deg, #272727, #3f1955, #272727);
+            background:linear-gradient( #3f1955, #353535);
             height: 100vh;
             top: 0;
             display: flex;
@@ -522,30 +546,84 @@ header{
 }
 
 main{
-    margin: 15px 0;
-    article{
-        padding: 0 2vw;
-        display: grid;
-        justify-content: center;
-        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-        gap: 25px;
-        section{
-            padding: 20px;
-            background-color: #202020;
-            border-radius: 12px;
-            box-shadow: 5px 5px 18px #00000028;
-        }
-    
-        h2{
-            color: $color2;
-            font-weight: 300;
-            text-align: center;
-        }
 
-        p{
-            margin-top: 20px;
-            text-align: justify;
-            color: rgb(93, 93, 93);
+    h2{
+        color: $color2;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h3{
+        color: white;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    h4{
+        color: $color2;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    p{
+        text-align: justify;
+        color: rgb(93, 93, 93);
+    }
+
+    .projectsMain{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-content: center;
+        align-items: center;
+        padding: 0 2vw;
+        margin: 25px 0;
+        gap: 25px;
+
+        .videoBox{
+            perspective: none;
+            display: flex;
+            justify-content: center;
+            video{
+                max-width: 90%;
+                border-radius: 12px;
+                box-shadow: 0 0 15px #00000050;
+                transform: rotateY(7deg);
+            }
+        }
+        
+        section{
+            display: grid;
+            align-content: center;
+            justify-items: center;
+            gap: 25px;
+        }
+    }
+    
+    .feedback{
+        padding: 25px 2vw;
+        display: grid;
+        gap: 25px;
+
+        .titleArticles{
+            width: 100%;
+            padding: 10px;
+            background-color: $colorDarkMidle;
+        }
+        .feedbackCards{
+            
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+            gap: 25px;
+            section{
+                display: grid;
+                gap: 20px;
+                padding: 20px;
+                background-color: #202020;
+                border-radius: 12px;
+                box-shadow: 0 0 15px #00000050;
+                justify-items: center;
+            }
         }
     }
 }

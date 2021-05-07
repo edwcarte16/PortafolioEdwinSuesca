@@ -10,6 +10,32 @@ body {
   background-color: #353535;
 }
 
+body button {
+  background-color: #04c0ff;
+  border-radius: 10px;
+  padding: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 1px solid #04c0ff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+body button a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #272727;
+}
+
+body button:hover {
+  background-color: #181818;
+}
+
+body button:hover a {
+  color: #04c0ff;
+}
+
 header {
   position: relative;
   overflow-x: hidden;
@@ -509,7 +535,8 @@ header #titleName h2 {
   }
   header nav {
     position: absolute;
-    background: linear-gradient(45deg, #272727, #3f1955, #272727);
+    background: -webkit-gradient(linear, left top, left bottom, from(#3f1955), to(#353535));
+    background: linear-gradient(#3f1955, #353535);
     height: 100vh;
     top: 0;
     display: -webkit-box;
@@ -712,40 +739,108 @@ header #titleName h2 {
   }
 }
 
-main {
-  margin: 15px 0;
+main h2 {
+  color: #04c0ff;
+  font-weight: 400;
+  text-align: center;
 }
 
-main article {
-  padding: 0 2vw;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-grid-columns: (minmax(20em, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-  gap: 25px;
+main h3 {
+  color: white;
+  font-weight: 400;
+  text-align: center;
 }
 
-main article section {
-  padding: 20px;
-  background-color: #202020;
-  border-radius: 12px;
-  -webkit-box-shadow: 5px 5px 18px #00000028;
-          box-shadow: 5px 5px 18px #00000028;
-}
-
-main article h2 {
+main h4 {
   color: #04c0ff;
   font-weight: 300;
   text-align: center;
 }
 
-main article p {
-  margin-top: 20px;
+main p {
   text-align: justify;
   color: #5d5d5d;
+}
+
+main .projectsMain {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 2vw;
+  margin: 25px 0;
+  gap: 25px;
+}
+
+main .projectsMain .videoBox {
+  -webkit-perspective: none;
+          perspective: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .projectsMain .videoBox video {
+  max-width: 90%;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 15px #00000050;
+          box-shadow: 0 0 15px #00000050;
+  -webkit-transform: rotateY(7deg);
+          transform: rotateY(7deg);
+}
+
+main .projectsMain section {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  gap: 25px;
+}
+
+main .feedback {
+  padding: 25px 2vw;
+  display: -ms-grid;
+  display: grid;
+  gap: 25px;
+}
+
+main .feedback .titleArticles {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e2e2e;
+}
+
+main .feedback .feedbackCards {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (minmax(20em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  gap: 25px;
+}
+
+main .feedback .feedbackCards section {
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  background-color: #202020;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 15px #00000050;
+          box-shadow: 0 0 15px #00000050;
+  justify-items: center;
 }
 
 footer {

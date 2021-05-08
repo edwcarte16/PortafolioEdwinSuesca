@@ -133,7 +133,7 @@ header{
                     animation: none;
                     width:max-content;
                     height: fit-content;
-                    background-color: $colorDark3;
+                    background-color: $colorDark1;
                     position: absolute;
                     border: 1px solid $colorCorp1;
                     top: 30px;
@@ -439,7 +439,7 @@ header{
                     .popUpList{
                         position:static;
                         bottom: 0;
-                        background-color: $colorDark3;
+                        background-color: $colorDark1;
                         position: block;
                         z-index: 2000;
 

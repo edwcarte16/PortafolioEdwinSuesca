@@ -177,7 +177,7 @@ header nav .menuList #liNav3:hover .popUpList {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: #303030;
+  background-color: #181818;
   position: absolute;
   border: 1px solid #d932d2;
   top: 30px;
@@ -620,7 +620,7 @@ header #titleName h2 {
   header nav .menuList #liNav3:hover .popUpList {
     position: static;
     bottom: 0;
-    background-color: #303030;
+    background-color: #181818;
     position: block;
     z-index: 2000;
   }

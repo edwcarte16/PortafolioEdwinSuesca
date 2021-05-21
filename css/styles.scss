@@ -1,679 +1,282 @@
 @import "colorsDark";
 
 *{
-    padding: 0;
+    box-sizing:border-box;
     margin: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    font-family: "Montserrat";
 }
 
 body{
-    background-color:$colorBackground;
-
+    background-color: $colorBackground;
     button{
-        background-color: $colorCorp2;
-        border-radius: 10px;
+        border: 2px solid $colorBlue;
         padding: 10px;
-        width: fit-content;
-        border: 1px solid $colorCorp2;
-        
-        cursor: pointer;
+        border-radius: 25px;
+        background-color: transparent;
+        color: $colorBlue;
         font-weight: 600;
-        
-        a{
-            text-transform: uppercase;
-            text-decoration: none;
-            color: $colorDark1;
-        }
+        text-transform: uppercase;
+        cursor: pointer;
     }
-
     button:hover{
-        background-color: $colorDark1;
-        a{
-            color: $colorCorp2;
-        }
-    }
-}
-
-header{
-    position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height:max-content;
-
-    #backgroundHeader{
-        width: 100vw;
-        opacity: 0.3;
-    }
-
-    nav{
-        position: absolute;
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        top: 55px;
-        @media (min-width: 721px){
-            #boxAllIcons{
-                position: absolute;
-                display: flex;
-                width: 100%;
-                .boxIconListNav{
-                    position: absolute;
-                    width: 40px;
-                    height: 65px;
-    
-                    svg{
-                        position: absolute;
-                        width: 40px;
-                        height: 65px;
-                        transition: ease-in 300ms;
-                        
-                        path{
-                            opacity: 0;
-                            fill: transparent;
-                            transform:translateY(0);
-                            transition: ease-out 300ms;
-                        }
-                    }
-                }
-            }
-        }
-    
-        .menuList{
-            width: 100%;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-    
-            li {
-                list-style: none;
-                z-index: 5;
-                a{
-                    color: $colorLight2;
-                    text-decoration: none;
-                    font-size: 1.4em;
-                    animation: animateBlur 2s 1s;
-                    animation-fill-mode: backwards;}
-            }
-    
-            li:hover{
-                text-decoration: none;
-                animation: animateList 1s;
-                animation-fill-mode: both;
-            }
-
-            #liNav3{
-                position: relative;
-                margin-bottom: 12px;
-                margin-top: 10px;
-                .popUpList{
-                    height: 0;
-                    background-color: transparent;
-                    position: absolute;
-                    overflow: hidden;
-                    border: none;
-                    transition: 500ms;
-                    border-radius: 10px;
-
-                    li{
-                        a{
-                            color: $colorLight2;
-                        }
-                    }
-                }
-            }
-
-            #liNav3:hover{
-                animation: none;
-                .popUpList{
-                    animation: none;
-                    width:max-content;
-                    height: fit-content;
-                    background-color: $colorDark1;
-                    position: absolute;
-                    border: 1px solid $colorCorp1;
-                    top: 30px;
-                    padding: 17px;
-                    
-                    li{
-                        animation: none;
-                        a{
-                            color: $colorLight2;
-                            
-                        }
-
-                        a:hover{
-                            color:$colorCorp1;
-                        }
-                    }
-                }
-            }
-        }
-    
-        .imgsNavBackground{
-            display: none;
-        }
-    }
-
-    #perfilImageBox{
-        position: absolute;
-        bottom: 140px;
-        height: 170px;
-        width: 170px;
-        overflow: hidden;
-        background: linear-gradient(to bottom, #111111, #242424);
-        border-radius: 100%;
-        transition: 200ms;
-        animation: flipInX 2s;
         
-        img{
+        border-color: $colorMagenta;
+        color: $colorMagenta;
+    }
+    header{
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 25% 75%;
+        grid-template-columns: 65% 35%;
+        height: 100vh;
+
+        &:before{
+            content: "";
+            height: 100%;
+            width: 100%;
             position: absolute;
-            top:60%;
-            left: 50%;
-            transform: translate(-50%, -55%);
-            height: 80%;
-            transition: 200ms;
-            animation: avatar 1.2s;
-            animation-timing-function: ease;
-            animation-fill-mode: backwards;
+            background-image: url(/images/background2.png);
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+    
+        nav{
+            grid-column: 1 / 3;
+            display: flex;
+            padding: 0 4vw;
+            justify-content: space-between;
+            align-items: center;
+            .boxLogo{
+                z-index: 2;
+                width: 120px;
+                height: 109px;
+                position: relative;
+                svg{
+                    width: 100%;
+                    #pathBlue{
+                        fill: $colorBlue;
+                    }
+        
+                    #pathMagenta{
+                        fill: $colorMagenta;
+                    }
+                }
+
+                #logo{
+                    position: absolute;
+                    left: 0;
+                    top: 61px;
+                    font-family: "Montserrat Alternates";
+                    font-weight: bold;
+                    color: $colorLogo;
+                    font-size: 196%;
+                    text-align: center;
+                    margin: 0;
+                }
+        
+                #slogan{
+                    position: absolute;
+                    left: 0;
+                    top: 93px;
+                    font-family: "Montserrat Alternates";
+                    font-size: 99%;
+                    color: $colorLogo;
+                }            
+            }
+        
+            ul{
+                display: flex;
+                width: 80%;
+                justify-content:flex-end;
+                height: fit-content;
+                li{
+                    list-style: none;
+                    margin-left: 6%;
+                    a{
+                        color: $colorText;
+                        text-decoration: none;
+                        font-size: 1.2em;
+                    }
+                }
+        
+                li:hover{
+                    a{
+                        color: $colorMagenta;
+                    }
+                }
+            }
+        }
+    
+        #nameContainer{
+            display: grid;
+            align-content:center;
+            justify-items: center;
+            height: 100%;
+            position: relative;
+            gap: 3px;
+            img{
+                width: 190px;
+            }
+            span{
+                display: block;
+                text-align: center;
+                font-family: "Montserrat";
+                font-weight: bold;
+                font-size: calc(1.6em + 1vw);
+                color: $colorBlue;
+            }
+
+            #myMedia{
+                color: $colorText;
+                margin-bottom: 20px;
+                font-size: calc(0.6em + 1vw);
+            }
+
+        }
+    
+        #inkscapeContainer{
+            position: relative;
+            display: grid;
+            place-items: center;
+            height: 100%;
+            perspective: 1000px;
+            align-self: center;
+
+            #inkscapeImage, #inkscapeLogo{
+                box-shadow: 10px 10px 25px #00000052;
+                margin-left: 4vw;
+                opacity: 1;
+                margin-left: 4vw;
+                position: absolute;
+                border-radius: 7px;
+                max-height: 55vh;
+                height: 34vw;
+                transform: rotateY(30deg) rotateX(20deg);
+                animation: inkscapeAnimation 2s;
+                animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+            #inkscapeLogo{
+                box-shadow: none;
+                z-index: 5;
+                animation: back 2s;
+                animation-fill-mode:both;
+                animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+            @keyframes back {
+
+                0%{
+                    z-index: 5;
+                    transform: rotateY(-200deg) rotateX(-40deg);
+                }
+
+                74%{
+                    z-index: -1;
+                }
+                100%{
+                    z-index: -1;
+                    transform: rotateY(30deg) rotateX(20deg);
+                }
+            }
+
+            .logos{
+                margin-left: 4vw;
+                position: absolute;
+                border-radius: 7px;
+                max-height: 55vh;
+                height: 34vw;
+                padding: 0;
+                transform: rotateY(30deg) rotateX(20deg);
+                opacity: 0;
+                transition: opacity 2.3s;
+                animation: inkscapeAnimation 2s;
+                animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+            }
         }
 
-        @keyframes avatar {
+        @keyframes inkscapeAnimation {
             0%{
-                height: 0;
+                transform: rotateY(-200deg) rotateX(-40deg);
             }
 
             100%{
-                height: 80%;
+                transform: rotateY(30deg) rotateX(20deg);
             }
         }
     }
 
-    #perfilImageBox:hover{
-        cursor: pointer;
-        overflow: visible;
-
-        img{
-            position: absolute;
-            top:45%;
-            left: 50%;
-            transform: translate(-50%, -55%);
-            height: 110%;
-            z-index: 3;
-        }
-    }
-
-    #titleName{
-        position: absolute;
-        display: flex;
-        align-items: center;
-        bottom: 50px;
-        flex-direction: column;
-    
-        h1{
-            background: linear-gradient(to right, $colorCorp2, $colorCorp1);
-            -webkit-background-clip: text;
-            color: transparent;
-            font-size: 28pt;
-            z-index: 2;
-            font-weight: 800;
-            text-align: center;
-            animation: slideInDown 1.5s;
-            animation-fill-mode: backwards;
-        }
-
-        p{
-            position: absolute;
-            z-index: 1;
-            top: 12px;
-            filter: blur(4px);
-            color: #00000083; 
-            font-weight: 800;
-            font-size: 28pt;
-            text-align: center;
-            animation: slideInDown 1.5s;
-            animation-fill-mode: backwards;
-        }
-        
-        h2{
-            text-shadow: 0 5px 12px#00000054;
-            font-weight: 800;
-            text-align: center;
-            position: relative;
-            top: -13px;
-            width: 100%;
-            color: $colorLight1;
-            animation: slideInDown 1.5s;
-            animation-fill-mode: backwards;
-        }
-    }
-}
-.boxLogoMedia{
-    display: none;
-}
-.burgerMenuBox{
-    display: none;
-}
-
-.aNav:hover{color:$colorCorp1;}
-
-.boxLogo{
-    cursor:pointer;
-    svg{
-    width: 100px;
-    height: 100px;
-    animation: animateSvg 2.5s;
-    animation-fill-mode: backwards;}
-}
-
-@keyframes animateList {
-    0%{transform: rotate(0deg);}
-    15%{transform: rotate(8deg);}
-    30%{transform: rotate(-7deg);}
-    50%{transform: rotate(5deg);}
-    70%{transform: rotate(-3deg);}
-    85%{transform: rotate(3deg);}
-    100%{transform: rotate(0deg);}
-}
-
-@keyframes animateSvg {
-    0%{
-        width: 200px;
-        height: 200px;
-    }
-
-    100%{
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@keyframes animateBlur {
-    0%{
-        filter: blur(5px);
-        opacity: 0;
-    }
-
-    100%{
-        filter: blur(0px);
-        opacity: 1;
-    }
-}
-
-#edwins, #pathSlogan{
-    fill: white;
-    animation: animateSlogan 3s;
-    animation-delay: 1.5s;
-    animation-fill-mode: backwards;
-}
-
-@keyframes animateSlogan {
-    0%{
-        fill: #00000000;
-    }
-
-    100%{
-        fill: $colorLogo;
-    }
-}
-
-#pathBlue{
-    animation: animateBlue 2.5s;
-    fill: $colorCorp2;
-    stroke-width: 2px;
-    stroke: $colorCorp2;
-    stroke-dasharray: 251;
-    stroke-dashoffset: 251;
-}
-
-#pathMagenta{
-    animation: animateMagenta 2.5s;
-    fill: $colorCorp1;
-    stroke-width: 2px;
-    stroke: $colorCorp1;
-    stroke-dasharray: 314;
-    stroke-dashoffset: 314;
-}
-
-@media (min-width: 1000px){
-    header{
-
-        #perfilImageBox{
-            top: 50vh;
-        }
-
-        #titleName{
-            top: 75vh;
-            bottom: initial;
-        }
-    }
-}
-
-@media (max-width: 720px){
-    header{
-        height: 94vh;
-        position: relative;
-        #backgroundHeader{
-            position: absolute;
-            top: 0;
-        }
-
-        #perfilImageBox{
-            top: 47vh;
-        }
-
-        #titleName{
-            height: initial;
-            position: absolute;
-            top: initial;
-            bottom: 10vh;
-        }
-
-        .burgerMenuBox{
-            cursor:pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 3vh;
-            right: 3vw;
-            z-index: 4;
-    
-            svg{
-                width: 26px;
-                height: 22px;
-    
-                rect{
-                    fill:$colorCorp2;
-                    transition: ease-in 300ms;
-                }
-            }
-            svg:hover{        
-                rect{
-                    fill:$colorCorp1;
-                }
-            }
-        }
-        .boxLogoMedia{
-            display: block;
-            position: absolute;
-            z-index: 7;
-            top: 45px;
-        }
-
-        nav{
-            position: absolute;
-            background:linear-gradient( $colorAcento, $colorBackground);
-            height: 100%;
-            top: 0;
-            display: flex;
-            justify-content: center;
-            z-index: 3;
-            clip-path: circle(0px at 100% 0%);
-            transition: clip-path 650ms;
-
-            .menuList{
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                top: 270px;
-                width: 65%;
-                left: 35%;
-                padding-left: 7px;
-
-                #liNav3, li{
-                    margin:30px 0 0 0;
-
-                    a{
-                        font-size: 1.5em;
-                    }
-                }
-
-                #liNav3:hover{
+    @media (max-width: 720px){
+        header{    
+            display: grid;
+            overflow: initial;
+            grid-template-rows: 20% 35% 45%;
+            grid-template-columns: auto;
+            place-items: center;
+            nav{
+                grid-column: 1 / 3;
+                margin: auto;
+                .boxLogo{
+                    width: fit-content;
+                    height: fit-content;
                     position: relative;
-                    .popUpList{
-                        position:static;
-                        bottom: 0;
-                        background-color: $colorDark1;
-                        position: block;
-                        z-index: 2000;
+                    
+                    svg{
+                        width: 80px;
+                    }
 
-                        li{
-                            margin: auto;
-                        }
+                    #logo{
+                        font-size: 131%;
+                        top: 44px;
+                    }
+
+                    #slogan{
+                        font-size: 66%;
+                        top: 66px;
+                    }
+                }
+                ul{
+                    li{
+                        display: none;
                     }
                 }
             }
 
-            .boxLogo{
-                display: none;
-            }
+            #inkscapeContainer{
+                width: 100%;
+                grid-column: 1 / 3;
 
-                .burgerMenuBox{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    position: absolute;
-                    top: 3vh;
-                    right: 2vw;
-                    z-index: 4;
-
-                svg{
-                    width: 26px;
-                    height: 22px;
-
-                    rect{
-                        fill:$colorCorp2;
-                        transition: ease-in 300ms;
-                    }
+                #inkscapeImage, #inkscapeLogo{
+                    height: auto;
+                    width: 80%;
+                    opacity: 1;
                 }
-                svg:hover{        
-                    rect{
-                        fill:$colorCorp1;
-                    }
+
+                .logos{
+                    height: auto;
+                    width: 80%;
+                    opacity: 0;
                 }
             }
 
-            .imgsNavBackground{
-                position: absolute;
-                display: block;
-                width: 100vw;
-                bottom: 0;
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 500ms;
-            }
-        }
-
-        #boxAllIcons div:last-child svg{
-            height: 35px;
-            width: 37px;
-        }
-
-        #boxAllIcons{
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        align-items:flex-end;
-        padding-right: 7px;
-        top: 266px;
-        width: 35%;
-        right: 65%;
-
-            div{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin:29px 0 0 0;
-                transition: margin-top 350ms ease-out;
-            }
-
-                svg{
-                    height: 30px;
-                    width: 37px;
-                    path{
-                    fill: $colorLight2;
-                    transition: ease 500ms;
-                    }
+            #nameContainer{
+                grid-column: 1 / 3;
+                grid-row: 3 / 4;
+                img{
+                    width: 20vh;
                 }
-            }
-        }
-    }
-@keyframes animateBlue{
-    0%{
-        fill: transparent;
-        stroke-dashoffset: 0;
-    }
 
-    50%{
-        fill: transparent;
-        stroke: $colorCorp1;
-    }
+                span{
+                    font-size:2em;
+                }
 
-    100%{
-        stroke: transparent;
-        stroke-dashoffset: 700;
-        fill: $colorCorp2;
-    }
-}
-
-@keyframes animateMagenta{
-    0%{
-        stroke-dashoffset: 0;
-        fill: transparent;
-    }
-
-    50%{
-       
-        fill: transparent;
-        stroke: $colorCorp2;
-    }
-
-    100%{
-        stroke-dashoffset: 700;
-        fill: $colorCorp1;
-        stroke: transparent;
-    }
-}
-
-main{
-
-    h2{
-        color: $colorCorp2;
-        font-weight: 400;
-        text-align: center;
-    }
-
-    h3{
-        color: $colorLight1;
-        font-weight: 400;
-        text-align: center;
-    }
-
-    h4{
-        color: $colorCorp2;
-        font-weight: 300;
-        text-align: center;
-    }
-
-    p{
-        text-align: justify;
-        color: $colorLight5;
-    }
-
-    .projectsMain{
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        justify-content: center;
-        align-items: center;
-        padding: 50px 2vw;
-        margin: 50px 0;
-        gap: 25px;
-        background-color: $colorDark3;
-
-        .videoBox{
-            perspective: none;
-            display: flex;
-            justify-content: center;
-            video{
-                max-width: 90%;
-                border-radius: 12px;
-                box-shadow: 5px 5px 15px $colorShadow;
-                transform: rotateY(7deg);
-            }
-        }
-        
-        section{
-            display: grid;
-            align-content: center;
-            justify-items: center;
-            gap: 25px;
-        }
-    }
-    
-    .feedback{
-        padding: 25px 2vw;
-        display: grid;
-        gap: 25px;
-        background-color: $colorDark3;
-
-        .titleArticles{
-            width: 100%;
-            padding: 10px;
-        }
-        .feedbackCards{
-            
-            display: grid;
-            justify-content: center;
-            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-            gap: 25px;
-            section{
-                display: grid;
-                gap: 20px;
-                padding: 20px;
-                background-color: $colorDark2;
-                border-radius: 12px;
-                box-shadow: 5px 5px 10px $colorShadow;
-                justify-items: center;
+                #myMedia{
+                    font-size: 1.2em;
+                }
             }
         }
     }
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: $colorDark1;
-    padding: 20px;
-    .boxLogo{
-        svg{
-            width:50px;
-            height:50px;
-            animation: none;
-            #pathSlogan{
-                display: none;
-            }
-        }
-    }
-
-    section{
-        margin-top: 20px;
-        display: grid;
-        justify-items: center;
-        align-content: center;
-        width: 100%;
-        grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
-        gap: 20px;
-        a, span{
-            color:$colorLight6;
-            text-align: center;
-        }
-    }
-}

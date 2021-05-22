@@ -15,11 +15,11 @@
 <link rel="stylesheet" href="css/styles.css">
   <title>Edwin Suesca</title>
 </head>
-<body onload="slider()">
+<body onload="next()">
   <header>
     <nav>
       <div class="boxLogo boxLogoMedia" onclick="location.reload()">
-        <svg class=logoSvg viewBox="0 0 75.213905 67.590004">
+        <svg class=logoSvg viewBox="-1 -1 77.213905 70.590004">
 
         <path id="pathMagenta"
           d="M 4.9728004,0 C 2.2179,0 0,2.21788 0,4.9728096 v 0.7956505 c 0,0.14406 0.01,0.28646 0.019,0.42735 C 0.007,6.3365601 0,6.4784601 0,6.6223701 V 19.29451 20.09016 32.48099 c 0,0.19217 0.012,0.38163 0.033,0.56799 C 0.012,33.23523 0,33.42415 0,33.6162 v 0.79565 c 0,2.75494 2.2179,4.97281 4.9728004,4.97281 H 16.509701 c 2.755,0 4.9728,-2.21787 4.9728,-4.97281 V 33.6162 c 0,-2.75493 -2.2178,-4.97281 -4.9728,-4.97281 h -3.5454 -0.4328 c -0.9918,0 -1.7902,-0.79843 -1.7902,-1.79021 0,-0.99178 0.7984,-1.79021 1.7902,-1.79021 h 0.6899 9.5164 8.0936 c 2.7549,0 4.9728,-2.21787 4.9728,-4.97281 v -0.79565 c 0,-2.75494 -2.2179,-4.97281 -4.9728,-4.97281 h -8.0936 -9.162 -1.0443 c -0.9918,0 -1.7902,-0.79844 -1.7902,-1.79021 0,-0.99178 0.7984,-1.79022 1.7902,-1.79022 h 1.282 8.9243 22.4153 c 2.7549,0 4.9728,-2.2178699 4.9728,-4.9728099 V 4.9728096 C 50.125901,2.21788 47.908001,0 45.153101,0 Z" />
@@ -40,15 +40,21 @@
       </ul>
     </nav>
 
-    <div id="inkscapeContainer" onclick="slider()">
-      
-      <img id="inkscapeImage" src="images/inkscape.png" alt="">
-      <img id="inkscapeLogo" src="images/inkscapeLogo.png" alt="">
-      
-      <img class="logos" src="images/logoIdeal.png" alt="">
-      <img class="logos" src="images/logoAltGraphics.png" alt="">
-      <img class="logos" src="images/logoCustom.png" alt="">
-      <img class="logos" id="logoss" src="images/logoSynergy.png" alt="">
+    <div id="inkscapeContainer">
+      <div id="circleLeft" onclick="previus()">
+        <div class="triangleLeft"></div>
+      </div>
+
+      <div id="circleRight" onclick="next()">
+        <div class="triangleRight"></div>
+      </div>
+
+      <div id="designsBox">
+        <img id="inkscapeImage" src="images/inkscape.png" alt="">
+        <img id="inkscapeLogo" src="images/inkscapeLogo.png" alt="">
+        
+        <img id="design" src="images/1.png" alt="">
+      </div>
     </div>
 
     <div id="nameContainer">

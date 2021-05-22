@@ -1,24 +1,45 @@
+var inkscapeContainer = document.getElementById('inkscapeContainer');
+var design = document.getElementById('design');
+var arrowL = document.getElementById('circleLeft');
+var arrowR = document.getElementById('circleRight');
 
-/*document.querySelector('.logos').style = 'scale:2';*/
-/*window.onload = function slider(){}*/
+function next(){
 
-function slider(){
-    const box = document.getElementById('inkscapeContainer');
-    const numChild = document.getElementById('inkscapeContainer').childElementCount;
-    
-    for (let i = 2; i < numChild; ++i) {
-            var count = 1;
-            setTimeout(function() {
-            count = ++count;
-
-            if(count>2){
-                box.children[count-1].style = "opacity:0";
-            }
-            box.children[count].style = "opacity:1";
-            if(count == numChild){
-                count = 1;
-                i = 1;
-            }
-        }, 4500 * (i-1));
+    design.style = "opacity:1";
+    let name = document.getElementById('design').src;
+    let name2 = name.split("/");
+    let nameImage = name2[name2.length-1];
+    let numberImage = nameImage.replace(".png", "");
+    let n = +numberImage;
+    if(n == 4){
+        n = 0;
     }
+    n = n+1;
+    document.getElementById("design").src=`images/${n}.png`;
 }
+
+function previus(){
+
+    design.style = "opacity:1";
+    let name = document.getElementById('design').src;
+    let name2 = name.split("/");
+    let nameImage = name2[name2.length-1];
+    let numberImage = nameImage.replace(".png", "");
+    let n = +numberImage;
+    if(n == 1){
+        n = 5;
+    }
+    n = n-1;
+    document.getElementById("design").src=`images/${n}.png`;
+}
+
+
+inkscapeContainer.onmouseover = function(){
+    arrowL.style = "opacity:1";
+    arrowR.style = "opacity:1";
+};
+
+inkscapeContainer.onmouseout = function(){
+    arrowL.style = "opacity:0";
+    arrowR.style = "opacity:0";
+};

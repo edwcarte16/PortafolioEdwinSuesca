@@ -96,46 +96,105 @@ body{
         }
     
         #inkscapeContainer{
-            grid-row: inherit;
             position: relative;
             display: grid;
             place-items: center;
             perspective: 1000px;
 
-            #inkscapeImage, #inkscapeLogo{
-                box-shadow: 10px 10px 25px #00000052;
-                margin-left: 4vw;
-                opacity: 1;
-                margin-left: 4vw;
+            #circleLeft{
+                cursor: pointer;
+                position: relative;
+                height: 60px;
+                width: 60px;
+                background-color: $colorBackground;
+                border: 3px solid $colorBlue;
+                border-radius: 100%;
                 position: absolute;
-                border-radius: 7px;
-                max-height: 55vh;
-                height: 34vw;
+                left: 5%;
                 transform: rotateY(30deg) rotateX(20deg);
-                animation: inkscapeAnimation 2s;
-                animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
-            }
-
-            #inkscapeLogo{
-                box-shadow: none;
-                z-index: 5;
-                animation: back 2s;
-                animation-fill-mode:both;
-                animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
-            }
-
-            .logos{
-                margin-left: 4vw;
-                position: absolute;
-                border-radius: 7px;
-                max-height: 55vh;
-                height: 34vw;
-                padding: 0;
-                transform: rotateY(30deg) rotateX(20deg);
+                z-index: 2;
                 opacity: 0;
-                transition: opacity 2.3s;
-                animation: inkscapeAnimation 2s;
-                animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                transition: 1s;
+
+                .triangleLeft{
+                    position: absolute;
+                    top: 10px;
+                    left:10px;
+                    height: 0;
+                    width: 0;
+                    border-top: 15px solid transparent;
+                    border-right: 25px solid $colorBlue;
+                    border-bottom: 15px solid transparent;
+                }
+            }
+
+            #circleRight{
+                cursor: pointer;
+                position: relative;
+                background-color: $colorBackground;
+                border: 3px solid $colorBlue;
+                right: 5%;
+                height: 45px;
+                width: 45px;
+                border-radius: 100%;
+                position: absolute;
+                transform:  rotateY(30deg) rotateX(20deg);
+                z-index: 2;
+                opacity: 0;
+                transition: 1s;
+
+                .triangleRight{
+                    position: absolute;
+                    top: 9px;
+                    left: 15px;
+                    height: 0;
+                    width: 0;
+                    border-top: 10px solid transparent;
+                    border-left: 15px solid $colorBlue;
+                    border-bottom: 10px solid transparent;
+                }
+            }
+
+            #designsBox{
+                position: relative;
+                display: grid;
+                place-items: center;
+                perspective: 1000px;
+                #inkscapeImage, #inkscapeLogo{
+                    box-shadow: 10px 10px 25px #00000052;
+                    margin-left: 4vw;
+                    opacity: 1;
+                    margin-left: 4vw;
+                    position: absolute;
+                    border-radius: 7px;
+                    max-height: 55vh;
+                    height: 34vw;
+                    transform: rotateY(30deg) rotateX(20deg);
+                    animation: inkscapeAnimation 2s;
+                    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                }
+    
+                #inkscapeLogo{
+                    box-shadow: none;
+                    z-index: 5;
+                    animation: back 2s;
+                    animation-fill-mode:both;
+                    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                }
+    
+                #design{
+                    margin-left: 4vw;
+                    position: absolute;
+                    border-radius: 7px;
+                    max-height: 55vh;
+                    height: 34vw;
+                    padding: 0;
+                    opacity: 0;
+                    transition: opacity 2s 2.2s;
+                    transform: rotateY(30deg) rotateX(20deg);
+                    animation: inkscapeAnimation 2s;
+                    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                }
             }
         }
 
@@ -198,16 +257,18 @@ body{
                 width: 100%;
                 grid-column: 1 / 3;
 
-                #inkscapeImage, #inkscapeLogo{
-                    height: auto;
-                    width: 80%;
-                    opacity: 1;
-                }
-
-                .logos{
-                    height: auto;
-                    width: 80%;
-                    opacity: 0;
+                #designsBox{
+                    width: 100%;
+                    #inkscapeImage, #inkscapeLogo{
+                        height: auto;
+                        width: 80%;
+                        opacity: 1;
+                    }
+    
+                    #design{
+                        height: auto;
+                        width: 80%;
+                    }
                 }
             }
 

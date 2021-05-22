@@ -245,7 +245,6 @@ body header nav ul li:hover a {
 }
 
 body header #inkscapeContainer {
-  grid-row: inherit;
   position: relative;
   display: -ms-grid;
   display: grid;
@@ -254,7 +253,74 @@ body header #inkscapeContainer {
           perspective: 1000px;
 }
 
-body header #inkscapeContainer #inkscapeImage, body header #inkscapeContainer #inkscapeLogo {
+body header #inkscapeContainer #circleLeft {
+  cursor: pointer;
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background-color: #292929;
+  border: 3px solid #04c0ff;
+  border-radius: 100%;
+  position: absolute;
+  left: 5%;
+  -webkit-transform: rotateY(30deg) rotateX(20deg);
+          transform: rotateY(30deg) rotateX(20deg);
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body header #inkscapeContainer #circleLeft .triangleLeft {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 0;
+  width: 0;
+  border-top: 15px solid transparent;
+  border-right: 25px solid #04c0ff;
+  border-bottom: 15px solid transparent;
+}
+
+body header #inkscapeContainer #circleRight {
+  cursor: pointer;
+  position: relative;
+  background-color: #292929;
+  border: 3px solid #04c0ff;
+  right: 5%;
+  height: 45px;
+  width: 45px;
+  border-radius: 100%;
+  position: absolute;
+  -webkit-transform: rotateY(30deg) rotateX(20deg);
+          transform: rotateY(30deg) rotateX(20deg);
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body header #inkscapeContainer #circleRight .triangleRight {
+  position: absolute;
+  top: 9px;
+  left: 15px;
+  height: 0;
+  width: 0;
+  border-top: 10px solid transparent;
+  border-left: 15px solid #04c0ff;
+  border-bottom: 10px solid transparent;
+}
+
+body header #inkscapeContainer #designsBox {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+body header #inkscapeContainer #designsBox #inkscapeImage, body header #inkscapeContainer #designsBox #inkscapeLogo {
   -webkit-box-shadow: 10px 10px 25px #00000052;
           box-shadow: 10px 10px 25px #00000052;
   margin-left: 4vw;
@@ -272,7 +338,7 @@ body header #inkscapeContainer #inkscapeImage, body header #inkscapeContainer #i
           animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-body header #inkscapeContainer #inkscapeLogo {
+body header #inkscapeContainer #designsBox #inkscapeLogo {
   -webkit-box-shadow: none;
           box-shadow: none;
   z-index: 5;
@@ -284,18 +350,18 @@ body header #inkscapeContainer #inkscapeLogo {
           animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
 }
 
-body header #inkscapeContainer .logos {
+body header #inkscapeContainer #designsBox #design {
   margin-left: 4vw;
   position: absolute;
   border-radius: 7px;
   max-height: 55vh;
   height: 34vw;
   padding: 0;
+  opacity: 0;
+  -webkit-transition: opacity 2s 2.2s;
+  transition: opacity 2s 2.2s;
   -webkit-transform: rotateY(30deg) rotateX(20deg);
           transform: rotateY(30deg) rotateX(20deg);
-  opacity: 0;
-  -webkit-transition: opacity 2.3s;
-  transition: opacity 2.3s;
   -webkit-animation: inkscapeAnimation 2s;
           animation: inkscapeAnimation 2s;
   -webkit-animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
@@ -371,15 +437,17 @@ body header #nameContainer #myMedia {
     -ms-grid-column-span: 2;
     grid-column: 1 / 3;
   }
-  body header #inkscapeContainer #inkscapeImage, body header #inkscapeContainer #inkscapeLogo {
+  body header #inkscapeContainer #designsBox {
+    width: 100%;
+  }
+  body header #inkscapeContainer #designsBox #inkscapeImage, body header #inkscapeContainer #designsBox #inkscapeLogo {
     height: auto;
     width: 80%;
     opacity: 1;
   }
-  body header #inkscapeContainer .logos {
+  body header #inkscapeContainer #designsBox #design {
     height: auto;
     width: 80%;
-    opacity: 0;
   }
   body header #nameContainer {
     -ms-grid-column: 1;

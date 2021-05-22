@@ -3,7 +3,11 @@ var design = document.getElementById('design');
 var arrowL = document.getElementById('circleLeft');
 var arrowR = document.getElementById('circleRight');
 
-function next(){
+window.onload = function(){
+    design.style = "opacity:1";
+}
+
+arrowR.onclick = function(){
 
     design.style = "opacity:1";
     let name = document.getElementById('design').src;
@@ -18,7 +22,7 @@ function next(){
     document.getElementById("design").src=`images/${n}.png`;
 }
 
-function previus(){
+arrowL.onclick = function(){
 
     design.style = "opacity:1";
     let name = document.getElementById('design').src;

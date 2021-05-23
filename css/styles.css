@@ -148,8 +148,8 @@
   font-family: "Montserrat";
 }
 
-*:focus {
-  outline: none;
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -167,10 +167,6 @@ body button {
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-}
-
-body a:focus, body li:focus, body div:focus, body ul:focus, body button:focus {
-  outline: none;
 }
 
 body button:hover {

@@ -60,3 +60,17 @@
         transform: rotateY(30deg) rotateX(20deg);
     }
 }
+
+@keyframes arrows {
+    0%{
+        opacity: 0;
+    }
+
+    30%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}

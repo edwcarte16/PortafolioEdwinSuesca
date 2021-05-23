@@ -148,6 +148,10 @@
   font-family: "Montserrat";
 }
 
+*:focus {
+  outline: none;
+}
+
 body {
   background-color: #292929;
   position: relative;
@@ -163,6 +167,10 @@ body button {
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+body a:focus, body li:focus, body div:focus, body ul:focus, body button:focus {
+  outline: none;
 }
 
 body button:hover {

@@ -6,6 +6,29 @@ var header = document.querySelector('header');
 var nameContainer = document.getElementById('nameContainer');
 var mapNav = document.getElementById('mapNav');
 var burger = document.querySelector('.boxIconBurger');
+var rect1 = document.getElementById('rectangle1');
+var rect2 = document.getElementById('rectangle2');
+var rect3 = document.getElementById('rectangle3');
+var iconBurger = document.getElementById('iconBurger');
+
+document.addEventListener("click", function(e){
+    console.log('clic');
+    position = mapNav.style.left = "-350px";
+    //obtiendo informacion del DOM para  
+    var clic = e.target;
+    console.log(clic);
+    position = mapNav.style.left;
+    console.log(position);
+    if(position == "0px" && clic != mapNav){
+        mapNav.style = "left:-350px";
+    }
+
+    else{
+        if(position == "-350px" && (clic == rect1 || clic == rect2 || clic == rect3 || clic == iconBurger)){
+            mapNav.style = "left:0px";
+        }
+    }
+}, false);
 
 function esperar(ms) {
     return new Promise(
@@ -25,7 +48,6 @@ window.onload = async function(){
 }
 
 arrowR.onclick = async function(){
-    design.style = "opacity:0";
     arrowR.style = "scale:0.2; opacity:1";
     await esperar(130);
     arrowR.style = "scale:1; opacity:1";
@@ -38,10 +60,7 @@ arrowR.onclick = async function(){
         n = 0;
     }
     n = n+1;
-    await esperar(200);
     document.getElementById("design").src=`images/${n}.png`;
-    await esperar(200);
-    design.style = "opacity:1";
 }
 
 arrowL.onclick = async function(){
@@ -71,7 +90,3 @@ inkscapeContainer.onmouseout = function(){
     arrowL.style = "opacity:0";
     arrowR.style = "opacity:0";
 };
-
-async function openMenu(){
-    mapNav.style = "left:0";
-}

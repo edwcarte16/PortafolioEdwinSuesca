@@ -150,6 +150,8 @@
 
 body {
   background-color: #292929;
+  position: relative;
+  overflow-x: hidden;
 }
 
 body button {
@@ -168,6 +170,49 @@ body button:hover {
   color: #d932d2;
 }
 
+body .boxLogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100%;
+  cursor: pointer;
+}
+
+body .boxLogo svg {
+  width: 80px;
+}
+
+body .boxLogo svg .pathBlue {
+  fill: #04c0ff;
+  -webkit-animation: animateBlue 2.5s;
+          animation: animateBlue 2.5s;
+  stroke-width: 1.3px;
+  stroke: #04c0ff;
+  stroke-dasharray: 251;
+  stroke-dashoffset: 251;
+}
+
+body .boxLogo svg .pathMagenta {
+  fill: #d932d2;
+  -webkit-animation: animateMagenta 2.5s;
+          animation: animateMagenta 2.5s;
+  stroke-width: 1.3px;
+  stroke: #d932d2;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+}
+
+body .boxLogo svg .edwins, body .boxLogo svg .pathSlogan {
+  fill: white;
+}
+
 body header {
   overflow: hidden;
   display: -ms-grid;
@@ -183,7 +228,7 @@ body header {
 
 body header nav {
   position: relative;
-  background-color: #2929298f;
+  background-color: #292929;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / 3;
@@ -197,49 +242,6 @@ body header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-body header nav .boxLogo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  z-index: 2;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 100%;
-  cursor: pointer;
-}
-
-body header nav .boxLogo svg {
-  width: 80px;
-}
-
-body header nav .boxLogo svg #pathBlue {
-  fill: #04c0ff;
-  -webkit-animation: animateBlue 2.5s;
-          animation: animateBlue 2.5s;
-  stroke-width: 2px;
-  stroke: #04c0ff;
-  stroke-dasharray: 251;
-  stroke-dashoffset: 251;
-}
-
-body header nav .boxLogo svg #pathMagenta {
-  fill: #d932d2;
-  -webkit-animation: animateMagenta 2.5s;
-          animation: animateMagenta 2.5s;
-  stroke-width: 2px;
-  stroke: #d932d2;
-  stroke-dasharray: 314;
-  stroke-dashoffset: 314;
-}
-
-body header nav .boxLogo svg #edwins, body header nav .boxLogo svg #pathSlogan {
-  fill: white;
 }
 
 body header nav ul {
@@ -259,43 +261,63 @@ body header nav ul {
 body header nav ul li {
   list-style: none;
   margin-left: 6%;
+  display: -ms-grid;
+  display: grid;
+}
+
+body header nav ul li i {
+  font-size: 0em;
+  text-align: center;
+  color: white;
 }
 
 body header nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 1.1em;
+  text-transform: uppercase;
 }
 
 body header nav ul li:hover a {
   color: #d932d2;
 }
 
-body header nav .burgerMenuBox {
+body header nav ul li:hover i {
+  font-size: 1.5em;
+  text-align: center;
+  color: #d932d2;
+  -webkit-transition: font-size 300ms;
+  transition: font-size 300ms;
+}
+
+body header nav .boxIconBurger {
   position: absolute;
   top: 50%;
   right: 50px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  width: 50px;
-  height: 40px;
   cursor: pointer;
+}
+
+body header nav .boxIconBurger #iconBurger {
+  height: 30px;
+  width: 30px;
   display: -ms-grid;
   display: grid;
   place-items: center;
 }
 
-body header nav .burgerMenuBox svg {
-  height: 16px;
-  width: 26px;
+body header nav .boxIconBurger #iconBurger #rectangle1, body header nav .boxIconBurger #iconBurger #rectangle2, body header nav .boxIconBurger #iconBurger #rectangle3 {
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #d932d2;
 }
 
-body header nav .burgerMenuBox svg rect {
-  fill: #04c0ff;
-}
-
-body header nav .burgerMenuBox:hover svg rect {
-  fill: #d932d2;
+body header nav .boxIconBurger:hover #iconBurger rect {
+  height: 5px;
+  width: 15px;
+  background-color: #d932d2;
 }
 
 body header #inkscapeContainer {
@@ -513,7 +535,7 @@ body header #nameContainer h1 {
   body header nav .boxLogo svg {
     width: 60px;
   }
-  body header nav .boxLogo svg #pathSlogan {
+  body header nav .boxLogo svg .pathSlogan {
     visibility: hidden;
   }
   body header nav ul {
@@ -522,10 +544,13 @@ body header #nameContainer h1 {
   body header nav ul li {
     display: none;
   }
-  body header nav .burgerMenuBox {
+  body header nav .boxIconBurger {
     position: initial;
     -webkit-transform: translateY(0);
             transform: translateY(0);
+    left: 100px;
+    -webkit-transition: left 3s;
+    transition: left 3s;
   }
   body header #inkscapeContainer {
     width: 100%;
@@ -570,5 +595,80 @@ body header #nameContainer h1 {
   body header #nameContainer p {
     max-width: 400px;
   }
+}
+
+#mapNav {
+  position: fixed;
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+  max-width: 300px;
+  background-color: #292929;
+  border-right: 1px solid #ffffff0a;
+  left: -350px;
+  top: 0;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+          transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#mapNav .boxLogo {
+  height: 150px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+#mapNav ul li {
+  list-style: none;
+}
+
+#mapNav ul li a, #mapNav ul li i {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+}
+
+#mapNav ul li i {
+  font-size: 1.1em;
+}
+
+#mapNav ul li:hover a, #mapNav ul li:hover i {
+  color: #04c0ff;
+}
+
+#mapNav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px 0;
+}
+
+#mapNav li {
+  padding: 10px 25px;
+  cursor: pointer;
+  overflow-y: hidden;
+  border-bottom: 1px solid #ffffff0a;
+}
+
+#mapNav li a {
+  text-transform: uppercase;
+}
+
+#mapNav li i {
+  margin-right: 15px;
+}
+
+#mapNav li:hover {
+  background-color: #ffffff0a;
 }
 /*# sourceMappingURL=styles.css.map */

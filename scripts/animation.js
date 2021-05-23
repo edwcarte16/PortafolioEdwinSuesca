@@ -4,6 +4,9 @@ var arrowL = document.getElementById('circleLeft');
 var arrowR = document.getElementById('circleRight');
 var header = document.querySelector('header');
 var nameContainer = document.getElementById('nameContainer');
+var mapNav = document.getElementById('mapNav');
+var burger = document.querySelector('.boxIconBurger');
+
 function esperar(ms) {
     return new Promise(
       resolve => setTimeout(resolve, ms)
@@ -11,11 +14,14 @@ function esperar(ms) {
   }
 
 window.onload = async function(){
+    await esperar(2000);
     design.style = "opacity:1";
-    inkscapeContainer.style.transform = "translateY(-300px)";
-    await esperar(1000);
-    inkscapeContainer.style.transform = "translateY(0px)";
-    nameContainer.style = "opacity:1";
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        inkscapeContainer.style.transform = "translateY(-300px)";
+        await esperar(1000);
+        inkscapeContainer.style.transform = "translateY(0px)";
+        nameContainer.style = "opacity:1";
+    }
 }
 
 arrowR.onclick = async function(){
@@ -65,3 +71,7 @@ inkscapeContainer.onmouseout = function(){
     arrowL.style = "opacity:0";
     arrowR.style = "opacity:0";
 };
+
+async function openMenu(){
+    mapNav.style = "left:0";
+}

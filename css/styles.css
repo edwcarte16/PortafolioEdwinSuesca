@@ -189,11 +189,13 @@ body .boxLogo {
   cursor: pointer;
 }
 
-body .boxLogo svg {
+body .boxLogo .logoSvg {
   width: 80px;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
 }
 
-body .boxLogo svg .pathBlue {
+body .boxLogo .logoSvg .pathBlue {
   fill: #04c0ff;
   -webkit-animation: animateBlue 2.5s;
           animation: animateBlue 2.5s;
@@ -203,7 +205,7 @@ body .boxLogo svg .pathBlue {
   stroke-dashoffset: 251;
 }
 
-body .boxLogo svg .pathMagenta {
+body .boxLogo .logoSvg .pathMagenta {
   fill: #d932d2;
   -webkit-animation: animateMagenta 2.5s;
           animation: animateMagenta 2.5s;
@@ -213,7 +215,7 @@ body .boxLogo svg .pathMagenta {
   stroke-dashoffset: 314;
 }
 
-body .boxLogo svg .edwins, body .boxLogo svg .pathSlogan {
+body .boxLogo .logoSvg .edwins, body .boxLogo .logoSvg .pathSlogan {
   fill: white;
 }
 
@@ -231,11 +233,9 @@ body header {
 }
 
 body header nav {
-  position: relative;
-  background-color: #292929;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1 / 3;
+  position: fixed;
+  height: 15vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,6 +246,10 @@ body header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 10;
+  top: 0;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
 }
 
 body header nav ul {
@@ -473,6 +477,9 @@ body header #nameContainer {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
   padding-right: 4vw;
   display: -ms-grid;
   display: grid;
@@ -535,6 +542,7 @@ body header #nameContainer h1 {
         -ms-flex-align: center;
             align-items: center;
     height: 80px;
+    width: 100vw;
     background-color: transparent;
   }
   body header nav .boxLogo {
@@ -547,10 +555,10 @@ body header #nameContainer h1 {
     height: fit-content;
     position: relative;
   }
-  body header nav .boxLogo svg {
+  body header nav .boxLogo .logoSvg {
     width: 60px;
   }
-  body header nav .boxLogo svg .pathSlogan {
+  body header nav .boxLogo .logoSvg .pathSlogan {
     visibility: hidden;
   }
   body header nav ul {
@@ -592,6 +600,7 @@ body header #nameContainer h1 {
     width: 80%;
   }
   body header #nameContainer {
+    margin-top: 70px;
     position: initial;
     height: -webkit-fit-content;
     height: -moz-fit-content;

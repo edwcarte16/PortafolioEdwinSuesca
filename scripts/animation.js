@@ -1,3 +1,9 @@
+var colorBg = "#292929";
+
+var edwins = document.getElementById('edwins');
+var pathSlogan = document.getElementById('pathSlogan');
+var logoSvg = document.getElementById('logoSvg');
+
 var inkscapeContainer = document.getElementById('inkscapeContainer');
 var design = document.getElementById('design');
 var arrowL = document.getElementById('circleLeft');
@@ -12,7 +18,51 @@ var rect1 = document.getElementById('rectangle1');
 var rect2 = document.getElementById('rectangle2');
 var rect3 = document.getElementById('rectangle3');
 
+var nav = document.querySelector('nav');
+
 var liMapNav = document.querySelector('.liMapNav');
+
+window.onscroll = function() {
+    var y = window.scrollY;
+    if (window.matchMedia("(min-width: 721px)").matches) {
+        
+        if(y >= 20){
+            nav.style.backgroundColor = colorBg;
+            nav.style.height = "30px";
+            edwins.style.display = "none";
+            pathSlogan.style.fill = "none";
+            logoSvg.style = "width: 40px; position: absolute; top: 10px";
+        }
+    
+        if(y < 20){
+            nav.style.backgroundColor = "transparent";
+            nav.style.height = "15vh";
+            edwins.style.display = "initial";
+            pathSlogan.style.display = "block";
+            logoSvg.style = "width: 80px; position: initial";
+        }
+    }
+
+    else{
+        if (window.matchMedia("(max-width: 720px)").matches) {
+
+            if(y >= 20){
+                nav.style.backgroundColor = colorBg;
+                nav.style.height = "30px";
+                edwins.style.display = "none";
+                logoSvg.style = "width: 40px; margin-top:7px";
+            }
+        
+            if(y < 20){
+                nav.style.backgroundColor = "transparent";
+                nav.style.height = "80px";
+                edwins.style.display = "block";
+                logoSvg.style = "width: 60px; margin-top:0px";
+            }
+        }
+    }
+
+}
 
 document.addEventListener("click", function(event){ 
     var clic = event.target;
@@ -32,9 +82,8 @@ document.addEventListener("click", function(event){
     }
 
     else{
-        console.log("Abierta y se procede a cerrar");
-    var position = mapNav.style.left;
-    if(position == "0px" && clicName != "LI" && clicName != "A" && clicName != "UL" && clicName != "I" && clic != mapNav){
+        var position = mapNav.style.left;
+        if(position == "0px" && clicName != "LI" && clicName != "A" && clicName != "UL" && clicName != "I" && clic != mapNav){
             mapNav.style = "left:-350px";
             rect1.style.transform = "rotate(0)";
             rect3.style.transform = "rotate(0)";

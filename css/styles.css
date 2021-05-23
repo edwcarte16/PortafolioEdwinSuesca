@@ -300,6 +300,7 @@ body header nav .boxIconBurger {
 }
 
 body header nav .boxIconBurger #iconBurger {
+  position: relative;
   height: 30px;
   width: 30px;
   display: -ms-grid;
@@ -312,6 +313,18 @@ body header nav .boxIconBurger #iconBurger #rectangle1, body header nav .boxIcon
   width: 100%;
   border-radius: 5px;
   background-color: #d932d2;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+body header nav .boxIconBurger #iconBurger #rectangle1 {
+  position: absolute;
+  top: 0;
+}
+
+body header nav .boxIconBurger #iconBurger #rectangle3 {
+  position: absolute;
+  bottom: 0;
 }
 
 body header nav .boxIconBurger:hover #iconBurger rect {
@@ -602,7 +615,9 @@ body header #nameContainer h1 {
   z-index: 1000;
   height: 100vh;
   width: 100vw;
-  max-width: 300px;
+  -webkit-clip-path: inset(0 5% 0 0);
+          clip-path: inset(0 5% 0 0);
+  max-width: 350px;
   background-color: #292929;
   border-right: 1px solid #ffffff0a;
   left: -350px;
@@ -611,6 +626,7 @@ body header #nameContainer h1 {
   transition: left 1s;
   -webkit-transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
           transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  overflow-y: scroll;
 }
 
 #mapNav .boxLogo {
@@ -653,22 +669,79 @@ body header #nameContainer h1 {
   padding: 25px 0;
 }
 
-#mapNav li {
+#mapNav .liMapNav {
+  padding: 10px 25px;
+  cursor: pointer;
+  overflow-y: hidden;
+  border-bottom: 1px solid #ffffff0a;
+  max-height: 40px;
+  -webkit-transition: all 700ms ease;
+  transition: all 700ms ease;
+  overflow: hidden;
+}
+
+#mapNav .liMapNav .aMapNav {
+  text-transform: uppercase;
+}
+
+#mapNav .liMapNav i {
+  margin-right: 15px;
+}
+
+#mapNav .liMapNav ul li {
+  list-style: none;
+}
+
+#mapNav .liMapNav ul li a, #mapNav .liMapNav ul li i {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+}
+
+#mapNav .liMapNav ul li i {
+  font-size: 1.1em;
+}
+
+#mapNav .liMapNav ul li:hover a, #mapNav .liMapNav ul li:hover i {
+  color: #d932d2;
+}
+
+#mapNav .liMapNav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px 0;
+}
+
+#mapNav .liMapNav li {
   padding: 10px 25px;
   cursor: pointer;
   overflow-y: hidden;
   border-bottom: 1px solid #ffffff0a;
 }
 
-#mapNav li a {
+#mapNav .liMapNav li a {
   text-transform: uppercase;
 }
 
-#mapNav li i {
+#mapNav .liMapNav li i {
   margin-right: 15px;
 }
 
-#mapNav li:hover {
+#mapNav .liMapNav:hover {
+  padding-top: 20px;
   background-color: #ffffff0a;
+  max-height: 300px;
+}
+
+#mapNav .liMapNav:hover .aMapNav {
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=styles.css.map */

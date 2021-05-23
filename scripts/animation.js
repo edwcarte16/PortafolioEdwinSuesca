@@ -6,26 +6,41 @@ var header = document.querySelector('header');
 var nameContainer = document.getElementById('nameContainer');
 var mapNav = document.getElementById('mapNav');
 var burger = document.querySelector('.boxIconBurger');
+
+var iconBurger = document.getElementById('iconBurger');
 var rect1 = document.getElementById('rectangle1');
 var rect2 = document.getElementById('rectangle2');
 var rect3 = document.getElementById('rectangle3');
-var iconBurger = document.getElementById('iconBurger');
 
-document.addEventListener("click", function(e){
-    console.log('clic');
-    position = mapNav.style.left = "-350px";
-    //obtiendo informacion del DOM para  
-    var clic = e.target;
-    console.log(clic);
-    position = mapNav.style.left;
+var liMapNav = document.querySelector('.liMapNav');
+
+document.addEventListener("click", function(event){ 
+    var clic = event.target;
+    var clicName = event.target.nodeName;
+    console.log(event.target.nodeName);
+    var position = mapNav.style.left;
     console.log(position);
-    if(position == "0px" && clic != mapNav){
-        mapNav.style = "left:-350px";
+    if(position == "-350px" && (clic === rect1 || clic === rect2 || clic === rect3 || clic === iconBurger)){
+        console.log("Cerrada y se procede a abrir");
+        mapNav.style = "left:0";
+
+        rect2.style.opacity = "0";
+        rect1.style.top = "41%";
+        rect3.style.bottom = "41%";
+        rect1.style.transform = "rotate(-45deg)";
+        rect3.style.transform = "rotate(45deg)";
     }
 
     else{
-        if(position == "-350px" && (clic == rect1 || clic == rect2 || clic == rect3 || clic == iconBurger)){
-            mapNav.style = "left:0px";
+        console.log("Abierta y se procede a cerrar");
+    var position = mapNav.style.left;
+    if(position == "0px" && clicName != "LI" && clicName != "A" && clicName != "UL" && clicName != "I" && clic != mapNav){
+            mapNav.style = "left:-350px";
+            rect1.style.transform = "rotate(0)";
+            rect3.style.transform = "rotate(0)";
+            rect1.style.top = "0";
+            rect3.style.bottom = "0";
+            rect2.style.opacity = "1";
         }
     }
 }, false);
@@ -37,6 +52,7 @@ function esperar(ms) {
   }
 
 window.onload = async function(){
+    mapNav.style.left = "-350px";
     await esperar(2000);
     design.style = "opacity:1";
     if (window.matchMedia("(max-width: 720px)").matches) {

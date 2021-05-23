@@ -24,7 +24,7 @@ document.addEventListener("click", function(event){
         console.log("Cerrada y se procede a abrir");
         mapNav.style = "left:0";
 
-        rect2.style.opacity = "0";
+        rect2.style.width = "0";
         rect1.style.top = "41%";
         rect3.style.bottom = "41%";
         rect1.style.transform = "rotate(-45deg)";
@@ -40,7 +40,7 @@ document.addEventListener("click", function(event){
             rect3.style.transform = "rotate(0)";
             rect1.style.top = "0";
             rect3.style.bottom = "0";
-            rect2.style.opacity = "1";
+            rect2.style.width = "100%";
         }
     }
 }, false);

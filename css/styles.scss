@@ -183,8 +183,8 @@ body{
                         height: 5px;
                         width: 100%;
                         border-radius: 5px;
-                        background-color: $colorMagenta;
-                        transition: all 1s ease;
+                        background-color: $colorBlue;
+                        transition: all 800ms ease;
                     }
 
                     #rectangle1{
@@ -200,9 +200,7 @@ body{
             }
             .boxIconBurger:hover{
                 #iconBurger{
-                    rect{
-                        height: 5px;
-                        width: 15px;
+                    #rectangle1, #rectangle2, #rectangle3{
                         background-color: $colorMagenta;
                     }
                     

@@ -316,9 +316,9 @@ body header nav .boxIconBurger #iconBurger #rectangle1, body header nav .boxIcon
   height: 5px;
   width: 100%;
   border-radius: 5px;
-  background-color: #d932d2;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  background-color: #04c0ff;
+  -webkit-transition: all 800ms ease;
+  transition: all 800ms ease;
 }
 
 body header nav .boxIconBurger #iconBurger #rectangle1 {
@@ -331,9 +331,7 @@ body header nav .boxIconBurger #iconBurger #rectangle3 {
   bottom: 0;
 }
 
-body header nav .boxIconBurger:hover #iconBurger rect {
-  height: 5px;
-  width: 15px;
+body header nav .boxIconBurger:hover #iconBurger #rectangle1, body header nav .boxIconBurger:hover #iconBurger #rectangle2, body header nav .boxIconBurger:hover #iconBurger #rectangle3 {
   background-color: #d932d2;
 }
 

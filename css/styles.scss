@@ -1,5 +1,6 @@
 @import "colorsDark";
 @import "keyframes";
+@import "textsAndTitles";
 
 @mixin listStyles($orientation, $padTB, $padLR, $colorLi, $colorHover) {
 
@@ -63,7 +64,7 @@ body{
         object-fit: cover;
         position: fixed;
         z-index: -1;
-        opacity: 0.3;
+        opacity: 0.2;
     }
     background-color: $colorBackground;
     position: relative;

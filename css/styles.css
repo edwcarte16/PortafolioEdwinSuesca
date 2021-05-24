@@ -246,18 +246,18 @@ body header nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 10;
   top: 0;
   -webkit-transition: all 700ms ease;
   transition: all 700ms ease;
+  z-index: 500;
 }
 
 body header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
-  margin-right: 100px;
+  width: 120%;
+  padding-right: calc(30px + 4vw);
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -268,7 +268,7 @@ body header nav ul {
 
 body header nav ul li {
   list-style: none;
-  margin-left: 6%;
+  margin-left: 5%;
   display: -ms-grid;
   display: grid;
 }
@@ -313,7 +313,9 @@ body header nav .boxIconBurger #iconBurger {
   width: 30px;
   display: -ms-grid;
   display: grid;
-  place-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  justify-items: center;
 }
 
 body header nav .boxIconBurger #iconBurger #rectangle1, body header nav .boxIconBurger #iconBurger #rectangle2, body header nav .boxIconBurger #iconBurger #rectangle3 {
@@ -323,16 +325,6 @@ body header nav .boxIconBurger #iconBurger #rectangle1, body header nav .boxIcon
   background-color: #04c0ff;
   -webkit-transition: all 800ms ease;
   transition: all 800ms ease;
-}
-
-body header nav .boxIconBurger #iconBurger #rectangle1 {
-  position: absolute;
-  top: 0;
-}
-
-body header nav .boxIconBurger #iconBurger #rectangle3 {
-  position: absolute;
-  bottom: 0;
 }
 
 body header nav .boxIconBurger:hover #iconBurger #rectangle1, body header nav .boxIconBurger:hover #iconBurger #rectangle2, body header nav .boxIconBurger:hover #iconBurger #rectangle3 {
@@ -568,13 +560,13 @@ body header #nameContainer h1 {
     display: none;
   }
   body header nav .boxIconBurger {
-    position: initial;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    left: 100px;
+    position: absolute;
+    right: 4vw;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     -webkit-transition: left 3s;
     transition: left 3s;
-    z-index: 20000;
   }
   body header #inkscapeContainer {
     width: 100%;
@@ -627,9 +619,9 @@ body header #nameContainer h1 {
   z-index: 1000;
   height: 100vh;
   width: 100vw;
-  -webkit-clip-path: inset(0 5% 0 0);
-          clip-path: inset(0 5% 0 0);
-  max-width: 350px;
+  max-width: 370px;
+  -webkit-clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
+          clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
   background-color: #292929;
   border-right: 1px solid #ffffff0a;
   left: -350px;

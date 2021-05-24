@@ -3,6 +3,7 @@ var colorBg = "#292929";
 var edwins = document.getElementById('edwins');
 var pathSlogan = document.getElementById('pathSlogan');
 var logoSvg = document.getElementById('logoSvg');
+var boxLogo = document.getElementById('boxLogo');
 
 var inkscapeContainer = document.getElementById('inkscapeContainer');
 var design = document.getElementById('design');
@@ -32,14 +33,38 @@ window.onscroll = function() {
             edwins.style.display = "none";
             pathSlogan.style.fill = "none";
             logoSvg.style = "width: 40px; position: absolute; top: 10px";
+            
+            if(mapNav.style.left == "0px"){
+                rect2.style.width = "0";
+                rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
+                rect3.style.transform = "translateY(-12.5px) rotate(45deg)";
+            }
+
+            else{
+                rect2.style.width = "0";
+                rect1.style.transform = "translateY(7px)";
+                rect3.style.transform = "translateY(-7px)";
+            }
         }
     
         if(y < 20){
             nav.style.backgroundColor = "transparent";
             nav.style.height = "15vh";
             edwins.style.display = "initial";
-            pathSlogan.style.display = "block";
+            pathSlogan.style = "display: block";
             logoSvg.style = "width: 80px; position: initial";
+
+            if(mapNav.style.left == "-350px"){
+                rect2.style.width = "100%";
+                rect1.style.transform = "translateY(0) rotate(0)";
+                rect3.style.transform = "translateY(0) rotate(0)";
+            }
+
+            else{
+                rect2.style.width = "0";
+                rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
+                rect3.style.transform = "translateY(-12.5px) rotate(45deg)";
+            }
         }
     }
 
@@ -51,6 +76,18 @@ window.onscroll = function() {
                 nav.style.height = "30px";
                 edwins.style.display = "none";
                 logoSvg.style = "width: 40px; margin-top:7px";
+
+                if(mapNav.style.left == "0px"){
+                    rect2.style.width = "0";
+                    rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
+                    rect3.style.transform = "translateY(-12.5px) rotate(45deg)";
+                }
+
+                else{
+                    rect2.style.width = "0";
+                    rect1.style.transform = "translateY(7px)";
+                    rect3.style.transform = "translateY(-7px)";
+                }
             }
         
             if(y < 20){
@@ -58,6 +95,18 @@ window.onscroll = function() {
                 nav.style.height = "80px";
                 edwins.style.display = "block";
                 logoSvg.style = "width: 60px; margin-top:0px";
+
+                if(mapNav.style.left == "-350px"){
+                    rect2.style.width = "100%";
+                    rect1.style.transform = "translateY(0) rotate(0)";
+                    rect3.style.transform = "translateY(0) rotate(0)";
+                }
+
+                else{
+                    rect2.style.width = "0";
+                    rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
+                    rect3.style.transform = "translateY(-12.5px) rotate(45deg)";
+                }
             }
         }
     }
@@ -73,23 +122,30 @@ document.addEventListener("click", function(event){
     if(position == "-350px" && (clic === rect1 || clic === rect2 || clic === rect3 || clic === iconBurger)){
         console.log("Cerrada y se procede a abrir");
         mapNav.style = "left:0";
+        boxLogo.style.zIndex = "0";
 
+        rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
+        rect3.style.transform = "translateY(-12.5px) rotate(45deg)";
         rect2.style.width = "0";
-        rect1.style.top = "41%";
-        rect3.style.bottom = "41%";
-        rect1.style.transform = "rotate(-45deg)";
-        rect3.style.transform = "rotate(45deg)";
     }
 
     else{
         var position = mapNav.style.left;
         if(position == "0px" && clicName != "LI" && clicName != "A" && clicName != "UL" && clicName != "I" && clic != mapNav){
+            y = window.scrollY;
             mapNav.style = "left:-350px";
-            rect1.style.transform = "rotate(0)";
-            rect3.style.transform = "rotate(0)";
-            rect1.style.top = "0";
-            rect3.style.bottom = "0";
-            rect2.style.width = "100%";
+            boxLogo.style.opacity = "1";
+            if(y < 20){
+                rect2.style.width = "100%";
+                rect1.style.transform = "translateY(0px) rotate(0)";
+                rect3.style.transform = "translateY(0px) rotate(0)";
+            }
+
+            else{
+                rect2.style.width = "0";
+                rect1.style.transform = "translateY(7px) rotate(0)";
+                rect3.style.transform = "translateY(-7px) rotate(0)";
+            }
         }
     }
 }, false);

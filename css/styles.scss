@@ -128,19 +128,19 @@ body{
             padding: 20px 4vw;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
             top: 0;
             transition: all 700ms ease;
+            z-index: 500;
         
             ul{
                 display: flex;
-                width: 80%;
-                margin-right: 100px;
+                width: 120%;
+                padding-right: calc(30px + 4vw);
                 justify-content:flex-end;
                 height: fit-content;
                 li{
                     list-style: none;
-                    margin-left: 6%;
+                    margin-left: 5%;
                     display: grid;
 
                     i{
@@ -177,28 +177,20 @@ body{
                 right: 50px;
                 transform: translateY(-50%);
                 cursor: pointer;
+                
                 #iconBurger{
                     position: relative;
                     height: 30px;
                     width: 30px;
                     display: grid;
-                    place-items: center;
+                    align-content: space-between;
+                    justify-items: center;
                     #rectangle1, #rectangle2, #rectangle3{
                         height: 5px;
                         width: 100%;
                         border-radius: 5px;
                         background-color: $colorBlue;
                         transition: all 800ms ease;
-                    }
-
-                    #rectangle1{
-                        position: absolute;
-                        top:0;
-                    }
-
-                    #rectangle3{
-                        position: absolute;
-                        bottom:0;
                     }
                 }
             }
@@ -389,11 +381,11 @@ body{
                 }
 
                 .boxIconBurger{
-                    position: initial;
-                    transform: translateY(0);
-                    left: 100px;
+                    position: absolute;
+                    right: 4vw;
+                    top: 50%;
+                    transform: translateY(-50%);
                     transition: left 3s;
-                    z-index: 20000;
                 }
             }
 
@@ -444,8 +436,8 @@ body{
     z-index: 1000;
     height: 100vh;
     width: 100vw;
-    clip-path: inset(0 5% 0 0);
-    max-width: 350px;
+    max-width: 370px;
+    clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
     background-color: $colorBackground;
     border-right: 1px solid $colorTranslucer;
     left: -350px;

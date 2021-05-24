@@ -158,6 +158,16 @@ body {
   overflow-x: hidden;
 }
 
+body #imageBgGlobal {
+  min-height: 100vh;
+  min-width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.3;
+}
+
 body button {
   border: 2px solid #04c0ff;
   padding: 10px;
@@ -227,8 +237,6 @@ body header {
       grid-template-rows: 15% 85%;
   -ms-grid-columns: 60% 40%;
       grid-template-columns: 60% 40%;
-  background-image: url(https://raw.githubusercontent.com/edwcarte16/PortafolioEdwins/main/images/background2.png);
-  background-size: cover;
   height: 100vh;
 }
 
@@ -277,13 +285,16 @@ body header nav ul li i {
   font-size: 0em;
   text-align: center;
   color: white;
+  margin-bottom: 3px;
 }
 
 body header nav ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 1em;
   text-transform: uppercase;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 body header nav ul li:hover a {
@@ -455,8 +466,8 @@ body header #inkscapeContainer #designsBox #design {
   height: 34vw;
   padding: 0;
   opacity: 0;
-  -webkit-transition: opacity 200ms;
-  transition: opacity 200ms;
+  -webkit-transition: opacity 1.7s ease;
+  transition: opacity 1.7s ease;
   -webkit-transform: rotateY(30deg) rotateX(20deg);
           transform: rotateY(30deg) rotateX(20deg);
   -webkit-animation: inkscapeAnimation 2s;

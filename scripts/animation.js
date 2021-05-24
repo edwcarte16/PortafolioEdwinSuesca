@@ -4,6 +4,9 @@ var edwins = document.getElementById('edwins');
 var pathSlogan = document.getElementById('pathSlogan');
 var logoSvg = document.getElementById('logoSvg');
 var boxLogo = document.getElementById('boxLogo');
+const liNav = document.querySelectorAll('.liNav');
+const iconsNav = document.querySelectorAll('.iconsNav');
+const aNav = document.querySelectorAll('.aNav');
 
 var inkscapeContainer = document.getElementById('inkscapeContainer');
 var design = document.getElementById('design');
@@ -26,14 +29,22 @@ var liMapNav = document.querySelector('.liMapNav');
 window.onscroll = function() {
     var y = window.scrollY;
     if (window.matchMedia("(min-width: 721px)").matches) {
-        
+ 
         if(y >= 20){
             nav.style.backgroundColor = colorBg;
             nav.style.height = "30px";
             edwins.style.display = "none";
             pathSlogan.style.fill = "none";
             logoSvg.style = "width: 40px; position: absolute; top: 10px";
-            
+
+            aNav.forEach(a => {
+                a.style.fontSize = "0.7em";
+            });
+
+            iconsNav.forEach(i => {
+                i.style.display = "none";
+            });
+
             if(mapNav.style.left == "0px"){
                 rect2.style.width = "0";
                 rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
@@ -53,6 +64,14 @@ window.onscroll = function() {
             edwins.style.display = "initial";
             pathSlogan.style = "display: block";
             logoSvg.style = "width: 80px; position: initial";
+
+            aNav.forEach(a => {
+                a.style.fontSize = "1em";
+            });
+
+            iconsNav.forEach(i => {
+                i.style.display = "initial";
+            });
 
             if(mapNav.style.left == "-350px"){
                 rect2.style.width = "100%";

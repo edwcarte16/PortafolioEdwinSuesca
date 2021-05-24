@@ -1,0 +1,28 @@
+h2{
+    font-size: 2em;
+    color: $colorBlue;
+}
+p{
+    color: $colorText;
+    text-align: justify;
+}
+
+article{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    justify-content:center;
+    align-items:flex-start;
+    margin: 50px 4vw;
+    gap: 25px;
+    section{
+        padding: 25px 4vw;
+        background-color: $colorTranslucerDark;
+    }
+}
+
+#videoAbout{
+    padding: 0;
+    video{
+        width: 100%;
+    }
+}

@@ -1,6 +1,6 @@
 @import "colorsDark";
 @import "keyframes";
-@import "textsAndTitles";
+@import "articles";
 
 @mixin listStyles($orientation, $padTB, $padLR, $colorLi, $colorHover) {
 
@@ -58,6 +58,11 @@
 }
 
 body{
+
+    background-color: $colorBackground;
+    position: relative;
+    overflow-x: hidden;
+
     #imageBgGlobal{
         min-height: 100vh;
         min-width: 100vw;
@@ -66,9 +71,31 @@ body{
         z-index: -1;
         opacity: 0.2;
     }
-    background-color: $colorBackground;
-    position: relative;
-    overflow-x: hidden;
+
+    #scrollBar{
+        height: 400px;
+        width: 1px;
+        background: linear-gradient(0deg, transparent 0%, $colorBlue 20%, $colorBlue 80%, transparent 100%);
+        position: fixed;
+        left: 4vw;
+        top: 50vh;
+        transform: translateY(-50%);
+        z-index: 20;
+        opacity: 0;
+        transition: opacity 1s ease;
+
+        #buttonScrollBar{
+            height: 10px;
+            width: 10px;
+            background-color: $colorBlue;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
     button{
         border: 2px solid $colorBlue;
         padding: 10px;
@@ -356,6 +383,10 @@ body{
     }
 
     @media (max-width: 720px){
+
+        #mapNav{
+            clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
+        }
         header{    
             display: flex;
             height: fit-content;
@@ -446,7 +477,7 @@ body{
     height: 100vh;
     width: 100vw;
     max-width: 370px;
-    clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
+    clip-path: polygon(0 0, 95% 0, 95% 100%, 0% 100%);
     background-color: $colorBackground;
     border-right: 1px solid $colorTranslucer;
     left: -350px;
@@ -504,6 +535,39 @@ body{
         max-height: 300px;
         .aMapNav{
             text-transform: uppercase;
+        }
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $colorDark1;
+    padding: 20px;
+    .boxLogo{
+        svg{
+            width:50px;
+            height:50px;
+            animation: none;
+            #pathSlogan{
+                display: none;
+            }
+        }
+    }
+
+    section{
+        margin-top: 20px;
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
+        gap: 20px;
+        a, span{
+            color:$colorLight6;
+            text-align: center;
         }
     }
 }

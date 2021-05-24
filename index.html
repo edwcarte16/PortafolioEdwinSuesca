@@ -15,7 +15,9 @@
   <title>Edwin Suesca</title>
 </head>
 <body onload="next()">
-
+  <div id="scrollBar">
+    <div id="buttonScrollBar"></div>
+  </div>
   <img id="imageBgGlobal" src="images/background2.png" alt="background image">
 
   <div id="mapNav">
@@ -40,7 +42,7 @@
 
         <ul id="about">
           <li class="liAbout"><a href="#">Autobiografía</a></li>
-          <li class="liAbout"><a href="#">Vídeo Presentación</a></li>
+          <li class="liAbout"><a href="#videoAbout">Vídeo Presentación</a></li>
           <li class="liAbout"><a href="#">Perfil Profesional</a></li>
           <li class="liAbout"><a href="#">Hobbies e Intereses</a></li>
         </ul>
@@ -121,8 +123,8 @@
       <img src="images/avatar.png" alt="">
       <p>Hola, mi nombre es</p>
       <h1>Edwin Suesca</h1>
-      <p>Soy Productor de Multimedia y espero poder ayudarte. ¡Echa un vistazo a mi portafolio!.</p>
-      <button>Ver Más</button>
+      <p>Soy Productor de Multimedia y espero poder ayudarte. ¡Echa un vistazo a mi portafolio!</p>
+      <button onclick="window.location.href='#aboutArticle'">Ver Más</button>
     </div>
 
     <div id="inkscapeContainer">
@@ -154,10 +156,8 @@
       </section>
 
       <section id="videoAbout">
-        <h2>Vídeo</h2>
-        <p>Hola, antes de empezar a contarte a cerca de mí, quiero agradecerte por estar aquí y por sacar un poco de tu tiempo para conocerme. </p>
+        <video controls src="videos/videoIntro.mp4"></video>
 
-        <p>Hola, antes de empezar a contarte a cerca de mí, quiero agradecerte por estar aquí y por sacar un poco de tu tiempo para conocerme. </p>
       </section>
 
       <section id="profile">
@@ -179,6 +179,16 @@
       <section></section>
     </article>
   </main>
+
+  <footer>
+    <section id="footerInfo">
+      <span>Copyrigth 2021</span>
+      <a href="#">Edwin Suesca</a>
+      <a href="#">Condiciones de venta</a>
+      <a href="#">Políticas de Privacidad</a>
+      <a href="#">Información Legal</a>
+    </section>
+  </footer>
   <script src="scripts/animation.js"></script>
 </body>
 </html>

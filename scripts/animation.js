@@ -7,6 +7,9 @@ var boxLogo = document.getElementById('boxLogo');
 const liNav = document.querySelectorAll('.liNav');
 const iconsNav = document.querySelectorAll('.iconsNav');
 const aNav = document.querySelectorAll('.aNav');
+var bodySelector = document.querySelector('body');
+var scrollBar = document.getElementById('scrollBar');
+var buttonScrollBar = document.getElementById('buttonScrollBar');
 
 var inkscapeContainer = document.getElementById('inkscapeContainer');
 var design = document.getElementById('design');
@@ -25,9 +28,32 @@ var rect3 = document.getElementById('rectangle3');
 var nav = document.querySelector('nav');
 
 var liMapNav = document.querySelector('.liMapNav');
+var y = window.scrollY;
+
+var scrollPos = 0;
+window.addEventListener('scroll', function(){
+    let sc = (document.body.getBoundingClientRect()).top;
+    console.log(sc);
+    if ((document.body.getBoundingClientRect()).top > scrollPos){
+        nav.style.top = "0";
+    }
+
+    else{
+        scrollPos = (document.body.getBoundingClientRect()).top;
+        nav.style.top = "-40px";
+    }
+});
 
 window.onscroll = function() {
-    var y = window.scrollY;
+    y = window.scrollY;
+    var hview = window.innerHeight;
+    var hBody = bodySelector.scrollHeight;
+    let topButton = (y*100/(hBody-hview));
+    buttonScrollBar.style.top = `${topButton}%`;
+    
+    if(y >= hview-70){scrollBar.style.opacity = "1";}
+    else{scrollBar.style.opacity = "0";}
+
     if (window.matchMedia("(min-width: 721px)").matches) {
  
         if(y >= 20){

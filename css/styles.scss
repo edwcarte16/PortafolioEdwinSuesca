@@ -73,11 +73,11 @@ body{
     }
 
     #scrollBar{
-        height: 400px;
+        height: 80vh;
         width: 1px;
-        background: linear-gradient(0deg, transparent 0%, $colorBlue 20%, $colorBlue 80%, transparent 100%);
+        background: linear-gradient(0deg, transparent 0%, $colorBlue 20%, $colorMagenta 80%, transparent 100%);
         position: fixed;
-        left: 4vw;
+        left: 3vw;
         top: 50vh;
         transform: translateY(-50%);
         z-index: 20;

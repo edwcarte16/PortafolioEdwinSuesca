@@ -16,14 +16,21 @@ article{
     gap: 25px;
     section{
         padding: 25px 4vw;
+        display: grid;
+        gap: 100px;
         background-color: $colorTranslucerDark;
+
+        .subSection{
+            display: grid;
+            gap: 20px;
+        }
     }
 }
 
 @media (max-width: 720px){
     article{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 }
 
@@ -31,5 +38,75 @@ article{
     padding: 0;
     video{
         width: 100%;
+        border-radius: 15px;
     }
 }
+
+.technologies{
+    display: grid;
+    gap: 20px;
+}
+
+.iconsWeb{
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+    .fab{font-size: 3em;}
+    .fab:hover{
+        color: $colorText;
+        cursor: pointer;
+    }
+
+    .fa-css3-alt{
+        color: #31A4D5;
+    }
+    .fa-sass{
+        color: #C76494;
+    }
+    .fa-html5{
+        color: #E96228;
+    }
+    .fa-js-square{
+        color: #EFD81D;
+    }
+    .fa-github{
+        color: #000000;
+    }
+    .fa-git-alt{
+        color: #E84E31;
+    }
+}
+
+.iconsMedia{
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+
+    .iconEd{font-size: 3em;}
+    .iconEd:hover{
+        color: $colorText;
+        cursor: pointer;
+    }
+
+    .iconEd-inkscape{
+        color: #000000;
+    }
+
+    .iconEd-ilustrator{
+        color: #FF9A00;
+    }
+
+    .iconEd-photoshop{
+        color: #31A8FF;
+    }
+
+    .iconEd-afterEffects{
+        color: #856CFF;
+    }
+
+    .iconEd-premiere{
+        color: #B145C9;
+    }
+}
+

@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'edwinsFontIcons';
+  src:  url('fonts/edwinsFontIcons.eot?ofdtxm');
+  src:  url('fonts/edwinsFontIcons.eot?ofdtxm#iefix') format('embedded-opentype'),
+    url('fonts/edwinsFontIcons.ttf?ofdtxm') format('truetype'),
+    url('fonts/edwinsFontIcons.woff?ofdtxm') format('woff'),
+    url('fonts/edwinsFontIcons.svg?ofdtxm#edwinsFontIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="iconEd-"], [class*=" iconEd-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'edwinsFontIcons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconEd-inkscape:before {
+  content: "\e900";
+}
+.iconEd-photoshop:before {
+  content: "\e901";
+}
+.iconEd-premiere:before {
+  content: "\e902";
+}
+.iconEd-ilustrator:before {
+  content: "\e903";
+}
+.iconEd-afterEffects:before {
+  content: "\e904";
+}

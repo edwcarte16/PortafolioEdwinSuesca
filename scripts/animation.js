@@ -35,8 +35,6 @@ window.addEventListener('scroll', function(){
     
     let sc = (document.body.getBoundingClientRect()).top;
     let pp = posicionDePartida;
-    console.log(sc);
-    console.log(`puntopartida ${pp}`);
     
     if ((document.body.getBoundingClientRect()).top > posicionDePartida){
         posicionDePartida = (document.body.getBoundingClientRect()).top;
@@ -45,8 +43,7 @@ window.addEventListener('scroll', function(){
 
     else{
         posicionDePartida = (document.body.getBoundingClientRect()).top;   
-        nav.style.top = "-40px"; 
-        console.log("si está entrando en el else");      
+        nav.style.top = "-40px";    
     }
     
 });
@@ -162,20 +159,15 @@ window.onscroll = function() {
             }
         }
     }
-
 }
 
 document.addEventListener("click", function(event){ 
     var clic = event.target;
-    var clicName = event.target.nodeName;
-    console.log(event.target.nodeName);
+    var clicName = event.target.className;
     var position = mapNav.style.left;
-    console.log(position);
     if(position == "-350px" && (clic === rect1 || clic === rect2 || clic === rect3 || clic === iconBurger)){
-        console.log("Cerrada y se procede a abrir");
         mapNav.style = "left:0";
         boxLogo.style.zIndex = "0";
-
         rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
         rect3.style.transform = "translateY(-12.5px) rotate(45deg)";
         rect2.style.width = "0";
@@ -183,7 +175,7 @@ document.addEventListener("click", function(event){
 
     else{
         var position = mapNav.style.left;
-        if(position == "0px" && clicName != "LI" && clicName != "A" && clicName != "UL" && clicName != "I" && clic != mapNav){
+        if(position == "0px" && clicName != "UL" && clicName != "liMapNav" && clicName != "aMapNav" && clic != mapNav){
             y = window.scrollY;
             mapNav.style = "left:-350px";
             boxLogo.style.opacity = "1";

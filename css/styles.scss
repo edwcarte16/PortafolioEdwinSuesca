@@ -82,7 +82,7 @@ body{
         transform: translateY(-50%);
         z-index: 20;
         opacity: 0;
-        transition: opacity 1s ease;
+        /*transition: opacity 300ms ease;*/
 
         #buttonScrollBar{
             height: 10px;

@@ -48,10 +48,10 @@ window.onscroll = function() {
     y = window.scrollY;
     var hview = window.innerHeight;
     var hBody = bodySelector.scrollHeight;
-    let topButton = (y*100/(hBody-hview));
+    let topButton = ((y-hview)*100)/(hBody-(hview*2));
     buttonScrollBar.style.top = `${topButton}%`;
     
-    if(y >= hview-70){scrollBar.style.opacity = "1";}
+    if(y >= hview){scrollBar.style.opacity = "1";}
     else{scrollBar.style.opacity = "0";}
 
     if (window.matchMedia("(min-width: 721px)").matches) {

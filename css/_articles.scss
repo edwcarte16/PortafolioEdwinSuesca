@@ -20,6 +20,13 @@ article{
     }
 }
 
+@media (max-width: 720px){
+    article{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 #videoAbout{
     padding: 0;
     video{

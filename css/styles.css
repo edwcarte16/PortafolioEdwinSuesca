@@ -170,6 +170,15 @@ article section {
   background-color: #00000018;
 }
 
+@media (max-width: 720px) {
+  article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 #videoAbout {
   padding: 0;
 }
@@ -218,8 +227,7 @@ body #scrollBar {
           transform: translateY(-50%);
   z-index: 20;
   opacity: 0;
-  -webkit-transition: opacity 1s ease;
-  transition: opacity 1s ease;
+  /*transition: opacity 300ms ease;*/
 }
 
 body #scrollBar #buttonScrollBar {

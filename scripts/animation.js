@@ -30,18 +30,25 @@ var nav = document.querySelector('nav');
 var liMapNav = document.querySelector('.liMapNav');
 var y = window.scrollY;
 
-var scrollPos = 0;
+var posicionDePartida = 0;
 window.addEventListener('scroll', function(){
+    
     let sc = (document.body.getBoundingClientRect()).top;
+    let pp = posicionDePartida;
     console.log(sc);
-    if ((document.body.getBoundingClientRect()).top > scrollPos){
+    console.log(`puntopartida ${pp}`);
+    
+    if ((document.body.getBoundingClientRect()).top > posicionDePartida){
+        posicionDePartida = (document.body.getBoundingClientRect()).top;
         nav.style.top = "0";
     }
 
     else{
-        scrollPos = (document.body.getBoundingClientRect()).top;
-        nav.style.top = "-40px";
+        posicionDePartida = (document.body.getBoundingClientRect()).top;   
+        nav.style.top = "-40px"; 
+        console.log("si está entrando en el else");      
     }
+    
 });
 
 window.onscroll = function() {

@@ -1,5 +1,3 @@
-var colorBg = "#292929";
-
 var edwins = document.getElementById('edwins');
 var pathSlogan = document.getElementById('pathSlogan');
 var logoSvg = document.getElementById('logoSvg');
@@ -10,7 +8,6 @@ const aNav = document.querySelectorAll('.aNav');
 var bodySelector = document.querySelector('body');
 var scrollBar = document.getElementById('scrollBar');
 var buttonScrollBar = document.getElementById('buttonScrollBar');
-
 var inkscapeContainer = document.getElementById('inkscapeContainer');
 var design = document.getElementById('design');
 var arrowL = document.getElementById('circleLeft');
@@ -19,23 +16,48 @@ var header = document.querySelector('header');
 var nameContainer = document.getElementById('nameContainer');
 var mapNav = document.getElementById('mapNav');
 var burger = document.querySelector('.boxIconBurger');
-
 var iconBurger = document.getElementById('iconBurger');
 var rect1 = document.getElementById('rectangle1');
 var rect2 = document.getElementById('rectangle2');
 var rect3 = document.getElementById('rectangle3');
-
 var nav = document.querySelector('nav');
-
 var liMapNav = document.querySelector('.liMapNav');
 var y = window.scrollY;
-
 var posicionDePartida = 0;
+var newCursor = document.querySelector(".newCursor");
+var sun = document.querySelector(".sun");
+const dark = document.getElementById("theme").href;
+var theme = document.getElementById("theme");
+var inkscapeImage = document.getElementById("inkscapeImage");
+
+sun.onclick = function(){
+    if(theme.href == dark){
+        theme.href = "css/lightTheme.css";
+        inkscapeImage.src = "images/inkscapeLight.png";
+    }
+    else{
+        theme.href = "css/darkTheme.css";
+        inkscapeImage.src = "images/inkscape.png";
+    }
+}
+
+const colorNewCursor = newCursor.style.backgroundColor;
+const sizeNewCursor = newCursor.style.fontSize;
+window.onmousemove = function(e){
+    
+    newCursor.style.top = e.pageY + 'px';
+    newCursor.style.left = e.pageX + 'px';
+    if(e.target.tagName == "LI" || e.target.tagName == "A" || e.target.tagName == "I"){
+        newCursor.classList.remove("cursorRadial");
+    }
+
+    else{
+        newCursor.classList.add("cursorRadial");
+    }
+}
+
 window.addEventListener('scroll', function(){
-    
-    let sc = (document.body.getBoundingClientRect()).top;
-    let pp = posicionDePartida;
-    
+
     if ((document.body.getBoundingClientRect()).top > posicionDePartida){
         posicionDePartida = (document.body.getBoundingClientRect()).top;
         nav.style.top = "0";
@@ -43,11 +65,12 @@ window.addEventListener('scroll', function(){
 
     else{
         posicionDePartida = (document.body.getBoundingClientRect()).top;   
-        nav.style.top = "-40px";    
+        nav.style.top = "-40px";
     }
     
 });
 
+var colorNav = nav.style.backgroundColor;
 window.onscroll = function() {
     y = window.scrollY;
     var hview = window.innerHeight;
@@ -61,7 +84,7 @@ window.onscroll = function() {
     if (window.matchMedia("(min-width: 721px)").matches) {
  
         if(y >= 20){
-            nav.style.backgroundColor = colorBg;
+            nav.style.backgroundColor = colorNav;
             nav.style.height = "30px";
             edwins.style.display = "none";
             pathSlogan.style.fill = "none";
@@ -89,7 +112,7 @@ window.onscroll = function() {
         }
     
         if(y < 20){
-            nav.style.backgroundColor = "transparent";
+            //nav.style.backgroundColor = "transparent";
             nav.style.height = "15vh";
             edwins.style.display = "initial";
             pathSlogan.style = "display: block";
@@ -121,7 +144,7 @@ window.onscroll = function() {
         if (window.matchMedia("(max-width: 720px)").matches) {
 
             if(y >= 20){
-                nav.style.backgroundColor = colorBg;
+                nav.style.backgroundColor = colorNav;
                 nav.style.height = "30px";
                 edwins.style.display = "none";
                 logoSvg.style = "width: 40px; margin-top:7px";
@@ -141,6 +164,7 @@ window.onscroll = function() {
         
             if(y < 20){
                 nav.style.backgroundColor = "transparent";
+                nav.style.boxShadow = "0 0 0 transparent";
                 nav.style.height = "80px";
                 edwins.style.display = "block";
                 logoSvg.style = "width: 60px; margin-top:0px";
@@ -244,7 +268,6 @@ arrowL.onclick = async function(){
     
     document.getElementById("design").src=`images/${n}.png`;
 }
-
 
 inkscapeContainer.onmouseover = function(){
     arrowL.style = "opacity:1";

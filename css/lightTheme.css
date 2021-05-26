@@ -1,0 +1,41 @@
+body, #mapNav, nav {
+  background-color: #fff;
+}
+
+.pathSlogan, .edwins {
+  fill: #292929;
+}
+
+a, span, p {
+  color: #292929;
+}
+
+li:hover {
+  background-color: #2929291f;
+}
+
+#imageBgGlobal {
+  opacity: 0.4;
+}
+
+nav {
+  -webkit-box-shadow: 5px 0 7px #2929298a;
+          box-shadow: 5px 0 7px #2929298a;
+}
+
+.newCursor {
+  background: -webkit-gradient(linear, left top, left bottom, from(#d932d2), to(#04c0ff));
+  background: linear-gradient(#d932d2, #04c0ff);
+}
+
+.cursorRadial {
+  background: -webkit-gradient(linear, left top, left bottom, from(#d932d2), to(#04c0ff));
+  background: linear-gradient(#d932d2, #04c0ff);
+}
+
+.sun {
+  background-color: #04c0ff;
+  -webkit-mask: url(/images/moon.svg);
+          mask: url(/images/moon.svg);
+}
+/*# sourceMappingURL=lightTheme.css.map */

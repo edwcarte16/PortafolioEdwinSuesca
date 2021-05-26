@@ -3,7 +3,6 @@ h2{
     color: $colorBlue;
 }
 p{
-    color: $colorText;
     text-align: justify;
 }
 
@@ -18,7 +17,6 @@ article{
         padding: 25px 4vw;
         display: grid;
         gap: 100px;
-        background-color: $colorTranslucerDark;
 
         .subSection{
             display: grid;
@@ -32,6 +30,14 @@ article{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
+}
+
+#controlBar *, .controlBar *, #controlsSpacer{
+    cursor: none !important;
+}
+
+div, bdi, span, button, input{
+    cursor: none !important;
 }
 
 #videoAbout{
@@ -54,7 +60,6 @@ article{
 
     .fab{font-size: 3em;}
     .fab:hover{
-        color: $colorText;
         cursor: pointer;
     }
 
@@ -85,7 +90,6 @@ article{
 
     .iconEd{font-size: 3em;}
     .iconEd:hover{
-        color: $colorText;
         cursor: pointer;
     }
 

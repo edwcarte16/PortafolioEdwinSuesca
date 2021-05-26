@@ -1,0 +1,42 @@
+$colorMagenta: #d932d2;
+$colorBlue: #04c0ff;
+$colorTexts: #292929;
+$colorTransp: #2929291f;
+$colorBg: #fff;
+
+body, #mapNav, nav{
+    background-color: $colorBg;
+}
+
+.pathSlogan, .edwins{
+    fill: $colorTexts;
+}
+
+a, span, p{
+    color: $colorTexts;
+}
+
+li:hover{
+    background-color: $colorTransp;
+}
+
+#imageBgGlobal{
+    opacity: 0.4;
+}
+
+nav{
+    box-shadow: 5px 0 7px #2929298a;
+}
+
+.newCursor{
+    background: linear-gradient($colorMagenta, $colorBlue);
+}
+
+.cursorRadial{
+    background: linear-gradient($colorMagenta, $colorBlue);
+}
+
+.sun{
+    background-color: $colorBlue;
+    mask: url(/images/moon.svg);
+}

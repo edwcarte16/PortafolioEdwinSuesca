@@ -1,0 +1,42 @@
+$colorMagenta: #d932d2;
+$colorBlue: #04c0ff;
+$colorTexts: white;
+$colorTransp: #ffffff0c;
+$colorBg: #292929;
+
+body, #mapNav, nav{
+    background-color: $colorBg;
+}
+
+.pathSlogan, .edwins{
+    fill: $colorTexts;
+}
+
+a, span, p{
+    color: $colorTexts;
+}
+
+li:hover{
+    background-color: $colorTransp;
+}
+
+#imageBgGlobal{
+    opacity: 0.2;
+}
+
+nav{
+    box-shadow: 5px 0 5px $colorBg;
+}
+
+.cursorRadial{
+    background: linear-gradient($colorBlue, $colorMagenta);
+}
+
+.newCursor{
+    background: linear-gradient($colorBlue, $colorMagenta);
+}
+
+.sun{
+    background-color: #ffffff6c;
+    mask: url(/images/sun.svg);
+}

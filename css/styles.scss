@@ -1,29 +1,44 @@
-@import "colorsDark";
 @import "keyframes";
 @import "articles";
 
-@mixin listStyles($orientation, $padTB, $padLR, $colorLi, $colorHover) {
+$colorMagenta: #d932d2;
+$colorBlue: #04c0ff;
+
+.cursorRadial{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    mask: url(/images/mask.svg);
+    z-index: 50000;
+    pointer-events: none;
+}
+
+.newCursor{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    transform: translate(-50%, 0);
+    mask: url(/images/mask.svg);
+    z-index: 50000;
+    pointer-events: none; 
+}
+
+@mixin listStyles($orientation, $padTB, $padLR) {
 
     ul{
         li{
             list-style: none;
             a, i{
                 text-decoration: none;
-                color: $colorLi;
                 font-size: 1em;
             }
 
             i{
                 font-size: 1.1em;
             }
-        }
-    
-        li:hover{
-            a, i{
-                color: $colorHover
-            }
-
-
         }
     }
 
@@ -51,6 +66,7 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
+    cursor: none !important;
 }
 
 *{
@@ -58,8 +74,6 @@
 }
 
 body{
-
-    background-color: $colorBackground;
     position: relative;
     overflow-x: hidden;
 
@@ -69,7 +83,6 @@ body{
         object-fit: cover;
         position: fixed;
         z-index: -1;
-        opacity: 0.2;
     }
 
     #scrollBar{
@@ -77,7 +90,7 @@ body{
         width: 1px;
         background: linear-gradient(0deg, transparent 0%, $colorBlue 20%, $colorMagenta 80%, transparent 100%);
         position: fixed;
-        left: 3vw;
+        left: 4vw;
         top: 50vh;
         transform: translateY(-50%);
         z-index: 20;
@@ -104,7 +117,6 @@ body{
         color: $colorBlue;
         font-weight: 600;
         text-transform: uppercase;
-        cursor: pointer;
     }
 
     button:hover{
@@ -119,7 +131,6 @@ body{
         z-index: 2;
         width: fit-content;
         height: 100%;
-        cursor: pointer;
         .logoSvg{
             width: 80px;
             transition: all 700ms ease;
@@ -139,10 +150,6 @@ body{
                 stroke: $colorMagenta;
                 stroke-dasharray: 314;
                 stroke-dashoffset: 314;
-            }
-
-            .edwins, .pathSlogan{
-                fill: $colorText;
             }
         }           
     }
@@ -180,12 +187,10 @@ body{
                     i{
                         font-size: 0em;
                         text-align: center;
-                        color: $colorText;
                         margin-bottom: 3px;
                     }
 
                     a{
-                        color: $colorText;
                         text-decoration: none;
                         font-size: 1em;
                         text-transform: uppercase;
@@ -207,12 +212,18 @@ body{
                 }
             }
 
+            .sun{
+                height: 30px;
+                min-width: 30px;
+                margin-right: 70px;
+                z-index: 3000;
+            }
+
             .boxIconBurger{
                 position: absolute;
                 top: 50%;
                 right: 50px;
                 transform: translateY(-50%);
-                cursor: pointer;
                 
                 #iconBurger{
                     position: relative;
@@ -249,11 +260,9 @@ body{
             perspective: 1000px;
 
             #circleLeft{
-                cursor: pointer;
                 position: relative;
                 height: 60px;
                 width: 60px;
-                background-color: $colorBackground;
                 border: 2px solid $colorBlue;
                 border-radius: 100%;
                 position: absolute;
@@ -277,9 +286,7 @@ body{
             }
 
             #circleRight{
-                cursor: pointer;
                 position: relative;
-                background-color: $colorBackground;
                 border: 2px solid $colorBlue;
                 right: 5%;
                 height: 45px;
@@ -366,7 +373,6 @@ body{
                 font-family: "Montserrat";
                 font-weight: 300;
                 font-size: 1em;
-                color: $colorText;
                 max-width: 450px;
             }
             button{
@@ -384,6 +390,14 @@ body{
 
     @media (max-width: 720px){
 
+        .newCursor, #cursorRadial{
+            display: none;
+        }
+
+        *{
+            cursor: auto;
+        }
+
         #mapNav{
             clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
         }
@@ -399,7 +413,7 @@ body{
                 align-items: center;
                 height: 80px;
                 width: 100vw;
-                background-color: transparent;
+
                 .boxLogo{
                     padding-top: 9px;
                     width: fit-content;
@@ -478,8 +492,6 @@ body{
     width: 100vw;
     max-width: 370px;
     clip-path: polygon(0 0, 95% 0, 95% 100%, 0% 100%);
-    background-color: $colorBackground;
-    border-right: 1px solid $colorTranslucer;
     left: -350px;
     top: 0;
     transition: left 1s;
@@ -498,12 +510,10 @@ body{
         margin: 45px 3% 45px 0;
     }
 
-    @include listStyles(v, 25px, 0, $colorText, $colorBlue);
+    @include listStyles(v, 25px, 0);
     .liMapNav{
         padding: 10px 25px;
-        cursor: pointer;
         overflow-y: hidden;
-        border-bottom: 1px solid $colorTranslucer;
         max-height: 40px;
         transition: all 700ms ease;
         overflow: hidden;
@@ -513,13 +523,11 @@ body{
         i{
             margin-right: 15px;
         }
-        @include listStyles(v, 25px, 0, $colorText, $colorMagenta);
+        @include listStyles(v, 25px, 0);
 
         li{
             padding: 10px 25px;
-            cursor: pointer;
             overflow-y: hidden;
-            border-bottom: 1px solid $colorTranslucer;
             a{
                 text-transform: uppercase;
             }
@@ -531,7 +539,6 @@ body{
 
     .liMapNav:hover{
         padding-top: 20px;
-        background-color: $colorTranslucer;
         max-height: 300px;
         .aMapNav{
             text-transform: uppercase;
@@ -544,7 +551,6 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: $colorDark1;
     padding: 20px;
     .boxLogo{
         svg{
@@ -566,7 +572,6 @@ footer{
         grid-template-columns: repeat(auto-fill, minmax(15em, 2fr));
         gap: 20px;
         a, span{
-            color:$colorLight6;
             text-align: center;
         }
     }

@@ -1,0 +1,41 @@
+body, #mapNav, nav {
+  background-color: #292929;
+}
+
+.pathSlogan, .edwins {
+  fill: white;
+}
+
+a, span, p {
+  color: white;
+}
+
+li:hover {
+  background-color: #ffffff0c;
+}
+
+#imageBgGlobal {
+  opacity: 0.2;
+}
+
+nav {
+  -webkit-box-shadow: 5px 0 5px #292929;
+          box-shadow: 5px 0 5px #292929;
+}
+
+.cursorRadial {
+  background: -webkit-gradient(linear, left top, left bottom, from(#04c0ff), to(#d932d2));
+  background: linear-gradient(#04c0ff, #d932d2);
+}
+
+.newCursor {
+  background: -webkit-gradient(linear, left top, left bottom, from(#04c0ff), to(#d932d2));
+  background: linear-gradient(#04c0ff, #d932d2);
+}
+
+.sun {
+  background-color: #ffffff6c;
+  -webkit-mask: url(/images/sun.svg);
+          mask: url(/images/sun.svg);
+}
+/*# sourceMappingURL=darkTheme.css.map */

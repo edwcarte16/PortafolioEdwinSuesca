@@ -146,7 +146,6 @@ h2 {
 }
 
 p {
-  color: white;
   text-align: justify;
 }
 
@@ -170,7 +169,6 @@ article section {
   display: -ms-grid;
   display: grid;
   gap: 100px;
-  background-color: #00000018;
 }
 
 article section .subSection {
@@ -186,6 +184,14 @@ article section .subSection {
     -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   }
+}
+
+#controlBar *, .controlBar *, #controlsSpacer {
+  cursor: none !important;
+}
+
+div, bdi, span, button, input {
+  cursor: none !important;
 }
 
 #videoAbout {
@@ -216,7 +222,6 @@ article section .subSection {
 }
 
 .iconsWeb .fab:hover {
-  color: white;
   cursor: pointer;
 }
 
@@ -257,7 +262,6 @@ article section .subSection {
 }
 
 .iconsMedia .iconEd:hover {
-  color: white;
   cursor: pointer;
 }
 
@@ -281,12 +285,39 @@ article section .subSection {
   color: #B145C9;
 }
 
+.cursorRadial {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-mask: url(/images/mask.svg);
+          mask: url(/images/mask.svg);
+  z-index: 50000;
+  pointer-events: none;
+}
+
+.newCursor {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-mask: url(/images/mask.svg);
+          mask: url(/images/mask.svg);
+  z-index: 50000;
+  pointer-events: none;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Montserrat";
+  cursor: none !important;
 }
 
 * {
@@ -294,7 +325,6 @@ article section .subSection {
 }
 
 body {
-  background-color: #292929;
   position: relative;
   overflow-x: hidden;
 }
@@ -306,7 +336,6 @@ body #imageBgGlobal {
      object-fit: cover;
   position: fixed;
   z-index: -1;
-  opacity: 0.2;
 }
 
 body #scrollBar {
@@ -315,7 +344,7 @@ body #scrollBar {
   background: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(20%, #04c0ff), color-stop(80%, #d932d2), to(transparent));
   background: linear-gradient(0deg, transparent 0%, #04c0ff 20%, #d932d2 80%, transparent 100%);
   position: fixed;
-  left: 3vw;
+  left: 4vw;
   top: 50vh;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -344,7 +373,6 @@ body button {
   color: #04c0ff;
   font-weight: 600;
   text-transform: uppercase;
-  cursor: pointer;
 }
 
 body button:hover {
@@ -364,7 +392,6 @@ body .boxLogo {
   width: -moz-fit-content;
   width: fit-content;
   height: 100%;
-  cursor: pointer;
 }
 
 body .boxLogo .logoSvg {
@@ -391,10 +418,6 @@ body .boxLogo .logoSvg .pathMagenta {
   stroke: #d932d2;
   stroke-dasharray: 314;
   stroke-dashoffset: 314;
-}
-
-body .boxLogo .logoSvg .edwins, body .boxLogo .logoSvg .pathSlogan {
-  fill: white;
 }
 
 body header {
@@ -452,12 +475,10 @@ body header nav ul li {
 body header nav ul li i {
   font-size: 0em;
   text-align: center;
-  color: white;
   margin-bottom: 3px;
 }
 
 body header nav ul li a {
-  color: white;
   text-decoration: none;
   font-size: 1em;
   text-transform: uppercase;
@@ -477,13 +498,19 @@ body header nav ul li:hover i {
   transition: font-size 300ms;
 }
 
+body header nav .sun {
+  height: 30px;
+  min-width: 30px;
+  margin-right: 70px;
+  z-index: 3000;
+}
+
 body header nav .boxIconBurger {
   position: absolute;
   top: 50%;
   right: 50px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  cursor: pointer;
 }
 
 body header nav .boxIconBurger #iconBurger {
@@ -526,11 +553,9 @@ body header #inkscapeContainer {
 }
 
 body header #inkscapeContainer #circleLeft {
-  cursor: pointer;
   position: relative;
   height: 60px;
   width: 60px;
-  background-color: #292929;
   border: 2px solid #04c0ff;
   border-radius: 100%;
   position: absolute;
@@ -557,9 +582,7 @@ body header #inkscapeContainer #circleLeft .triangleLeft {
 }
 
 body header #inkscapeContainer #circleRight {
-  cursor: pointer;
   position: relative;
-  background-color: #292929;
   border: 2px solid #04c0ff;
   right: 5%;
   height: 45px;
@@ -672,7 +695,6 @@ body header #nameContainer p {
   font-family: "Montserrat";
   font-weight: 300;
   font-size: 1em;
-  color: white;
   max-width: 450px;
 }
 
@@ -688,6 +710,12 @@ body header #nameContainer h1 {
 }
 
 @media (max-width: 720px) {
+  body .newCursor, body #cursorRadial {
+    display: none;
+  }
+  body * {
+    cursor: auto;
+  }
   body #mapNav {
     -webkit-clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
             clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
@@ -718,7 +746,6 @@ body header #nameContainer h1 {
             align-items: center;
     height: 80px;
     width: 100vw;
-    background-color: transparent;
   }
   body header nav .boxLogo {
     padding-top: 9px;
@@ -805,8 +832,6 @@ body header #nameContainer h1 {
   max-width: 370px;
   -webkit-clip-path: polygon(0 0, 95% 0, 95% 100%, 0% 100%);
           clip-path: polygon(0 0, 95% 0, 95% 100%, 0% 100%);
-  background-color: #292929;
-  border-right: 1px solid #ffffff0a;
   left: -350px;
   top: 0;
   -webkit-transition: left 1s;
@@ -846,16 +871,11 @@ body header #nameContainer h1 {
 
 #mapNav ul li a, #mapNav ul li i {
   text-decoration: none;
-  color: white;
   font-size: 1em;
 }
 
 #mapNav ul li i {
   font-size: 1.1em;
-}
-
-#mapNav ul li:hover a, #mapNav ul li:hover i {
-  color: #04c0ff;
 }
 
 #mapNav ul {
@@ -874,9 +894,7 @@ body header #nameContainer h1 {
 
 #mapNav .liMapNav {
   padding: 10px 25px;
-  cursor: pointer;
   overflow-y: hidden;
-  border-bottom: 1px solid #ffffff0a;
   max-height: 40px;
   -webkit-transition: all 700ms ease;
   transition: all 700ms ease;
@@ -897,16 +915,11 @@ body header #nameContainer h1 {
 
 #mapNav .liMapNav ul li a, #mapNav .liMapNav ul li i {
   text-decoration: none;
-  color: white;
   font-size: 1em;
 }
 
 #mapNav .liMapNav ul li i {
   font-size: 1.1em;
-}
-
-#mapNav .liMapNav ul li:hover a, #mapNav .liMapNav ul li:hover i {
-  color: #d932d2;
 }
 
 #mapNav .liMapNav ul {
@@ -925,9 +938,7 @@ body header #nameContainer h1 {
 
 #mapNav .liMapNav li {
   padding: 10px 25px;
-  cursor: pointer;
   overflow-y: hidden;
-  border-bottom: 1px solid #ffffff0a;
 }
 
 #mapNav .liMapNav li a {
@@ -940,7 +951,6 @@ body header #nameContainer h1 {
 
 #mapNav .liMapNav:hover {
   padding-top: 20px;
-  background-color: #ffffff0a;
   max-height: 300px;
 }
 
@@ -962,7 +972,6 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #0e0e0e;
   padding: 20px;
 }
 
@@ -991,7 +1000,6 @@ footer section {
 }
 
 footer section a, footer section span {
-  color: #545454;
   text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */

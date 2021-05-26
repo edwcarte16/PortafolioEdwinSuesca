@@ -21,7 +21,7 @@ li:hover{
 }
 
 #imageBgGlobal{
-    opacity: 0.4;
+    opacity: 0.25;
 }
 
 nav{
@@ -32,11 +32,10 @@ nav{
     background: linear-gradient($colorMagenta, $colorBlue);
 }
 
-.cursorRadial{
+.cursorPointer{
     background: linear-gradient($colorMagenta, $colorBlue);
 }
 
 .sun{
-    background-color: $colorBlue;
-    mask: url(/images/moon.svg);
+    color: $colorBlue;
 }

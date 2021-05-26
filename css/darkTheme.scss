@@ -28,7 +28,7 @@ nav{
     box-shadow: 5px 0 5px $colorBg;
 }
 
-.cursorRadial{
+.cursorPointer{
     background: linear-gradient($colorBlue, $colorMagenta);
 }
 
@@ -37,6 +37,5 @@ nav{
 }
 
 .sun{
-    background-color: #ffffff6c;
-    mask: url(/images/sun.svg);
+    color: #ffffff6c;
 }

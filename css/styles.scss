@@ -4,13 +4,13 @@
 $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
 
-.cursorRadial{
+.cursorPointer{
     position: absolute;
     height: 40px;
     width: 40px;
     border-radius: 100%;
-    transform: translate(-50%, -50%);
-    mask: url(/images/mask.svg);
+    transform: translate(-50%, 0);
+    mask: url(/images/hand.svg);
     z-index: 50000;
     pointer-events: none;
 }
@@ -21,7 +21,7 @@ $colorBlue: #04c0ff;
     width: 40px;
     border-radius: 100%;
     transform: translate(-50%, 0);
-    mask: url(/images/mask.svg);
+    mask: url(/images/cursor.svg);
     z-index: 50000;
     pointer-events: none; 
 }
@@ -66,16 +66,17 @@ $colorBlue: #04c0ff;
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
-    cursor: none !important;
+    -webkit-tap-highlight-color: transparent;
 }
 
-*{
-    -webkit-tap-highlight-color: transparent;
+.noNewCursor{
+    cursor: auto;
 }
 
 body{
     position: relative;
     overflow-x: hidden;
+    cursor: none;
 
     #imageBgGlobal{
         min-height: 100vh;
@@ -213,8 +214,7 @@ body{
             }
 
             .sun{
-                height: 30px;
-                min-width: 30px;
+                font-size: 2em;
                 margin-right: 70px;
                 z-index: 3000;
             }
@@ -389,14 +389,6 @@ body{
     }
 
     @media (max-width: 720px){
-
-        .newCursor, #cursorRadial{
-            display: none;
-        }
-
-        *{
-            cursor: auto;
-        }
 
         #mapNav{
             clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);

@@ -285,15 +285,15 @@ div, bdi, span, button, input {
   color: #B145C9;
 }
 
-.cursorRadial {
+.cursorPointer {
   position: absolute;
   height: 40px;
   width: 40px;
   border-radius: 100%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-mask: url(/images/mask.svg);
-          mask: url(/images/mask.svg);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  -webkit-mask: url(/images/hand.svg);
+          mask: url(/images/hand.svg);
   z-index: 50000;
   pointer-events: none;
 }
@@ -305,8 +305,8 @@ div, bdi, span, button, input {
   border-radius: 100%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -webkit-mask: url(/images/mask.svg);
-          mask: url(/images/mask.svg);
+  -webkit-mask: url(/images/cursor.svg);
+          mask: url(/images/cursor.svg);
   z-index: 50000;
   pointer-events: none;
 }
@@ -317,16 +317,17 @@ div, bdi, span, button, input {
   margin: 0;
   padding: 0;
   font-family: "Montserrat";
-  cursor: none !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
-* {
-  -webkit-tap-highlight-color: transparent;
+.noNewCursor {
+  cursor: auto;
 }
 
 body {
   position: relative;
   overflow-x: hidden;
+  cursor: none;
 }
 
 body #imageBgGlobal {
@@ -499,8 +500,7 @@ body header nav ul li:hover i {
 }
 
 body header nav .sun {
-  height: 30px;
-  min-width: 30px;
+  font-size: 2em;
   margin-right: 70px;
   z-index: 3000;
 }
@@ -710,12 +710,6 @@ body header #nameContainer h1 {
 }
 
 @media (max-width: 720px) {
-  body .newCursor, body #cursorRadial {
-    display: none;
-  }
-  body * {
-    cursor: auto;
-  }
   body #mapNav {
     -webkit-clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
             clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);

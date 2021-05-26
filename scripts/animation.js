@@ -29,6 +29,9 @@ var sun = document.querySelector(".sun");
 const dark = document.getElementById("theme").href;
 var theme = document.getElementById("theme");
 var inkscapeImage = document.getElementById("inkscapeImage");
+var device = navigator.vendor;
+const colorNewCursor = newCursor.style.backgroundColor;
+const sizeNewCursor = newCursor.style.fontSize;
 
 sun.onclick = function(){
     if(theme.href == dark){
@@ -41,20 +44,30 @@ sun.onclick = function(){
     }
 }
 
-const colorNewCursor = newCursor.style.backgroundColor;
-const sizeNewCursor = newCursor.style.fontSize;
-window.onmousemove = function(e){
-    
-    newCursor.style.top = e.pageY + 'px';
-    newCursor.style.left = e.pageX + 'px';
-    if(e.target.tagName == "LI" || e.target.tagName == "A" || e.target.tagName == "I"){
-        newCursor.classList.remove("cursorRadial");
+document.addEventListener("mousemove", cursor);
+
+function cursor(e){
+
+    if (/android/i.test(device)) {
+        bodySelector.classList.add("noNewCursor");
     }
 
     else{
-        newCursor.classList.add("cursorRadial");
+        newCursor.style.top = e.pageY + 'px';
+        newCursor.style.left = e.pageX + 'px';
+        var classN = e.target;
+        if(e.target.tagName == "LI" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "sun"){
+            newCursor.classList.remove("newCursor");
+            newCursor.classList.add("cursorPointer");
+        }
+        
+        else{
+            newCursor.classList.add("newCursor");
+            newCursor.classList.remove("cursorPointer");
+        }
     }
 }
+
 
 window.addEventListener('scroll', function(){
 

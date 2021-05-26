@@ -23,7 +23,7 @@ nav {
           box-shadow: 5px 0 5px #292929;
 }
 
-.cursorRadial {
+.cursorPointer {
   background: -webkit-gradient(linear, left top, left bottom, from(#04c0ff), to(#d932d2));
   background: linear-gradient(#04c0ff, #d932d2);
 }
@@ -34,8 +34,6 @@ nav {
 }
 
 .sun {
-  background-color: #ffffff6c;
-  -webkit-mask: url(/images/sun.svg);
-          mask: url(/images/sun.svg);
+  color: #ffffff6c;
 }
 /*# sourceMappingURL=darkTheme.css.map */

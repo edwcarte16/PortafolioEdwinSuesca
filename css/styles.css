@@ -318,6 +318,7 @@ div, bdi, span, button, input {
   padding: 0;
   font-family: "Montserrat";
   -webkit-tap-highlight-color: transparent;
+  cursor: none;
 }
 
 .noNewCursor {
@@ -499,7 +500,7 @@ body header nav ul li:hover i {
   transition: font-size 300ms;
 }
 
-body header nav .sun {
+body header nav .changeTheme {
   font-size: 2em;
   margin-right: 70px;
   z-index: 3000;

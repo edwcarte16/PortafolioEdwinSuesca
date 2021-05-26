@@ -23,7 +23,7 @@ $colorBlue: #04c0ff;
     transform: translate(-50%, 0);
     mask: url(/images/cursor.svg);
     z-index: 50000;
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 @mixin listStyles($orientation, $padTB, $padLR) {
@@ -67,6 +67,7 @@ $colorBlue: #04c0ff;
     padding: 0;
     font-family: "Montserrat";
     -webkit-tap-highlight-color: transparent;
+    cursor: none;
 }
 
 .noNewCursor{
@@ -213,7 +214,7 @@ body{
                 }
             }
 
-            .sun{
+            .changeTheme{
                 font-size: 2em;
                 margin-right: 70px;
                 z-index: 3000;

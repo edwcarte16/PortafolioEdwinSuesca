@@ -6,6 +6,7 @@ const liNav = document.querySelectorAll('.liNav');
 const iconsNav = document.querySelectorAll('.iconsNav');
 const aNav = document.querySelectorAll('.aNav');
 var bodySelector = document.querySelector('body');
+var aselector = document.querySelector('a');
 var scrollBar = document.getElementById('scrollBar');
 var buttonScrollBar = document.getElementById('buttonScrollBar');
 var inkscapeContainer = document.getElementById('inkscapeContainer');
@@ -25,7 +26,7 @@ var liMapNav = document.querySelector('.liMapNav');
 var y = window.scrollY;
 var posicionDePartida = 0;
 var newCursor = document.querySelector(".newCursor");
-var sun = document.querySelector(".sun");
+var changeTheme = document.querySelector(".changeTheme");
 const dark = document.getElementById("theme").href;
 var theme = document.getElementById("theme");
 var inkscapeImage = document.getElementById("inkscapeImage");
@@ -33,7 +34,7 @@ var device = navigator.vendor;
 const colorNewCursor = newCursor.style.backgroundColor;
 const sizeNewCursor = newCursor.style.fontSize;
 
-sun.onclick = function(){
+changeTheme.onclick = function(){
     if(theme.href == dark){
         theme.href = "css/lightTheme.css";
         inkscapeImage.src = "images/inkscapeLight.png";
@@ -49,14 +50,17 @@ document.addEventListener("mousemove", cursor);
 function cursor(e){
 
     if (/android/i.test(device)) {
+        aselector.classList.add("noNewCursor");
         bodySelector.classList.add("noNewCursor");
     }
 
     else{
+        aselector.classList.remove("noNewCursor");
+        bodySelector.classList.remove("noNewCursor");
         newCursor.style.top = e.pageY + 'px';
         newCursor.style.left = e.pageX + 'px';
         var classN = e.target;
-        if(e.target.tagName == "LI" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "sun"){
+        if(e.target.tagName == "LI" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme"){
             newCursor.classList.remove("newCursor");
             newCursor.classList.add("cursorPointer");
         }

@@ -10,10 +10,6 @@ a, span, p {
   color: #292929;
 }
 
-li:hover {
-  background-color: #2929291f;
-}
-
 #imageBgGlobal {
   opacity: 0.25;
 }
@@ -35,5 +31,39 @@ nav {
 
 .changeTheme {
   color: #04c0ff;
+}
+
+.changeTheme:hover {
+  color: #d932d2;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.liMapNav {
+  border-bottom: 1px solid #04c0ff10;
+}
+
+.liMapNav .aMapNav, .liMapNav i {
+  color: #292929;
+}
+
+.liMapNav ul a {
+  color: #292929;
+}
+
+.liMapNav ul li {
+  border-bottom: 1px solid #04c0ff10;
+}
+
+.liMapNav ul li:hover a {
+  color: #04c0ff;
+}
+
+.liMapNav:hover {
+  background-color: #04c0ff10;
+}
+
+.liMapNav:hover .aMapNav, .liMapNav:hover i {
+  color: #d932d2;
 }
 /*# sourceMappingURL=lightTheme.css.map */

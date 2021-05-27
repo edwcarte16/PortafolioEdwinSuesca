@@ -59,9 +59,6 @@ div, bdi, span, button, input{
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 
     .fab{font-size: 3em;}
-    .fab:hover{
-        cursor: pointer;
-    }
 
     .fa-css3-alt{
         color: #31A4D5;
@@ -89,9 +86,6 @@ div, bdi, span, button, input{
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
 
     .iconEd{font-size: 3em;}
-    .iconEd:hover{
-        cursor: pointer;
-    }
 
     .iconEd-inkscape{
         color: #000000;

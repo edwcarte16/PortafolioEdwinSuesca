@@ -221,10 +221,6 @@ div, bdi, span, button, input {
   font-size: 3em;
 }
 
-.iconsWeb .fab:hover {
-  cursor: pointer;
-}
-
 .iconsWeb .fa-css3-alt {
   color: #31A4D5;
 }
@@ -259,10 +255,6 @@ div, bdi, span, button, input {
 
 .iconsMedia .iconEd {
   font-size: 3em;
-}
-
-.iconsMedia .iconEd:hover {
-  cursor: pointer;
 }
 
 .iconsMedia .iconEd-inkscape {
@@ -478,14 +470,17 @@ body header nav ul li i {
   font-size: 0em;
   text-align: center;
   margin-bottom: 3px;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  color: transparent;
 }
 
 body header nav ul li a {
   text-decoration: none;
   font-size: 1em;
   text-transform: uppercase;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 
 body header nav ul li:hover a {
@@ -496,14 +491,13 @@ body header nav ul li:hover i {
   font-size: 1.5em;
   text-align: center;
   color: #d932d2;
-  -webkit-transition: font-size 300ms;
-  transition: font-size 300ms;
 }
 
 body header nav .changeTheme {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-right: 70px;
   z-index: 3000;
+  padding: 7px;
 }
 
 body header nav .boxIconBurger {
@@ -888,7 +882,7 @@ body header #nameContainer h1 {
 }
 
 #mapNav .liMapNav {
-  padding: 10px 25px;
+  padding: 15px 25px;
   overflow-y: hidden;
   max-height: 40px;
   -webkit-transition: all 700ms ease;

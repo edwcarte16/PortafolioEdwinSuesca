@@ -2,6 +2,7 @@ var edwins = document.getElementById('edwins');
 var pathSlogan = document.getElementById('pathSlogan');
 var logoSvg = document.getElementById('logoSvg');
 var boxLogo = document.getElementById('boxLogo');
+var boxLogoClass = document.querySelector('.boxLogo');
 const liNav = document.querySelectorAll('.liNav');
 const iconsNav = document.querySelectorAll('.iconsNav');
 const aNav = document.querySelectorAll('.aNav');
@@ -33,6 +34,7 @@ var inkscapeImage = document.getElementById("inkscapeImage");
 var device = navigator.vendor;
 const colorNewCursor = newCursor.style.backgroundColor;
 const sizeNewCursor = newCursor.style.fontSize;
+var boxLogo = document.querySelector(".boxLogo");
 
 changeTheme.onclick = function(){
     if(theme.href == dark){
@@ -49,7 +51,7 @@ document.addEventListener("mousemove", cursor);
 
 function cursor(e){
 
-    if (/android/i.test(device)) {
+    if (/android/i.test(device) || /iPad|iPhone|iPod/.test(device)) {
         aselector.classList.add("noNewCursor");
         bodySelector.classList.add("noNewCursor");
     }
@@ -60,7 +62,7 @@ function cursor(e){
         newCursor.style.top = e.pageY + 'px';
         newCursor.style.left = e.pageX + 'px';
         var classN = e.target;
-        if(e.target.tagName == "LI" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme"){
+        if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
             newCursor.classList.remove("newCursor");
             newCursor.classList.add("cursorPointer");
         }

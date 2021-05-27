@@ -66,4 +66,30 @@ nav {
 .liMapNav:hover .aMapNav, .liMapNav:hover i {
   color: #d932d2;
 }
+
+.iconsMedia div:hover span:hover {
+  color: #292929;
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.iconsMedia div:hover #inkscapeIcon {
+  color: #04c0ff;
+}
+
+.iconsWeb div:hover i:hover {
+  color: #292929;
+  text-shadow: 0 0 3px #00000041;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.iconsWeb div:hover #githubIcon {
+  color: #04c0ff;
+}
+
+footer {
+  background-color: #fff;
+}
 /*# sourceMappingURL=lightTheme.css.map */

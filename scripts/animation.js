@@ -145,7 +145,7 @@ window.onscroll = function() {
                 i.style.display = "initial";
             });
 
-            if(mapNav.style.left == "-350px"){
+            if(mapNav.style.left == "-400px"){
                 rect2.style.width = "100%";
                 rect1.style.transform = "translateY(0) rotate(0)";
                 rect3.style.transform = "translateY(0) rotate(0)";
@@ -188,7 +188,7 @@ window.onscroll = function() {
                 edwins.style.display = "block";
                 logoSvg.style = "width: 60px; margin-top:0px";
 
-                if(mapNav.style.left == "-350px"){
+                if(mapNav.style.left == "-400px"){
                     rect2.style.width = "100%";
                     rect1.style.transform = "translateY(0) rotate(0)";
                     rect3.style.transform = "translateY(0) rotate(0)";
@@ -208,7 +208,7 @@ document.addEventListener("click", function(event){
     var clic = event.target;
     var clicName = event.target.className;
     var position = mapNav.style.left;
-    if(position == "-350px" && (clic === rect1 || clic === rect2 || clic === rect3 || clic === iconBurger)){
+    if(position == "-400px" && (clic === rect1 || clic === rect2 || clic === rect3 || clic === iconBurger)){
         mapNav.style = "left:0";
         boxLogo.style.zIndex = "0";
         rect1.style.transform = "translateY(12.5px) rotate(-45deg)";
@@ -220,7 +220,7 @@ document.addEventListener("click", function(event){
         var position = mapNav.style.left;
         if(position == "0px" && clicName != "UL" && clicName != "liMapNav" && clicName != "aMapNav" && clic != mapNav){
             y = window.scrollY;
-            mapNav.style = "left:-350px";
+            mapNav.style = "left:-400px";
             boxLogo.style.opacity = "1";
             if(y < 20){
                 rect2.style.width = "100%";
@@ -244,7 +244,7 @@ function esperar(ms) {
   }
 
 window.onload = async function(){
-    mapNav.style.left = "-350px";
+    mapNav.style.left = "-400px";
     await esperar(2000);
     design.style = "opacity:1";
     if (window.matchMedia("(max-width: 720px)").matches) {

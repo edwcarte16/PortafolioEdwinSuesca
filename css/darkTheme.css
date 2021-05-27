@@ -1,5 +1,5 @@
 body, #mapNav, nav {
-  background-color: #292929;
+  background-color: #1d1d1d;
 }
 
 .pathSlogan, .edwins {
@@ -19,8 +19,8 @@ a, span, p {
 }
 
 nav {
-  -webkit-box-shadow: 5px 0 5px #292929;
-          box-shadow: 5px 0 5px #292929;
+  -webkit-box-shadow: 5px 0 5px #1d1d1d;
+          box-shadow: 5px 0 5px #1d1d1d;
 }
 
 .cursorPointer {
@@ -69,5 +69,23 @@ nav {
 
 .liMapNav:hover .aMapNav, .liMapNav:hover i {
   color: #d932d2;
+}
+
+.iconsMedia div:hover span:hover {
+  color: white;
+  text-shadow: 0 0 10px #1d1d1d, 0 0 10px #1d1d1d;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.iconsWeb div:hover i:hover {
+  color: white;
+  text-shadow: 0 0 10px #1d1d1d, 0 0 10px #1d1d1d;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+footer {
+  background-color: #1d1d1d;
 }
 /*# sourceMappingURL=darkTheme.css.map */

@@ -2,7 +2,7 @@ $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
 $colorTexts: white;
 $colorTransp: #ffffff0c;
-$colorBg: #292929;
+$colorBg: #1d1d1d;
 
 body, #mapNav, nav{
     background-color: $colorBg;
@@ -73,6 +73,29 @@ nav{
     .aMapNav, i{
         color: $colorMagenta;
     }
+}
 
+.iconsMedia{
+    div:hover{
 
+        span:hover{
+            color: $colorTexts;
+            text-shadow: 0 0 10px $colorBg, 0 0 10px $colorBg;
+            transition: all 500ms ease;
+        }
+    }
+}
+
+.iconsWeb{
+    div:hover{
+        i:hover{
+            color: $colorTexts;
+            text-shadow: 0 0 10px $colorBg, 0 0 10px $colorBg;
+            transition: all 500ms ease;
+        }
+    }
+}
+
+footer{
+    background-color: $colorBg;
 }

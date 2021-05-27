@@ -68,6 +68,37 @@ nav{
     .aMapNav, i{
         color: $colorMagenta;
     }
+}
 
+.iconsMedia{
+    div:hover{
 
+        span:hover{
+            color: $colorTexts;
+            text-shadow: 0 0 10px $colorBg, 0 0 10px $colorBg;
+            transition: all 500ms ease;
+        }
+
+        #inkscapeIcon{
+            color:$colorBlue;
+        }
+    }
+}
+
+.iconsWeb{
+    div:hover{
+        i:hover{
+            color: $colorTexts;
+            text-shadow: 0 0 3px #00000041;
+            transition: all 500ms ease;
+        }
+
+        #githubIcon{
+            color:$colorBlue;
+        }
+    }
+}
+
+footer{
+    background-color: $colorBg;
 }

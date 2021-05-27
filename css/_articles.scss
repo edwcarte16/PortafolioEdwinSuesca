@@ -55,8 +55,9 @@ div, bdi, span, button, input{
 
 .iconsWeb{
     display: grid;
-    place-content: center;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+    gap: 20px;
 
     .fab{font-size: 3em;}
 
@@ -82,8 +83,9 @@ div, bdi, span, button, input{
 
 .iconsMedia{
     display: grid;
-    place-content: center;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+    gap: 20px;
 
     .iconEd{font-size: 3em;}
 
@@ -107,4 +109,3 @@ div, bdi, span, button, input{
         color: #B145C9;
     }
 }
-

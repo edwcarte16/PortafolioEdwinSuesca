@@ -26,41 +26,6 @@ $colorBlue: #04c0ff;
     pointer-events: none;
 }
 
-@mixin listStyles($orientation, $padTB, $padLR) {
-
-    ul{
-        li{
-            list-style: none;
-            a, i{
-                text-decoration: none;
-                font-size: 1em;
-            }
-
-            i{
-                font-size: 1.1em;
-            }
-        }
-    }
-
-    @if $orientation == h {
-        
-        ul{
-            display: flex;
-            padding: $padTB $padLR;
-            justify-content: space-between;
-        }
-    }
-
-    @if $orientation == v {
-        ul{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: $padTB $padLR;
-        }
-    }
-}
-
 *{
     box-sizing:border-box;
     margin: 0;
@@ -485,16 +450,17 @@ body{
     position:fixed;
     z-index: 1000;
     height: 100vh;
-    width: 100vw;
-    max-width: 370px;
+    width: 108vw;
+    max-width: 400px;
     clip-path: polygon(0 0, 95% 0, 95% 100%, 0% 100%);
-    left: -350px;
+    left: -400px;
     top: 0;
     transition: left 1s;
     transition-timing-function:cubic-bezier(0.77, 0, 0.175, 1);
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 
     .boxLogo{
         height: fit-content;
@@ -506,38 +472,44 @@ body{
         margin: 45px 3% 45px 0;
     }
 
-    @include listStyles(v, 25px, 0);
-    .liMapNav{
-        padding: 15px 25px;
-        overflow-y: hidden;
-        max-height: 40px;
-        transition: all 700ms ease;
-        overflow: hidden;
-        .aMapNav{
-            text-transform: uppercase;
-        }
-        i{
-            margin-right: 15px;
-        }
-        @include listStyles(v, 25px, 0);
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 0;
 
-        li{
-            padding: 10px 25px;
+        .liMapNav{
+            list-style: none;
+            padding: 20px 25px;
             overflow-y: hidden;
-            a{
+            max-height: 60px;
+            transition: all 700ms ease;
+            overflow: hidden;
+            .aMapNav{
                 text-transform: uppercase;
+                text-decoration: none;
+                font-size: 1.3em;
             }
             i{
-                margin-right: 15px;
+                margin-right: 20px;
+                font-size: 1.5em;
+            }
+    
+            li{
+                list-style: none;
+                padding: 10px 25px;
+                overflow-y: hidden;
+                a{
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: 1.1em;
+                }
             }
         }
-    }
-
-    .liMapNav:hover{
-        padding-top: 20px;
-        max-height: 300px;
-        .aMapNav{
-            text-transform: uppercase;
+    
+        .liMapNav:hover{
+            padding-top: 20px;
+            max-height: 360px;
         }
     }
 }

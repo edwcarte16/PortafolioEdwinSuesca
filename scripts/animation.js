@@ -1,40 +1,52 @@
-var edwins = document.getElementById('edwins');
-var pathSlogan = document.getElementById('pathSlogan');
-var logoSvg = document.getElementById('logoSvg');
-var boxLogo = document.getElementById('boxLogo');
-var boxLogoClass = document.querySelector('.boxLogo');
-const liNav = document.querySelectorAll('.liNav');
-const iconsNav = document.querySelectorAll('.iconsNav');
 const aNav = document.querySelectorAll('.aNav');
-var bodySelector = document.querySelector('body');
-var aselector = document.querySelector('a');
-var scrollBar = document.getElementById('scrollBar');
-var buttonScrollBar = document.getElementById('buttonScrollBar');
-var inkscapeContainer = document.getElementById('inkscapeContainer');
-var design = document.getElementById('design');
 var arrowL = document.getElementById('circleLeft');
 var arrowR = document.getElementById('circleRight');
-var header = document.querySelector('header');
-var nameContainer = document.getElementById('nameContainer');
-var mapNav = document.getElementById('mapNav');
+var aSelector = document.querySelector('a');
+var bodySelector = document.querySelector('body');
+var buttonSelector = document.querySelector('button');
+var boxLogo = document.querySelector(".boxLogo");
+var boxLogo = document.getElementById('boxLogo');
+var boxLogoClass = document.querySelector('.boxLogo');
 var burger = document.querySelector('.boxIconBurger');
+var buttonScrollBar = document.getElementById('buttonScrollBar');
+var changeTheme = document.querySelector(".changeTheme");
+const dark = document.getElementById("theme").href;
+var design = document.getElementById('design');
+var device = navigator.vendor;
+var edwins = document.getElementById('edwins');
+const iconsNav = document.querySelectorAll('.iconsNav');
 var iconBurger = document.getElementById('iconBurger');
+var inkscapeContainer = document.getElementById('inkscapeContainer');
+var inkscapeImage = document.getElementById("inkscapeImage");
+var header = document.querySelector('header');
+var logoSvg = document.getElementById('logoSvg');
+const liNav = document.querySelectorAll('.liNav');
+var liMapNav = document.querySelector('.liMapNav');
+var mapNav = document.getElementById('mapNav');
+var nameContainer = document.getElementById('nameContainer');
+var me = document.getElementById('me');
+var nav = document.querySelector('nav');
+var newCursor = document.querySelector(".newCursor");
+var pathSlogan = document.getElementById('pathSlogan');
+var posicionDePartida = 0;
 var rect1 = document.getElementById('rectangle1');
 var rect2 = document.getElementById('rectangle2');
 var rect3 = document.getElementById('rectangle3');
-var nav = document.querySelector('nav');
-var liMapNav = document.querySelector('.liMapNav');
-var y = window.scrollY;
-var posicionDePartida = 0;
-var newCursor = document.querySelector(".newCursor");
-var changeTheme = document.querySelector(".changeTheme");
-const dark = document.getElementById("theme").href;
+var scrollBar = document.getElementById('scrollBar');
 var theme = document.getElementById("theme");
-var inkscapeImage = document.getElementById("inkscapeImage");
-var device = navigator.vendor;
-const colorNewCursor = newCursor.style.backgroundColor;
-const sizeNewCursor = newCursor.style.fontSize;
-var boxLogo = document.querySelector(".boxLogo");
+var y = window.scrollY;
+
+window.onload = async function(){
+    mapNav.style.left = "-400px";
+    await esperar(2000);
+    design.style = "opacity:1";
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        inkscapeContainer.style.transform = "translateY(-300px)";
+        await esperar(1000);
+        inkscapeContainer.style.transform = "translateY(0px)";
+        nameContainer.style = "opacity:1";
+    }
+}
 
 changeTheme.onclick = function(){
     if(theme.href == dark){
@@ -47,21 +59,31 @@ changeTheme.onclick = function(){
     }
 }
 
+me.onclick = function defaultCursor(){
+    aSelector.classList.add("noNewCursor");
+    bodySelector.classList.add("noNewCursor");
+    buttonSelector.classList.add("noNewCursor");
+}
+
 document.addEventListener("mousemove", cursor);
 
 function cursor(e){
-
     if (/android/i.test(device) || /iPad|iPhone|iPod/.test(device)) {
-        aselector.classList.add("noNewCursor");
+        aSelector.classList.add("noNewCursor");
         bodySelector.classList.add("noNewCursor");
+        buttonSelector.classList.add("noNewCursor");
     }
 
     else{
-        aselector.classList.remove("noNewCursor");
+        buttonSelector.classList.remove("noNewCursor");
+        aSelector.classList.remove("noNewCursor");
         bodySelector.classList.remove("noNewCursor");
+        aSelector.classList.add("noCursor");
+        buttonSelector.classList.add("noCursor");
+        bodySelector.classList.add("noCursor");
         newCursor.style.top = e.pageY + 'px';
         newCursor.style.left = e.pageX + 'px';
-        var classN = e.target;
+        let classN = e.target;
         if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
             newCursor.classList.remove("newCursor");
             newCursor.classList.add("cursorPointer");
@@ -74,25 +96,9 @@ function cursor(e){
     }
 }
 
-
-window.addEventListener('scroll', function(){
-
-    if ((document.body.getBoundingClientRect()).top > posicionDePartida){
-        posicionDePartida = (document.body.getBoundingClientRect()).top;
-        nav.style.top = "0";
-    }
-
-    else{
-        posicionDePartida = (document.body.getBoundingClientRect()).top;   
-        nav.style.top = "-40px";
-    }
-});
-
-window.onresize = resize;
-
-async function resize()
+window.onresize = async function()
 {
-    if (window.matchMedia("(max-width: 720px)").matches) {
+    if (window.matchMedia("(max-width: 1000px)").matches) {
         inkscapeContainer.style.transform = "translateY(0px)";
         nameContainer.style = "opacity:1";
     }
@@ -111,12 +117,23 @@ async function resize()
         }
     }
 }
-  
-var colorNav = nav.style.backgroundColor;
+
 window.onscroll = function() {
+
+    if ((document.body.getBoundingClientRect()).top > posicionDePartida){
+        posicionDePartida = (document.body.getBoundingClientRect()).top;
+        nav.style.top = "0";
+    }
+
+    else{
+        posicionDePartida = (document.body.getBoundingClientRect()).top;   
+        nav.style.top = "-40px";
+    }
+
+    let colorNav = nav.style.backgroundColor;
     y = window.scrollY;
-    var hview = window.innerHeight;
-    var hBody = bodySelector.scrollHeight;
+    let hview = window.innerHeight;
+    let hBody = bodySelector.scrollHeight;
     let topButton = ((y-hview)*100)/(hBody-(hview*2));
     buttonScrollBar.style.top = `${topButton}%`;
     
@@ -238,9 +255,9 @@ window.onscroll = function() {
 }
 
 document.addEventListener("click", function(event){ 
-    var clic = event.target;
-    var clicName = event.target.className;
-    var position = mapNav.style.left;
+    let clic = event.target;
+    let clicName = event.target.className;
+    let position = mapNav.style.left;
     if(position == "-400px" && (clic === rect1 || clic === rect2 || clic === rect3 || clic === iconBurger)){
         mapNav.style = "left:0";
         boxLogo.style.zIndex = "0";
@@ -250,7 +267,7 @@ document.addEventListener("click", function(event){
     }
 
     else{
-        var position = mapNav.style.left;
+        position = mapNav.style.left;
         if(position == "0px" && clicName != "UL" && clicName != "liMapNav" && clicName != "aMapNav" && clic != mapNav){
             y = window.scrollY;
             mapNav.style = "left:-400px";
@@ -275,18 +292,6 @@ function esperar(ms) {
       resolve => setTimeout(resolve, ms)
     );
   }
-
-window.onload = async function(){
-    mapNav.style.left = "-400px";
-    await esperar(2000);
-    design.style = "opacity:1";
-    if (window.matchMedia("(max-width: 720px)").matches) {
-        inkscapeContainer.style.transform = "translateY(-300px)";
-        await esperar(1000);
-        inkscapeContainer.style.transform = "translateY(0px)";
-        nameContainer.style = "opacity:1";
-    }
-}
 
 arrowR.onclick = async function(){
     arrowR.style = "scale:0.2; opacity:1";

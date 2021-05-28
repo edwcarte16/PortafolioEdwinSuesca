@@ -32,12 +32,16 @@ $colorBlue: #04c0ff;
     padding: 0;
     font-family: "Montserrat";
     -webkit-tap-highlight-color: transparent;
-    cursor: none;
 }
 
 .noNewCursor{
-    cursor: auto;
+    cursor:auto;
 }
+
+.noCursor, a{
+    cursor:none;
+}
+
 @media screen and (min-width: 721px) and (max-width: 800px){
     .liNav{
         .aNav{font-size: 12pt;}
@@ -46,7 +50,6 @@ $colorBlue: #04c0ff;
 body{
     position: relative;
     overflow-x: hidden;
-    cursor: none;
 
     #imageBgGlobal{
         min-height: 100vh;
@@ -345,8 +348,8 @@ body{
                 text-align: center;
                 font-family: "Montserrat";
                 font-weight: 300;
-                font-size: 1em;
-                max-width: 450px;
+                font-size: 1.4em;
+                max-width: 500px;
             }
             button{
                 margin-top: 35px;
@@ -361,7 +364,7 @@ body{
         }
     }
  
-    @media (max-width: 720px){
+    @media (max-width: 1000px){
 
         #mapNav{
             clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);

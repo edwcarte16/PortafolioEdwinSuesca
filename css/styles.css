@@ -147,13 +147,12 @@ h2 {
 
 p {
   text-align: justify;
+  font-size: 1.4em;
 }
 
 article {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(500px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -177,21 +176,27 @@ article section .subSection {
   gap: 20px;
 }
 
-@media (max-width: 720px) {
+@media (min-width: 1001px) {
   article {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(280px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+  article .subSection {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
   }
 }
 
-#controlBar *, .controlBar *, #controlsSpacer {
-  cursor: none !important;
-}
-
-div, bdi, span, button, input {
-  cursor: none !important;
+@media (max-width: 1000px) {
+  article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
 }
 
 #videoAbout {
@@ -312,11 +317,14 @@ div, bdi, span, button, input {
   padding: 0;
   font-family: "Montserrat";
   -webkit-tap-highlight-color: transparent;
-  cursor: none;
 }
 
 .noNewCursor {
   cursor: auto;
+}
+
+.noCursor, a {
+  cursor: none;
 }
 
 @media screen and (min-width: 721px) and (max-width: 800px) {
@@ -328,7 +336,6 @@ div, bdi, span, button, input {
 body {
   position: relative;
   overflow-x: hidden;
-  cursor: none;
 }
 
 body #imageBgGlobal {
@@ -697,8 +704,8 @@ body header #nameContainer p {
   text-align: center;
   font-family: "Montserrat";
   font-weight: 300;
-  font-size: 1em;
-  max-width: 450px;
+  font-size: 1.4em;
+  max-width: 500px;
 }
 
 body header #nameContainer button {
@@ -712,7 +719,7 @@ body header #nameContainer h1 {
   font-size: 2em;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1000px) {
   body #mapNav {
     -webkit-clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);
             clip-path: polygon(75% 0, 95% 20%, 95% 100%, 0 100%, 0 0);

@@ -308,8 +308,8 @@ article section .subSection {
   border-radius: 100%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  -webkit-mask: url(/images/cursor.svg);
-          mask: url(/images/cursor.svg);
+  -webkit-clip-path: url(/images/cursor.svg);
+          clip-path: url(/images/cursor.svg);
   z-index: 50000;
   pointer-events: none;
 }

@@ -61,6 +61,9 @@ window.onload = async function(){
     aSubMapNav.forEach(a => {
         a.style.cursor = "none";
     });
+
+    newCursor.style.display = "block";
+    newCursor.style.zIndex = "50000";
 }
 
 changeTheme.onclick = function(){
@@ -127,7 +130,6 @@ function cursor(e){
     if (/android/i.test(device) || /iPad|iPhone|iPod/.test(device)) {
         bodySelector.classList.add("noNewCursor");
         buttonSelector.classList.add("noNewCursor");
-        SwitchCursor.style.display = "none";
     }
 
     else{
@@ -192,7 +194,6 @@ window.onscroll = function() {
         nav.style.top = "-40px";
     }
 
-    
     y = window.scrollY;
     var hview = window.innerHeight;
     var hBody = bodySelector.scrollHeight;
@@ -233,7 +234,6 @@ window.onscroll = function() {
         }
     
         if(y < 20){
-            //nav.style.backgroundColor = "transparent";
             nav.style.height = "15vh";
             edwins.style.display = "initial";
             pathSlogan.style = "display: block";

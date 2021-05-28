@@ -21,7 +21,7 @@ $colorBlue: #04c0ff;
     width: 40px;
     border-radius: 100%;
     transform: translate(-50%, 0);
-    mask: url(/images/cursor.svg);
+    clip-path: url(/images/cursor.svg);
     z-index: 50000;
     pointer-events: none;
 }

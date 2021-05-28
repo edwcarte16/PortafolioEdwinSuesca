@@ -92,4 +92,20 @@ nav {
 footer {
   background-color: #fff;
 }
+
+#SwitchCursor {
+  border: 1px solid #04c0ff;
+}
+
+#SwitchCursor span, #SwitchCursor i {
+  color: #04c0ff;
+}
+
+#SwitchCursor:hover {
+  border: 1px solid #d932d2;
+}
+
+#SwitchCursor:hover span, #SwitchCursor:hover i {
+  color: #d932d2;
+}
 /*# sourceMappingURL=lightTheme.css.map */

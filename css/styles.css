@@ -191,6 +191,10 @@ article section .subSection {
 }
 
 @media (max-width: 1000px) {
+  p {
+    text-align: justify;
+    font-size: 1em;
+  }
   article {
     display: -ms-grid;
     display: grid;
@@ -323,7 +327,7 @@ article section .subSection {
   cursor: auto;
 }
 
-.noCursor, a {
+.noCursor {
   cursor: none;
 }
 
@@ -825,6 +829,7 @@ body header #nameContainer h1 {
   }
   body header #nameContainer p {
     max-width: 400px;
+    font-size: 1em;
   }
 }
 
@@ -920,6 +925,28 @@ body header #nameContainer h1 {
 #mapNav ul .liMapNav:hover {
   padding-top: 20px;
   max-height: 360px;
+}
+
+#mapNav #SwitchCursor {
+  margin-top: 40px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 15px;
+  place-items: center;
+  padding: 15px;
+  border-radius: 30px;
+}
+
+#mapNav #SwitchCursor i {
+  font-size: 1.4em;
+}
+
+#mapNav #SwitchCursor span {
+  font-size: 0.8em;
 }
 
 footer {

@@ -1,7 +1,8 @@
 const aNav = document.querySelectorAll('.aNav');
 var arrowL = document.getElementById('circleLeft');
 var arrowR = document.getElementById('circleRight');
-var aSelector = document.querySelector('a');
+var aMapNav = document.querySelectorAll('.aMapNav');
+var aSubMapNav = document.querySelectorAll('.aSubMapNav');
 var bodySelector = document.querySelector('body');
 var buttonSelector = document.querySelector('button');
 var boxLogo = document.querySelector(".boxLogo");
@@ -10,6 +11,7 @@ var boxLogoClass = document.querySelector('.boxLogo');
 var burger = document.querySelector('.boxIconBurger');
 var buttonScrollBar = document.getElementById('buttonScrollBar');
 var changeTheme = document.querySelector(".changeTheme");
+var cursorCustom = true;
 const dark = document.getElementById("theme").href;
 var design = document.getElementById('design');
 var device = navigator.vendor;
@@ -24,7 +26,7 @@ const liNav = document.querySelectorAll('.liNav');
 var liMapNav = document.querySelector('.liMapNav');
 var mapNav = document.getElementById('mapNav');
 var nameContainer = document.getElementById('nameContainer');
-var me = document.getElementById('me');
+var SwitchCursor = document.getElementById('SwitchCursor');
 var nav = document.querySelector('nav');
 var newCursor = document.querySelector(".newCursor");
 var pathSlogan = document.getElementById('pathSlogan');
@@ -40,12 +42,24 @@ window.onload = async function(){
     mapNav.style.left = "-400px";
     await esperar(2000);
     design.style = "opacity:1";
-    if (window.matchMedia("(max-width: 720px)").matches) {
+    if (window.matchMedia("(max-width: 1000px)").matches) {
         inkscapeContainer.style.transform = "translateY(-300px)";
-        await esperar(1000);
+        await esperar(500);
         inkscapeContainer.style.transform = "translateY(0px)";
         nameContainer.style = "opacity:1";
     }
+
+    aNav.forEach(a => {
+        a.style.cursor = "none";
+    });
+
+    aMapNav.forEach(a => {
+        a.style.cursor = "none";
+    });
+
+    aSubMapNav.forEach(a => {
+        a.style.cursor = "none";
+    });
 }
 
 changeTheme.onclick = function(){
@@ -59,39 +73,86 @@ changeTheme.onclick = function(){
     }
 }
 
-me.onclick = function defaultCursor(){
-    aSelector.classList.add("noNewCursor");
-    bodySelector.classList.add("noNewCursor");
-    buttonSelector.classList.add("noNewCursor");
+SwitchCursor.onclick = function defaultCursor(){
+    switch(cursorCustom){
+
+        case true:
+            bodySelector.classList.add("noNewCursor");
+            buttonSelector.classList.add("noNewCursor");
+            bodySelector.classList.remove("noCursor");
+            buttonSelector.classList.remove("noCursor");
+            newCursor.style.display = "none";
+            aNav.forEach(a => {
+                a.style.cursor = "pointer";
+            });
+
+            aMapNav.forEach(a => {
+                a.style.cursor = "pointer";
+            });
+
+            aSubMapNav.forEach(a => {
+                a.style.cursor = "pointer";
+            });
+            console.log(cursorCustom);
+            cursorCustom = false;
+        break;
+        case false:
+            bodySelector.classList.remove("noNewCursor");
+            buttonSelector.classList.remove("noNewCursor");
+            bodySelector.classList.add("noCursor");
+            buttonSelector.classList.add("noCursor");
+            newCursor.style.display = "block";
+            aNav.forEach(a => {
+                a.style.cursor = "none";
+            });
+
+            aMapNav.forEach(a => {
+                a.style.cursor = "none";
+            });
+
+            aSubMapNav.forEach(a => {
+                a.style.cursor = "none";
+            });
+
+            console.log(cursorCustom);
+            cursorCustom = true;
+        break; 
+    }
 }
 
 document.addEventListener("mousemove", cursor);
 
 function cursor(e){
     if (/android/i.test(device) || /iPad|iPhone|iPod/.test(device)) {
-        aSelector.classList.add("noNewCursor");
         bodySelector.classList.add("noNewCursor");
         buttonSelector.classList.add("noNewCursor");
+        SwitchCursor.style.display = "none";
     }
 
     else{
-        buttonSelector.classList.remove("noNewCursor");
-        aSelector.classList.remove("noNewCursor");
-        bodySelector.classList.remove("noNewCursor");
-        aSelector.classList.add("noCursor");
-        buttonSelector.classList.add("noCursor");
-        bodySelector.classList.add("noCursor");
-        newCursor.style.top = e.pageY + 'px';
-        newCursor.style.left = e.pageX + 'px';
-        let classN = e.target;
-        if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
-            newCursor.classList.remove("newCursor");
-            newCursor.classList.add("cursorPointer");
+
+        if(cursorCustom == true){
+            buttonSelector.classList.remove("noNewCursor");
+            bodySelector.classList.remove("noNewCursor");
+            buttonSelector.classList.add("noCursor");
+            bodySelector.classList.add("noCursor");
+            newCursor.style.top = e.pageY + 'px';
+            newCursor.style.left = e.pageX + 'px';
+            let classN = e.target;
+            if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
+                newCursor.classList.remove("newCursor");
+                newCursor.classList.add("cursorPointer");
+            }
+            
+            else{
+                newCursor.classList.add("newCursor");
+                newCursor.classList.remove("cursorPointer");
+            }
+            console.log("Es verdadero");
         }
-        
+
         else{
-            newCursor.classList.add("newCursor");
-            newCursor.classList.remove("cursorPointer");
+            console.log("Es falso");
         }
     }
 }

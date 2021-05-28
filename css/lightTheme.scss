@@ -102,3 +102,15 @@ nav{
 footer{
     background-color: $colorBg;
 }
+
+#SwitchCursor{
+    border: 1px solid $colorBlue;
+
+    span, i{color: $colorBlue;}
+}
+
+#SwitchCursor:hover{
+    border: 1px solid $colorMagenta;
+
+    span, i{color: $colorMagenta;}
+}

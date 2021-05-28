@@ -38,7 +38,7 @@ $colorBlue: #04c0ff;
     cursor:auto;
 }
 
-.noCursor, a{
+.noCursor{
     cursor:none;
 }
 
@@ -447,6 +447,7 @@ body{
 
                 p{
                     max-width: 400px;
+                    font-size: 1em;
                 }
             }
         }
@@ -518,6 +519,21 @@ body{
             padding-top: 20px;
             max-height: 360px;
         }
+    }
+
+    #SwitchCursor{
+        margin-top: 40px;
+        align-self: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 15px;
+        place-items: center;
+        padding: 15px;
+        border-radius: 30px;
+
+        i{font-size: 1.4em;}
+
+        span{font-size: 0.8em;}
     }
 }
 

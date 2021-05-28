@@ -38,6 +38,12 @@ article{
 
 
 @media (max-width: 1000px){
+
+    p{
+        text-align: justify;
+        font-size: 1em;
+    }
+
     article{
         display: grid;
         grid-template-columns: auto;

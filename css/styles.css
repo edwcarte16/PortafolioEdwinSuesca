@@ -319,6 +319,12 @@ div, bdi, span, button, input {
   cursor: auto;
 }
 
+@media screen and (min-width: 721px) and (max-width: 800px) {
+  .liNav .aNav {
+    font-size: 12pt;
+  }
+}
+
 body {
   position: relative;
   overflow-x: hidden;

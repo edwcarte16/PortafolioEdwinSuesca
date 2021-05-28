@@ -86,9 +86,32 @@ window.addEventListener('scroll', function(){
         posicionDePartida = (document.body.getBoundingClientRect()).top;   
         nav.style.top = "-40px";
     }
-    
 });
 
+window.onresize = resize;
+
+async function resize()
+{
+    if (window.matchMedia("(max-width: 720px)").matches) {
+        inkscapeContainer.style.transform = "translateY(0px)";
+        nameContainer.style = "opacity:1";
+    }
+    window.location.reload;
+        if (window.matchMedia("(min-width: 721px)").matches){
+            if(window.matchMedia("(max-width: 800px)").matches){
+            aNav.forEach(a => {
+                a.style.fontSize = "0.85em";
+            });
+            }
+
+        else{
+            aNav.forEach(a => {
+                a.style.fontSize = "1em";
+            });
+        }
+    }
+}
+  
 var colorNav = nav.style.backgroundColor;
 window.onscroll = function() {
     y = window.scrollY;
@@ -137,9 +160,19 @@ window.onscroll = function() {
             pathSlogan.style = "display: block";
             logoSvg.style = "width: 80px; position: initial";
 
-            aNav.forEach(a => {
-                a.style.fontSize = "1em";
-            });
+            if (window.matchMedia("(min-width: 721px)").matches){
+                if(window.matchMedia("(max-width: 800px)").matches){
+                    aNav.forEach(a => {
+                        a.style.fontSize = "0.85em";
+                    });
+                }
+        
+                else{
+                    aNav.forEach(a => {
+                        a.style.fontSize = "1em";
+                    });
+                }
+            }
 
             iconsNav.forEach(i => {
                 i.style.display = "initial";

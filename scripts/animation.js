@@ -63,7 +63,6 @@ window.onload = async function(){
     });
 
     newCursor.style.display = "block";
-    newCursor.style.zIndex = "50000";
 }
 
 changeTheme.onclick = function(){

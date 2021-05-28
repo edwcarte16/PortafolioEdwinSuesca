@@ -1,7 +1,7 @@
 $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
 $colorTexts: #292929;
-$colorTransp: #04c0ff10;
+$colorTransp: #24242410;
 $colorBg: #fff;
 
 body, #mapNav, nav{
@@ -24,12 +24,14 @@ nav{
     box-shadow: 5px 0 7px #2929298a;
 }
 
-.newCursor{
-    background: linear-gradient($colorMagenta, $colorBlue);
+.cursorPointer{
+    background: $colorBlue;
+    border: 2px solid $colorTexts;
 }
 
-.cursorPointer{
-    background: linear-gradient($colorMagenta, $colorBlue);
+.newCursor{
+    background: $colorMagenta;
+    border: 2px solid $colorTexts;
 }
 
 .changeTheme{

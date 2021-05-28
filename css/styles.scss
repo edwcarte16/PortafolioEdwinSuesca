@@ -6,24 +6,27 @@ $colorBlue: #04c0ff;
 
 .cursorPointer{
     position: absolute;
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    transform: translate(-50%, 0);
-    mask: url(/images/hand.svg);
+    height: 30px;
+    width: 10px;
+    border-radius: 20px;
+    transform: translate(0, 0) rotate(-20deg);
     z-index: 50000;
     pointer-events: none;
+    transition: all 300ms ease;
+    transition-property: background-color, transform, width;
 }
 
 .newCursor{
     position: absolute;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border-radius: 100%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) rotate(0deg);
     clip-path: url(/images/cursor.svg);
     z-index: 50000;
     pointer-events: none;
+    transition: all 300ms ease;
+    transition-property: background-color, transform, width;
 }
 
 *{

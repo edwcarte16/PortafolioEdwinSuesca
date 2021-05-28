@@ -19,14 +19,14 @@ nav {
           box-shadow: 5px 0 7px #2929298a;
 }
 
-.newCursor {
-  background: -webkit-gradient(linear, left top, left bottom, from(#d932d2), to(#04c0ff));
-  background: linear-gradient(#d932d2, #04c0ff);
+.cursorPointer {
+  background: #04c0ff;
+  border: 2px solid #292929;
 }
 
-.cursorPointer {
-  background: -webkit-gradient(linear, left top, left bottom, from(#d932d2), to(#04c0ff));
-  background: linear-gradient(#d932d2, #04c0ff);
+.newCursor {
+  background: #d932d2;
+  border: 2px solid #292929;
 }
 
 .changeTheme {
@@ -40,7 +40,7 @@ nav {
 }
 
 .liMapNav {
-  border-bottom: 1px solid #04c0ff10;
+  border-bottom: 1px solid #24242410;
 }
 
 .liMapNav .aMapNav, .liMapNav i {
@@ -52,7 +52,7 @@ nav {
 }
 
 .liMapNav ul li {
-  border-bottom: 1px solid #04c0ff10;
+  border-bottom: 1px solid #24242410;
 }
 
 .liMapNav ul li:hover a {
@@ -60,7 +60,7 @@ nav {
 }
 
 .liMapNav:hover {
-  background-color: #04c0ff10;
+  background-color: #24242410;
 }
 
 .liMapNav:hover .aMapNav, .liMapNav:hover i {

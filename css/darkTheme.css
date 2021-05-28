@@ -24,13 +24,13 @@ nav {
 }
 
 .cursorPointer {
-  background: -webkit-gradient(linear, left top, left bottom, from(#04c0ff), to(#d932d2));
-  background: linear-gradient(#04c0ff, #d932d2);
+  background: #04c0ff;
+  border: 2px solid white;
 }
 
 .newCursor {
-  background: -webkit-gradient(linear, left top, left bottom, from(#04c0ff), to(#d932d2));
-  background: linear-gradient(#04c0ff, #d932d2);
+  background: #d932d2;
+  border: 2px solid white;
 }
 
 .changeTheme {

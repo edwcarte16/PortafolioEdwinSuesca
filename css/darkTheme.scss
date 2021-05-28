@@ -30,11 +30,13 @@ nav{
 }
 
 .cursorPointer{
-    background: linear-gradient($colorBlue, $colorMagenta);
+    background: $colorBlue;
+    border: 2px solid $colorTexts;
 }
 
 .newCursor{
-    background: linear-gradient($colorBlue, $colorMagenta);
+    background: $colorMagenta;
+    border: 2px solid $colorTexts;
 }
 
 .changeTheme{

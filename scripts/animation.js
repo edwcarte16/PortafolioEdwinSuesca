@@ -37,6 +37,7 @@ var rect3 = document.getElementById('rectangle3');
 var scrollBar = document.getElementById('scrollBar');
 var theme = document.getElementById("theme");
 var y = window.scrollY;
+var colorNav = nav.style.backgroundColor;
 
 window.onload = async function(){
     mapNav.style.left = "-400px";
@@ -191,17 +192,17 @@ window.onscroll = function() {
         nav.style.top = "-40px";
     }
 
-    let colorNav = nav.style.backgroundColor;
+    
     y = window.scrollY;
-    let hview = window.innerHeight;
-    let hBody = bodySelector.scrollHeight;
+    var hview = window.innerHeight;
+    var hBody = bodySelector.scrollHeight;
     let topButton = ((y-hview)*100)/(hBody-(hview*2));
     buttonScrollBar.style.top = `${topButton}%`;
     
     if(y >= hview){scrollBar.style.opacity = "1";}
     else{scrollBar.style.opacity = "0";}
 
-    if (window.matchMedia("(min-width: 721px)").matches) {
+    if (window.matchMedia("(min-width: 1001px)").matches) {
  
         if(y >= 20){
             nav.style.backgroundColor = colorNav;
@@ -271,7 +272,7 @@ window.onscroll = function() {
     }
 
     else{
-        if (window.matchMedia("(max-width: 720px)").matches) {
+        if (window.matchMedia("(max-width: 1000px)").matches) {
 
             if(y >= 20){
                 nav.style.backgroundColor = colorNav;

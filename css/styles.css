@@ -928,6 +928,7 @@ body header #nameContainer h1 {
 }
 
 #mapNav #SwitchCursor {
+  margin-right: 5%;
   margin-top: 40px;
   -ms-grid-row-align: center;
       align-self: center;

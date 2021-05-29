@@ -305,6 +305,19 @@ article section .subSection {
   transition-property: background-color, transform, width, -webkit-transform;
 }
 
+#toolTip {
+  position: absolute;
+  padding: 4px 10px;
+  text-shadow: 0 0 1px #00000034;
+  font-size: 0.7em;
+  border-radius: 10px;
+  z-index: 50000;
+  -webkit-box-shadow: 3px 3px 10px #00000034;
+          box-shadow: 3px 3px 10px #00000034;
+  white-space: nowrap;
+  display: none;
+}
+
 .newCursor {
   position: absolute;
   height: 30px;

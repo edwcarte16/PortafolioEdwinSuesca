@@ -108,4 +108,9 @@ footer {
 #SwitchCursor:hover span, #SwitchCursor:hover i {
   color: #d932d2;
 }
+
+#toolTip {
+  background-color: #292929;
+  color: #fff;
+}
 /*# sourceMappingURL=lightTheme.css.map */

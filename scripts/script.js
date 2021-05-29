@@ -74,22 +74,16 @@ window.addEventListener("resize", function(){
   if(windowWidth>720){
 
     document.getElementById("avatar").style = "fill:transparent"
-
     document.getElementById("bag").style = "fill:transparent"
-
     document.getElementById("book").style = "fill:transparent"
-
     document.getElementById("chat").style = "fill:transparent"
 
     left1 = itemList1.getBoundingClientRect().left+30
     iconList1.style = `left: ${left1}px`;
-
     left2 = itemList2.getBoundingClientRect().left+34
     iconList2.style = `left: ${left2}px`;
-
     left3 = itemList3.getBoundingClientRect().left+30
     iconList3.style = `left: ${left3}px`;
-
     left4 = itemList4.getBoundingClientRect().left+47
     iconList4.style = `left: ${left4}px`;
   }
@@ -97,11 +91,8 @@ window.addEventListener("resize", function(){
   if(windowWidth<720){
 
     document.getElementById("avatar").style = "fill:#ffffff93"
-
     document.getElementById("bag").style = "fill:#ffffff93"
-
     document.getElementById("book").style = "fill:#ffffff93"
-
     document.getElementById("chat").style = "fill:#ffffff93"
   }
 });
@@ -109,23 +100,16 @@ window.addEventListener("resize", function(){
 function openMenu(){
   if (document.getElementById("menuListNav").style.clipPath != "circle(1500px at 100% 0%)") {
     document.getElementById("menuListNav").style.clipPath = "circle(1500px at 100% 0%)";
-
     document.getElementById("svgBurger").style = "height:22px; width:26px";
-
     document.getElementById("rectBurgerMenu1").style = "rotate:-45deg; x:-12.999996px; y:11.246504px";
-
     document.getElementById("rectBurgerMenu2").style = "rotate:45deg; x:1.2465px; y:-3px";
-
     document.getElementById("rectBurgerMenu2")
   }
 
   else {
     document.getElementById("menuListNav").style.clipPath = "circle(0 at 100% 0%)";
-
     document.getElementById("svgBurger").style = "height:22px; width:26px";
-    
     document.getElementById("rectBurgerMenu1").style = "rotate:0; x:0; y:9.7727985px";
-
     document.getElementById("rectBurgerMenu2").style = "rotate:0; x:0; y:0";
   }
 }

@@ -38,6 +38,44 @@ var scrollBar = document.getElementById('scrollBar');
 var theme = document.getElementById("theme");
 var y = window.scrollY;
 var colorNav = nav.style.backgroundColor;
+var toolTip = document.getElementById("toolTip");
+
+document.addEventListener("mousemove", toolTipFunction);
+
+function toolTipFunction(e){
+    let targetMouse = e.target.id;
+    console.log(e.target.id);
+    let y = e.pageY;
+    let x = e.pageX;
+    switch(targetMouse){
+        case "changeTheme":
+            toolTip.style.display = 'block';
+            if(theme.href == dark){
+                toolTip.innerHTML = "Cambiar a tema claro"
+            }
+            else{
+                toolTip.innerHTML = "Cambiar a tema oscuro"
+            }
+            y = y - 33;
+            x = x - 120;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        case "logoSvg":
+            toolTip.innerHTML = "Recargar página"
+            toolTip.style.display = 'block';
+            y = y - 33;
+            x = x + 40;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        default:
+            toolTip.style.display = 'none';
+        break;
+    }
+}
 
 window.onload = async function(){
     mapNav.style.left = "-400px";
@@ -69,10 +107,12 @@ changeTheme.onclick = function(){
     if(theme.href == dark){
         theme.href = "css/lightTheme.css";
         inkscapeImage.src = "images/inkscapeLight.png";
+        toolTip.innerHTML = "Cambiar a tema oscuro"
     }
     else{
         theme.href = "css/darkTheme.css";
         inkscapeImage.src = "images/inkscape.png";
+        toolTip.innerHTML = "Cambiar a tema claro"
     }
 }
 
@@ -96,7 +136,6 @@ SwitchCursor.onclick = function defaultCursor(){
             aSubMapNav.forEach(a => {
                 a.style.cursor = "pointer";
             });
-            console.log(cursorCustom);
             cursorCustom = false;
         break;
         case false:
@@ -116,8 +155,6 @@ SwitchCursor.onclick = function defaultCursor(){
             aSubMapNav.forEach(a => {
                 a.style.cursor = "none";
             });
-
-            console.log(cursorCustom);
             cursorCustom = true;
         break; 
     }
@@ -150,11 +187,10 @@ function cursor(e){
                 newCursor.classList.add("newCursor");
                 newCursor.classList.remove("cursorPointer");
             }
-            console.log("Es verdadero");
         }
 
         else{
-            console.log("Es falso");
+            console.log("");
         }
     }
 }

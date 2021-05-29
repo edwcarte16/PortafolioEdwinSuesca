@@ -166,6 +166,7 @@ function cursor(e){
     if (/android/i.test(device) || /iPad|iPhone|iPod/.test(device)) {
         bodySelector.classList.add("noNewCursor");
         buttonSelector.classList.add("noNewCursor");
+        newCursor.style.display = "none";
     }
 
     else{

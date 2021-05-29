@@ -40,6 +40,16 @@ var y = window.scrollY;
 var colorNav = nav.style.backgroundColor;
 var toolTip = document.getElementById("toolTip");
 
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
+
+if(isAndroid) {
+    bodySelector.classList.add("noNewCursor");
+    buttonSelector.classList.add("noNewCursor");
+    newCursor.style.display = "none";
+    SwitchCursor.style.display = "none";
+}
+
 document.addEventListener("mousemove", toolTipFunction);
 
 function toolTipFunction(e){
@@ -163,18 +173,7 @@ SwitchCursor.onclick = function defaultCursor(){
 document.addEventListener("mousemove", cursor);
 
 function cursor(e){
-
-    var ua = navigator.userAgent.toLowerCase();
-    var isAndroid = ua.indexOf("android") > -1;
-    if(isAndroid) {
-        bodySelector.classList.add("noNewCursor");
-        buttonSelector.classList.add("noNewCursor");
-        newCursor.style.display = "none";
-        alert("Estás navegando desde un dispositivo android.");
-    }
-
-    else{
-        if(cursorCustom == true){
+    if(cursorCustom == true){
             buttonSelector.classList.remove("noNewCursor");
             bodySelector.classList.remove("noNewCursor");
             buttonSelector.classList.add("noCursor");
@@ -191,11 +190,10 @@ function cursor(e){
                 newCursor.classList.add("newCursor");
                 newCursor.classList.remove("cursorPointer");
             }
-        }
+    }
 
-        else{
+    else{
             console.log("");
-        }
     }
 }
 

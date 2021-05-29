@@ -14,7 +14,7 @@ var changeTheme = document.querySelector(".changeTheme");
 var cursorCustom = true;
 const dark = document.getElementById("theme").href;
 var design = document.getElementById('design');
-var device = navigator.vendor;
+var device = 'desktop';
 var edwins = document.getElementById('edwins');
 const iconsNav = document.querySelectorAll('.iconsNav');
 var iconBurger = document.getElementById('iconBurger');
@@ -39,7 +39,6 @@ var theme = document.getElementById("theme");
 var y = window.scrollY;
 var colorNav = nav.style.backgroundColor;
 var toolTip = document.getElementById("toolTip");
-
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
 
@@ -48,13 +47,13 @@ if(isAndroid) {
     buttonSelector.classList.add("noNewCursor");
     newCursor.style.display = "none";
     SwitchCursor.style.display = "none";
+    device = 'mobile';
 }
 
 document.addEventListener("mousemove", toolTipFunction);
 
 function toolTipFunction(e){
     let targetMouse = e.target.id;
-    console.log(e.target.id);
     let y = e.pageY;
     let x = e.pageX;
     switch(targetMouse){
@@ -170,30 +169,32 @@ SwitchCursor.onclick = function defaultCursor(){
     }
 }
 
-document.addEventListener("mousemove", cursor);
-
-function cursor(e){
+if(device == 'desktop') {
+    document.addEventListener("mousemove", cursor);
+    
+    function cursor(e){
     if(cursorCustom == true){
-            buttonSelector.classList.remove("noNewCursor");
-            bodySelector.classList.remove("noNewCursor");
-            buttonSelector.classList.add("noCursor");
-            bodySelector.classList.add("noCursor");
-            newCursor.style.top = e.pageY + 'px';
-            newCursor.style.left = e.pageX + 'px';
-            let classN = e.target;
-            if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
-                newCursor.classList.remove("newCursor");
-                newCursor.classList.add("cursorPointer");
+        buttonSelector.classList.remove("noNewCursor");
+        bodySelector.classList.remove("noNewCursor");
+        buttonSelector.classList.add("noCursor");
+        bodySelector.classList.add("noCursor");
+        newCursor.style.top = e.pageY + 'px';
+        newCursor.style.left = e.pageX + 'px';
+        let classN = e.target;
+        if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
+            newCursor.classList.remove("newCursor");
+            newCursor.classList.add("cursorPointer");
             }
             
-            else{
-                newCursor.classList.add("newCursor");
-                newCursor.classList.remove("cursorPointer");
-            }
+        else{
+            newCursor.classList.add("newCursor");
+            newCursor.classList.remove("cursorPointer");
+        }
     }
 
     else{
             console.log("");
+    }
     }
 }
 

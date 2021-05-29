@@ -163,14 +163,17 @@ SwitchCursor.onclick = function defaultCursor(){
 document.addEventListener("mousemove", cursor);
 
 function cursor(e){
-    if (/android/i.test(device) || /iPad|iPhone|iPod/.test(device)) {
+
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1;
+    if(isAndroid) {
         bodySelector.classList.add("noNewCursor");
         buttonSelector.classList.add("noNewCursor");
         newCursor.style.display = "none";
+        alert("Estás navegando desde un dispositivo android.");
     }
 
     else{
-
         if(cursorCustom == true){
             buttonSelector.classList.remove("noNewCursor");
             bodySelector.classList.remove("noNewCursor");

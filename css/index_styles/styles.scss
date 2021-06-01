@@ -1,0 +1,197 @@
+@import "keyframes";
+@import "articles";
+
+$colorMagenta: #d932d2;
+$colorBlue: #04c0ff;
+
+body{
+    header{
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: 15% 85%;
+        grid-template-columns: 60% 40%;
+        height: 100vh;
+    
+        #inkscapeContainer{
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            position: relative;
+            display: grid;
+            place-items: center;
+            perspective: 1000px;
+
+            #circleLeft{
+                position: relative;
+                height: 60px;
+                width: 60px;
+                border: 2px solid $colorBlue;
+                border-radius: 100%;
+                position: absolute;
+                left: 5%;
+                transform: rotateY(30deg) rotateX(20deg);
+                z-index: 2;
+                opacity: 0;
+                transition: 1s;
+                animation: arrows 2s 2s;
+
+                .triangleLeft{
+                    position: absolute;
+                    top: 12px;
+                    left:12px;
+                    height: 0;
+                    width: 0;
+                    border-top: 15px solid transparent;
+                    border-right: 25px solid $colorBlue;
+                    border-bottom: 15px solid transparent;
+                }
+            }
+
+            #circleRight{
+                position: relative;
+                border: 2px solid $colorBlue;
+                right: 5%;
+                height: 45px;
+                width: 45px;
+                border-radius: 100%;
+                position: absolute;
+                transform:  rotateY(30deg) rotateX(20deg);
+                z-index: 2;
+                opacity: 0;
+                transition: 1s;
+                animation: arrows 2s 2s;
+
+                .triangleRight{
+                    position: absolute;
+                    top: 11px;
+                    left: 16px;
+                    height: 0;
+                    width: 0;
+                    border-top: 10px solid transparent;
+                    border-left: 15px solid $colorBlue;
+                    border-bottom: 10px solid transparent;
+                }
+            }
+
+            #designsBox{
+                position: relative;
+                display: grid;
+                place-items: center;
+                perspective: 1000px;
+                #inkscapeImage, #inkscapeLogo{
+                    box-shadow: 10px 10px 25px #00000052;
+                    margin-left: 4vw;
+                    opacity: 1;
+                    margin-left: 4vw;
+                    position: absolute;
+                    border-radius: 7px;
+                    max-height: 55vh;
+                    height: 34vw;
+                    transform: rotateY(30deg) rotateX(20deg);
+                    animation: inkscapeAnimation 2s;
+                    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                }
+    
+                #inkscapeLogo{
+                    box-shadow: none;
+                    z-index: 5;
+                    animation: back 2s;
+                    animation-fill-mode:both;
+                    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                }
+    
+                #design{
+                    margin-left: 4vw;
+                    position: absolute;
+                    border-radius: 7px;
+                    max-height: 55vh;
+                    height: 34vw;
+                    padding: 0;
+                    opacity: 0;
+                    transition: opacity 1.7s ease;
+                    transform: rotateY(30deg) rotateX(20deg);
+                    animation: inkscapeAnimation 2s;
+                    animation-timing-function:cubic-bezier(0.86, 0, 0.07, 1);
+                }
+            }
+        }
+
+        #nameContainer{
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            padding-right: 4vw;
+            display: grid;
+            align-content:center;
+            justify-items: center;
+            height: 100%;
+            position: relative;
+            gap: 3px;
+            img{
+                width: 190px;
+            }
+            p{
+                display: block;
+                text-align: center;
+                font-family: "Montserrat";
+                font-weight: 300;
+                font-size: 1.4em;
+                max-width: 500px;
+            }
+            button{
+                margin-top: 35px;
+            }
+
+            h1{
+                color: $colorBlue;
+                margin-bottom: 20px;
+                font-weight: bold;
+                font-size: 2em;
+            }
+        }
+    }
+ 
+    @media (max-width: 1000px){
+
+        header{
+
+            #inkscapeContainer{
+                width: 100%;
+                height: 65vw;
+                position: initial;
+                transform: translateY(-300px);
+                transition: transform 1s;
+                #designsBox{
+                    width: 100%;
+                    #inkscapeImage, #inkscapeLogo{
+                        height: auto;
+                        width: 80%;
+                        opacity: 1;
+                    }
+    
+                    #design{
+                        height: auto;
+                        width: 80%;
+                    }
+                }
+            }
+
+            #nameContainer{
+                margin-top: 70px;
+                position: initial;
+                height: fit-content;
+                padding: 30px 0;
+                display: grid;
+                opacity: 0;
+                transition: opacity 1s;
+                transition-timing-function:ease;
+                img{
+                    width: 20vh;
+                }
+
+                p{
+                    max-width: 400px;
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+}

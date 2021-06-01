@@ -1,0 +1,56 @@
+$colorMagenta: #d932d2;
+$colorBlue: #04c0ff;
+
+header{
+    padding-top: 150px;
+    height: 100vh;
+    display: grid;
+    gap: 20px;
+
+    span{
+        font-size: 5em;
+        color: $colorBlue;
+        font-weight: bold;
+        place-self: center;
+    }
+
+    #boxHeaderProjects{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+        gap: 20px;
+        place-items: center;
+        padding: 0 4vw;
+    
+        .headerProjects{
+            border-radius: 10px;
+            height: 200px;
+            width: 300px;
+            background-color: #00000011;
+            overflow: hidden;
+            box-shadow: 2px 2px 10px #00000067;
+
+            img{
+                width: 100%;
+                min-height: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    button{
+        width: 100px;
+        place-self: center;
+    }
+}
+
+main{
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    header{
+        padding-top: 90px;
+    }
+}
+

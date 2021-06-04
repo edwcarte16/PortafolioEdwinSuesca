@@ -1,6 +1,20 @@
 $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
+#present{
+    position: initial;
+    height: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 
+    div{
+        width: 50%;
+        img{
+            width: 100%;
+        }
+    }
+}
 header{
     padding-top: 150px;
     height: 100vh;

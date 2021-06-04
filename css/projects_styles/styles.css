@@ -1,3 +1,26 @@
+#present {
+  position: initial;
+  height: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#present div {
+  width: 50%;
+}
+
+#present div img {
+  width: 100%;
+}
+
 header {
   padding-top: 150px;
   height: 100vh;

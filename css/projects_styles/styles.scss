@@ -4,6 +4,7 @@ $colorBlue: #04c0ff;
 
 
 #present{
+    padding: 4vw;
     padding-top: 30px;
     position: initial;
     height: initial;
@@ -19,7 +20,7 @@ $colorBlue: #04c0ff;
         align-items: center;
         flex-direction: row;
         img{
-            height: 100%;
+            width: 50%;
         }
     }
     div{

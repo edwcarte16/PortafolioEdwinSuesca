@@ -148,6 +148,17 @@ body{
             }
         }
     }
+
+    #phrase{
+        padding: 50px 0;
+        text-align: center;
+        justify-self: center;
+        width: 100%;
+        span{
+            font-size: 1.3em;
+            color: $colorBlue;
+        }
+    }
  
     @media (max-width: 1000px){
 

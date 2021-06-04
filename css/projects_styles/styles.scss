@@ -1,8 +1,6 @@
 $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
 
-
-
 #present{
     padding: 4vw;
     padding-top: 30px;
@@ -71,10 +69,11 @@ header{
     gap: 20px;
 
     span{
-        font-size: 5em;
+        font-size: 4em;
         color: $colorBlue;
         font-weight: bold;
         place-self: center;
+
     }
 
     #boxHeaderProjects{

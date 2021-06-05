@@ -85,6 +85,14 @@ p{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    img{
+        position: absolute;
+        bottom: 0;
+        width: 120%;
+        right: 0;
+        z-index: -1;
+        opacity: 0.5;
+    }
 
     .boxLogo{
         height: fit-content;
@@ -142,16 +150,13 @@ p{
         margin-top: 40px;
         align-self: center;
         display: grid;
-        grid-template-columns: auto auto;
-        gap: 15px;
         place-items: center;
-        padding: 15px;
+        padding: 10px;
         border-radius: 30px;
-
-        i{font-size: 1.4em;}
-
-        span{font-size: 0.8em;}
+        font-size: 0.7em;
     }
+
+
 }
 
 body{

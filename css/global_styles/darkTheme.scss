@@ -105,14 +105,13 @@ footer{
 
 #SwitchCursor{
     border: 1px solid $colorBlue;
-
-    span, i{color: $colorBlue;}
+    color: $colorBlue;
+    background-color: $colorBg;
 }
 
 #SwitchCursor:hover{
     border: 1px solid $colorMagenta;
-
-    span, i{color: $colorMagenta;}
+    color: $colorMagenta;
 }
 
 #toolTip{

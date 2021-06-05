@@ -247,6 +247,15 @@ p {
   overflow-x: hidden;
 }
 
+#mapNav img {
+  position: absolute;
+  bottom: 0;
+  width: 120%;
+  right: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
 #mapNav .boxLogo {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -323,20 +332,10 @@ p {
       align-self: center;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  gap: 15px;
   place-items: center;
-  padding: 15px;
+  padding: 10px;
   border-radius: 30px;
-}
-
-#mapNav #SwitchCursor i {
-  font-size: 1.4em;
-}
-
-#mapNav #SwitchCursor span {
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 body {

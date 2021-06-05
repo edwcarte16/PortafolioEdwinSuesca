@@ -42,6 +42,7 @@ if(isAndroid) {
     buttonSelector.classList.add("noNewCursor");
     newCursorId.style.display = "none";
     SwitchCursor.style.display = "none";
+    newCursorId.style.zIndex = "-2";
     device = 'mobile';
     cursorCustom = false;
     window.onload = function(){

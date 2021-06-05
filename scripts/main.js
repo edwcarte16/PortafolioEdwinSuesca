@@ -11,7 +11,7 @@ var boxLogoClass = document.querySelector('.boxLogo');
 var burger = document.querySelector('.boxIconBurger');
 var buttonScrollBar = document.getElementById('buttonScrollBar');
 var changeTheme = document.querySelector(".changeTheme");
-var cursorCustom = true;
+var cursorCustom;
 const dark = document.getElementById("theme").href;
 var design = document.getElementById('design');
 var device = 'desktop';
@@ -29,6 +29,7 @@ var nameContainer = document.getElementById('nameContainer');
 var SwitchCursor = document.getElementById('SwitchCursor');
 var nav = document.querySelector('nav');
 var newCursor = document.querySelector(".newCursor");
+var newCursorId = document.getElementById("newCursorId");
 var pathSlogan = document.getElementById('pathSlogan');
 var posicionDePartida = 0;
 var rect1 = document.getElementById('rectangle1');
@@ -45,9 +46,13 @@ var isAndroid = ua.indexOf("android") > -1;
 if(isAndroid) {
     bodySelector.classList.add("noNewCursor");
     buttonSelector.classList.add("noNewCursor");
-    newCursor.style.display = "none";
+    newCursorId.style.display = "none";
     SwitchCursor.style.display = "none";
     device = 'mobile';
+    cursorCustom = false;
+}
+else{
+    cursorCustom = true;
 }
 
 document.addEventListener("mousemove", toolTipFunction);
@@ -109,7 +114,7 @@ window.onload = async function(){
         a.style.cursor = "none";
     });
 
-    newCursor.style.display = "block";
+    newCursorId.style.display = "block";
 }
 
 changeTheme.onclick = function(){
@@ -133,7 +138,7 @@ SwitchCursor.onclick = function defaultCursor(){
             buttonSelector.classList.add("noNewCursor");
             bodySelector.classList.remove("noCursor");
             buttonSelector.classList.remove("noCursor");
-            newCursor.style.display = "none";
+            newCursorId.style.display = "none";
             aNav.forEach(a => {
                 a.style.cursor = "pointer";
             });
@@ -152,7 +157,7 @@ SwitchCursor.onclick = function defaultCursor(){
             buttonSelector.classList.remove("noNewCursor");
             bodySelector.classList.add("noCursor");
             buttonSelector.classList.add("noCursor");
-            newCursor.style.display = "block";
+            newCursorId.style.display = "block";
             aNav.forEach(a => {
                 a.style.cursor = "none";
             });

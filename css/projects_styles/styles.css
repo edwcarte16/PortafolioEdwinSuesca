@@ -104,6 +104,12 @@ header span {
   place-self: center;
 }
 
+@media (max-width: 700px) {
+  header span {
+    font-size: 2em;
+  }
+}
+
 header #boxHeaderProjects {
   display: -ms-grid;
   display: grid;

@@ -76,6 +76,11 @@ header{
 
     }
 
+    @media (max-width: 700px) {
+        span{
+            font-size: 2em;}
+    }
+
     #boxHeaderProjects{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));

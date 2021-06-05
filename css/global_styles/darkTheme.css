@@ -7,7 +7,7 @@ body, #mapNav, nav {
 }
 
 a, span, p {
-  color: white;
+  color: #ffffffb6;
 }
 
 .liNav:hover {
@@ -25,12 +25,12 @@ nav {
 
 .cursorPointer {
   background: #04c0ff;
-  border: 2px solid white;
+  border: 2px solid #ffffffb6;
 }
 
 .newCursor {
   background: #d932d2;
-  border: 2px solid white;
+  border: 2px solid #ffffffb6;
 }
 
 .changeTheme {
@@ -48,11 +48,11 @@ nav {
 }
 
 .liMapNav .aMapNav, .liMapNav i {
-  color: white;
+  color: #ffffffb6;
 }
 
 .liMapNav ul a {
-  color: white;
+  color: #ffffffb6;
 }
 
 .liMapNav ul li {
@@ -72,14 +72,14 @@ nav {
 }
 
 .iconsMedia div:hover span:hover {
-  color: white;
+  color: #ffffffb6;
   text-shadow: 0 0 10px #1d1d1d, 0 0 10px #1d1d1d;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
 }
 
 .iconsWeb div:hover i:hover {
-  color: white;
+  color: #ffffffb6;
   text-shadow: 0 0 10px #1d1d1d, 0 0 10px #1d1d1d;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
@@ -111,6 +111,10 @@ footer {
 }
 
 #phrase {
+  background-color: #ffffff0c;
+}
+
+section {
   background-color: #ffffff0c;
 }
 /*# sourceMappingURL=darkTheme.css.map */

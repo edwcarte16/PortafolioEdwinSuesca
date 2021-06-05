@@ -1,6 +1,7 @@
 $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
-$colorTexts: white;
+$colorTexts: #ffffffb6;
+$colorWhite: white;
 $colorTransp: #ffffff0c;
 $colorBg: #1d1d1d;
 
@@ -9,7 +10,7 @@ body, #mapNav, nav{
 }
 
 .pathSlogan, .edwins{
-    fill: $colorTexts;
+    fill: $colorWhite;
 }
 
 a, span, p{
@@ -115,10 +116,14 @@ footer{
 }
 
 #toolTip{
-    background-color: $colorTexts;
+    background-color: $colorWhite;
     color: $colorBg;
 }
 
 #phrase{
+    background-color: $colorTransp;
+}
+
+section{
     background-color: $colorTransp;
 }

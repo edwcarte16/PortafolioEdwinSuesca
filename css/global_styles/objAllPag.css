@@ -156,7 +156,7 @@ h2 {
 
 p {
   text-align: justify;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .cursorPointer {
@@ -635,7 +635,7 @@ footer .boxLogo svg #pathSlogan {
   display: none;
 }
 
-footer section {
+footer div {
   margin-top: 20px;
   display: -ms-grid;
   display: grid;
@@ -648,7 +648,8 @@ footer section {
   gap: 20px;
 }
 
-footer section a, footer section span {
+footer div a, footer div span {
   text-align: center;
+  text-decoration: none;
 }
 /*# sourceMappingURL=objAllPag.css.map */

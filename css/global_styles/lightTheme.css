@@ -40,7 +40,7 @@ nav {
 }
 
 .liMapNav {
-  border-bottom: 1px solid #24242410;
+  border-bottom: 1px solid #ffffff6c;
 }
 
 .liMapNav .aMapNav, .liMapNav i {
@@ -52,7 +52,7 @@ nav {
 }
 
 .liMapNav ul li {
-  border-bottom: 1px solid #24242410;
+  border-bottom: 1px solid #ffffff6c;
 }
 
 .liMapNav ul li:hover a {
@@ -60,7 +60,7 @@ nav {
 }
 
 .liMapNav:hover {
-  background-color: #24242410;
+  background-color: #ffffff6c;
 }
 
 .liMapNav:hover .aMapNav, .liMapNav:hover i {
@@ -115,6 +115,10 @@ footer {
 }
 
 #phrase {
-  background-color: #24242410;
+  background-color: #ffffff6c;
+}
+
+section {
+  background-color: #ffffff6c;
 }
 /*# sourceMappingURL=lightTheme.css.map */

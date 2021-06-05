@@ -16,7 +16,7 @@ h2{
 }
 p{
     text-align: justify;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .cursorPointer{
@@ -396,7 +396,7 @@ footer{
         }
     }
 
-    section{
+    div{
         margin-top: 20px;
         display: grid;
         justify-items: center;
@@ -406,6 +406,7 @@ footer{
         gap: 20px;
         a, span{
             text-align: center;
+            text-decoration: none;
         }
     }
 }

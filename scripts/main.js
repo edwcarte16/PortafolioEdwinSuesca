@@ -26,6 +26,10 @@ const liNav = document.querySelectorAll('.liNav');
 var liMapNav = document.querySelector('.liMapNav');
 var mapNav = document.getElementById('mapNav');
 var nameContainer = document.getElementById('nameContainer');
+var photosMe1 = document.getElementById('photosMe1');
+var photosMe2 = document.getElementById('photosMe2');
+var photosMe3 = document.getElementById('photosMe3');
+var photosMe4 = document.getElementById('photosMe4');
 var SwitchCursor = document.getElementById('SwitchCursor');
 var nav = document.querySelector('nav');
 var newCursor = document.querySelector(".newCursor");
@@ -57,42 +61,6 @@ if(isAndroid) {
 }
 else{
     cursorCustom = true;
-}
-
-document.addEventListener("mousemove", toolTipFunction);
-
-function toolTipFunction(e){
-    let targetMouse = e.target.id;
-    let y = e.pageY;
-    let x = e.pageX;
-    switch(targetMouse){
-        case "changeTheme":
-            toolTip.style.display = 'block';
-            if(theme.href == dark){
-                toolTip.innerHTML = "Cambiar a tema claro"
-            }
-            else{
-                toolTip.innerHTML = "Cambiar a tema oscuro"
-            }
-            y = y - 33;
-            x = x - 120;
-            toolTip.style.top = y + 'px';
-            toolTip.style.left = x + 'px';
-        break;
-
-        case "logoSvg":
-            toolTip.innerHTML = "Recargar página"
-            toolTip.style.display = 'block';
-            y = y - 33;
-            x = x + 40;
-            toolTip.style.top = y + 'px';
-            toolTip.style.left = x + 'px';
-        break;
-
-        default:
-            toolTip.style.display = 'none';
-        break;
-    }
 }
 
 window.onload = async function(){
@@ -184,28 +152,116 @@ if(device == 'desktop') {
     document.addEventListener("mousemove", cursor);
     
     function cursor(e){
-    if(cursorCustom == true){
-        buttonSelector.classList.remove("noNewCursor");
-        bodySelector.classList.remove("noNewCursor");
-        buttonSelector.classList.add("noCursor");
-        bodySelector.classList.add("noCursor");
-        newCursor.style.top = e.pageY + 'px';
-        newCursor.style.left = e.pageX + 'px';
-        let classN = e.target;
-        if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
-            newCursor.classList.remove("newCursor");
-            newCursor.classList.add("cursorPointer");
+        if(cursorCustom == true){
+            buttonSelector.classList.remove("noNewCursor");
+            bodySelector.classList.remove("noNewCursor");
+            buttonSelector.classList.add("noCursor");
+            bodySelector.classList.add("noCursor");
+            newCursor.style.top = e.pageY + 'px';
+            newCursor.style.left = e.pageX + 'px';
+            let classN = e.target;
+            if(e.target.tagName == "LI" || e.target.tagName == "BUTTON" || e.target.tagName == "SPAN" || e.target.tagName == "A" || e.target.tagName == "I" || classN === rect1 || classN === rect2 || classN === rect3 || classN === iconBurger || e.target.className === "changeTheme" || e.target.className === "buttonsInkscape" || e.target.className === "iconEd" || classN === logoSvg || e.target.tagName == "path" || e.target.tagName == "svg"){
+                newCursor.classList.remove("newCursor");
+                newCursor.classList.add("cursorPointer");
+                }
+                
+            else{
+                newCursor.classList.add("newCursor");
+                newCursor.classList.remove("cursorPointer");
             }
-            
+        }
+
         else{
-            newCursor.classList.add("newCursor");
-            newCursor.classList.remove("cursorPointer");
+            console.log("");
         }
     }
+}
 
-    else{
-            console.log("");
-    }
+document.addEventListener("mousemove", toolTipFunction);
+
+function toolTipFunction(e){
+    let targetMouse = e.target.id;
+    let y = e.pageY;
+    let x = e.pageX;
+    switch(targetMouse){
+        case "changeTheme":
+            toolTip.style.display = 'block';
+            if(theme.href == dark){
+                toolTip.innerHTML = "Cambiar a tema claro"
+            }
+            else{
+                toolTip.innerHTML = "Cambiar a tema oscuro"
+            }
+            y = y - 33;
+            x = x - 120;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        case "logoSvg":
+            toolTip.innerHTML = "Recargar página";
+            toolTip.style.display = 'block';
+            y = y - 33;
+            x = x + 40;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        case "photosMe1":
+            toolTip.innerHTML = "Yo soy el tercero de izquierda a derecha. Los que me acompañan son mis tíos.";
+            toolTip.style.display = 'block';
+            toolTip.style.whiteSpace = 'normal';
+            toolTip.style.width = '250px';
+            newCursor.classList.remove("newCursor");
+            newCursor.classList.add("cursorPointer");
+            y = y + 33;
+            x = x + 10;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        case "photosMe2":
+            toolTip.innerHTML = "Así me veía a mis seis años.";
+            toolTip.style.display = 'block';
+            toolTip.style.whiteSpace = 'normal';
+            toolTip.style.width = 'initial';
+            newCursor.classList.remove("newCursor");
+            newCursor.classList.add("cursorPointer");
+            y = y + 33;
+            x = x - 150;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        case "photosMe3":
+            toolTip.innerHTML = "Con el requinto que me regaló mi madre... mis inicios en la música XD";
+            toolTip.style.display = 'block';
+            toolTip.style.whiteSpace = 'normal';
+            toolTip.style.width = '220px';
+            newCursor.classList.remove("newCursor");
+            newCursor.classList.add("cursorPointer");
+            y = y + 33;
+            x = x + 10;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        case "photosMe4":
+            toolTip.innerHTML = "Aquí, con mis tíos y mi perrito, en mi hermoso campo.";
+            toolTip.style.display = 'block';
+            toolTip.style.whiteSpace = 'normal';
+            toolTip.style.width = '190px';
+            newCursor.classList.remove("newCursor");
+            newCursor.classList.add("cursorPointer");
+            y = y + 33;
+            x = x - 177;
+            toolTip.style.top = y + 'px';
+            toolTip.style.left = x + 'px';
+        break;
+
+        default:
+            toolTip.style.display = 'none';
+        break;
     }
 }
 

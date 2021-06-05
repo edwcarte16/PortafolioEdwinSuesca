@@ -1,7 +1,7 @@
 $colorMagenta: #d932d2;
 $colorBlue: #04c0ff;
 $colorTexts: #292929;
-$colorTransp: #24242410;
+$colorTransp: #ffffff6c;
 $colorBg: #fff;
 
 body, #mapNav, nav{
@@ -123,5 +123,9 @@ footer{
 }
 
 #phrase{
+    background-color: $colorTransp;
+}
+
+section{
     background-color: $colorTransp;
 }

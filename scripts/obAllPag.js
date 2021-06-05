@@ -44,6 +44,9 @@ if(isAndroid) {
     SwitchCursor.style.display = "none";
     device = 'mobile';
     cursorCustom = false;
+    window.onload = function(){
+        newCursorId.style.display = "none";
+    }
 }
 else{
     cursorCustom = true;

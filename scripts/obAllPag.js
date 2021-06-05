@@ -34,6 +34,7 @@ var colorNav = nav.style.backgroundColor;
 var toolTip = document.getElementById("toolTip");
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
+var cursorCustom;
 
 if(isAndroid) {
     bodySelector.classList.add("noNewCursor");
@@ -41,9 +42,10 @@ if(isAndroid) {
     newCursor.style.display = "none";
     SwitchCursor.style.display = "none";
     device = 'mobile';
+    cursorCustom = false;
 }
 else{
-    var cursorCustom = true;
+    cursorCustom = true;
 }
 
 document.addEventListener("mousemove", toolTipFunction);
@@ -158,7 +160,7 @@ SwitchCursor.onclick = function defaultCursor(){
 
 if(device == 'desktop') {
     document.addEventListener("mousemove", cursor);
-    
+    window.alert(cursorCustom);
     function cursor(e){
     if(cursorCustom == true){
         buttonSelector.classList.remove("noNewCursor");
@@ -181,7 +183,7 @@ if(device == 'desktop') {
 
     else{
             console.log("");
-    }
+        }
     }
 }
 

@@ -9,7 +9,6 @@ var boxLogoClass = document.querySelector('.boxLogo');
 var burger = document.querySelector('.boxIconBurger');
 var buttonScrollBar = document.getElementById('buttonScrollBar');
 var changeTheme = document.querySelector(".changeTheme");
-var cursorCustom = true;
 const dark = document.getElementById("theme").href;
 var device = 'desktop';
 var edwins = document.getElementById('edwins');
@@ -42,6 +41,9 @@ if(isAndroid) {
     newCursor.style.display = "none";
     SwitchCursor.style.display = "none";
     device = 'mobile';
+}
+else{
+    var cursorCustom = true;
 }
 
 document.addEventListener("mousemove", toolTipFunction);

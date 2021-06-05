@@ -651,5 +651,6 @@ footer div {
 footer div a, footer div span {
   text-align: center;
   text-decoration: none;
+  cursor: none;
 }
 /*# sourceMappingURL=objAllPag.css.map */

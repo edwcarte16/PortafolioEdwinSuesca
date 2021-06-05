@@ -92,6 +92,7 @@
 header {
   padding-top: 150px;
   height: 100vh;
+  min-height: 600px;
   display: -ms-grid;
   display: grid;
   gap: 20px;
@@ -106,18 +107,20 @@ header span {
 
 @media (max-width: 700px) {
   header span {
-    font-size: 2em;
+    font-size: 3em;
   }
 }
 
 header #boxHeaderProjects {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(310px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-  gap: 20px;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 20px 0;
   place-items: center;
-  padding: 0 4vw;
+  background-color: yellowgreen;
+  margin: 10px 4vw;
 }
 
 header #boxHeaderProjects .headerProjects {

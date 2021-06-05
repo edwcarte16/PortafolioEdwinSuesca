@@ -65,6 +65,7 @@ $colorBlue: #04c0ff;
 header{
     padding-top: 150px;
     height: 100vh;
+    min-height: 600px;
     display: grid;
     gap: 20px;
 
@@ -78,16 +79,18 @@ header{
 
     @media (max-width: 700px) {
         span{
-            font-size: 2em;}
+            font-size: 3em;
+        }
     }
 
     #boxHeaderProjects{
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+        padding: 20px 0;
         place-items: center;
-        padding: 0 4vw;
-    
+        background-color: yellowgreen;
+        margin: 10px 4vw;
         .headerProjects{
             border-radius: 10px;
             height: 200px;

@@ -254,7 +254,7 @@ window.onscroll = function() {
         }
     
         if(y < 20){
-            nav.style.height = "15vh";
+            nav.style.height = "100px";
             edwins.style.display = "initial";
             pathSlogan.style = "display: block";
             logoSvg.style = "width: 80px; position: initial";

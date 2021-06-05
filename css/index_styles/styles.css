@@ -462,11 +462,12 @@ body header #nameContainer h1 {
 }
 
 body #phrase {
-  padding: 50px 0;
+  padding: 50px 4vw;
   text-align: center;
   -ms-grid-column-align: center;
       justify-self: center;
   width: 100%;
+  margin-top: 25px;
 }
 
 body #phrase span {

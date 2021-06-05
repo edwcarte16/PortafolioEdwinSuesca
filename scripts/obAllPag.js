@@ -105,7 +105,8 @@ window.onload = async function(){
         a.style.cursor = "none";
     });
 
-    newCursorId.style.display = "block";
+    if(isAndroid){newCursorId.style.display = "none";}
+    else{newCursorId.style.display = "block";}
 }
 
 changeTheme.onclick = function(){
@@ -146,7 +147,8 @@ SwitchCursor.onclick = function defaultCursor(){
             buttonSelector.classList.remove("noNewCursor");
             bodySelector.classList.add("noCursor");
             buttonSelector.classList.add("noCursor");
-            newCursorId.style.display = "block";
+            if(isAndroid){newCursorId.style.display = "none";}
+            else{newCursorId.style.display = "block";}
             aNav.forEach(a => {
                 a.style.cursor = "none";
             });

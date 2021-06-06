@@ -230,7 +230,7 @@ function toolTipFunction(e){
             newCursor.classList.remove("newCursor");
             newCursor.classList.add("cursorPointer");
             y = y + 33;
-            x = x + 10;
+            x = x - 70;
             toolTip.style.top = y + 'px';
             toolTip.style.left = x + 'px';
         break;

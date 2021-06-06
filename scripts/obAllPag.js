@@ -13,7 +13,7 @@ var changeTheme = document.querySelector(".changeTheme");
 var cursorCustom;
 var themeCache;
 const dark = document.getElementById("theme").href;
-var themeAndroid = document.getElementById('themeAndroid').content;
+var themeAndroid = document.getElementById('themeAndroid').contentEditable;
 var device = 'desktop';
 var edwins = document.getElementById('edwins');
 const iconsNav = document.querySelectorAll('.iconsNav');
@@ -44,19 +44,15 @@ console.log(themeCache);
 changeTheme.onclick = function(){
     if(theme.href == dark){
         theme.href = "css/global_styles/lightTheme.css";
-        themeAndroid.content = "#ffffff"
+        themeAndroid.contentEditable = "#ffffff";
         toolTip.innerHTML = "Cambiar a tema oscuro";
         localStorage.setItem('theme','css/global_styles/lightTheme.css');
-        themeCache = localStorage.getItem('theme');
-        console.log(themeCache);
     }
     else{
         theme.href = "css/global_styles/darkTheme.css";
-        themeAndroid.content = "#1e2c39"
+        themeAndroid.contentEditable = "#1e2c39";
         toolTip.innerHTML = "Cambiar a tema claro";
         localStorage.setItem('theme','css/global_styles/darkTheme.css');
-        themeCache = localStorage.getItem('theme');
-        console.log(themeCache);
     }
 }
 

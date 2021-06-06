@@ -14,7 +14,7 @@ var buttonScrollBar = document.getElementById('buttonScrollBar');
 var changeTheme = document.querySelector(".changeTheme");
 var cursorCustom;
 const dark = document.getElementById("theme").href;
-var themeAndroid = document.getElementById('themeAndroid').content;
+var themeAndroid = document.getElementById('themeAndroid').contentEditable;
 var design = document.getElementById('design');
 var device = 'desktop';
 var edwins = document.getElementById('edwins');
@@ -99,13 +99,13 @@ window.onload = async function(){
 changeTheme.onclick = function(){
     if(theme.href == dark){
         theme.href = "css/global_styles/lightTheme.css";
-        themeAndroid.content = "#ffffff"
+        themeAndroid.contentEditable = "#ffffff"
         inkscapeImage.src = "images/inkscapeLight.png";
         toolTip.innerHTML = "Cambiar a tema oscuro"
     }
     else{
         theme.href = "css/global_styles/darkTheme.css";
-        themeAndroid.content = "#1e2c39"
+        themeAndroid.contentEditable = "#1e2c39"
         inkscapeImage.src = "images/inkscape.png";
         toolTip.innerHTML = "Cambiar a tema claro"
     }

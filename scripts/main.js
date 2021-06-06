@@ -3,6 +3,7 @@ var arrowL = document.getElementById('circleLeft');
 var arrowR = document.getElementById('circleRight');
 var aMapNav = document.querySelectorAll('.aMapNav');
 var aSubMapNav = document.querySelectorAll('.aSubMapNav');
+var aNoPointer = document.querySelectorAll('.aNoPointer');
 var bodySelector = document.querySelector('body');
 var buttonSelector = document.querySelector('button');
 var boxLogo = document.querySelector(".boxLogo");
@@ -86,6 +87,10 @@ window.onload = async function(){
         a.style.cursor = "none";
     });
 
+    aNoPointer.forEach(a => {
+        a.style.cursor = "none";
+    });
+
     if(isAndroid){newCursorId.style.display = "none";}
     else{newCursorId.style.display = "block";}
 }
@@ -123,6 +128,11 @@ SwitchCursor.onclick = function defaultCursor(){
             aSubMapNav.forEach(a => {
                 a.style.cursor = "pointer";
             });
+
+            aNoPointer.forEach(a => {
+                a.style.cursor = "pointer";
+            });
+
             cursorCustom = false;
         break;
         case false:
@@ -143,6 +153,11 @@ SwitchCursor.onclick = function defaultCursor(){
             aSubMapNav.forEach(a => {
                 a.style.cursor = "none";
             });
+
+            aNoPointer.forEach(a => {
+                a.style.cursor = "none";
+            });
+
             cursorCustom = true;
         break; 
     }

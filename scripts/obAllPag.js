@@ -1,6 +1,7 @@
 const aNav = document.querySelectorAll('.aNav');
 var aMapNav = document.querySelectorAll('.aMapNav');
 var aSubMapNav = document.querySelectorAll('.aSubMapNav');
+var aNoPointer = document.querySelectorAll('.aNoPointer');
 var bodySelector = document.querySelector('body');
 var buttonSelector = document.querySelector('button');
 var boxLogo = document.querySelector(".boxLogo");
@@ -10,6 +11,7 @@ var burger = document.querySelector('.boxIconBurger');
 var buttonScrollBar = document.getElementById('buttonScrollBar');
 var changeTheme = document.querySelector(".changeTheme");
 var cursorCustom;
+var themeCache;
 const dark = document.getElementById("theme").href;
 var device = 'desktop';
 var edwins = document.getElementById('edwins');
@@ -36,6 +38,24 @@ var colorNav = nav.style.backgroundColor;
 var toolTip = document.getElementById("toolTip");
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
+console.log(themeCache);
+
+changeTheme.onclick = function(){
+    if(theme.href == dark){
+        theme.href = "css/global_styles/lightTheme.css";
+        toolTip.innerHTML = "Cambiar a tema oscuro";
+        localStorage.setItem('theme','css/global_styles/lightTheme.css');
+        themeCache = localStorage.getItem('theme');
+        console.log(themeCache);
+    }
+    else{
+        theme.href = "css/global_styles/darkTheme.css";
+        toolTip.innerHTML = "Cambiar a tema claro";
+        localStorage.setItem('theme','css/global_styles/darkTheme.css');
+        themeCache = localStorage.getItem('theme');
+        console.log(themeCache);
+    }
+}
 
 if(isAndroid) {
     bodySelector.classList.add("noNewCursor");
@@ -105,19 +125,12 @@ window.onload = async function(){
         a.style.cursor = "none";
     });
 
+    aNoPointer.forEach(a => {
+        a.style.cursor = "none";
+    });
+
     if(isAndroid){newCursorId.style.display = "none";}
     else{newCursorId.style.display = "block";}
-}
-
-changeTheme.onclick = function(){
-    if(theme.href == dark){
-        theme.href = "css/global_styles/lightTheme.css";
-        toolTip.innerHTML = "Cambiar a tema oscuro"
-    }
-    else{
-        theme.href = "css/global_styles/darkTheme.css";
-        toolTip.innerHTML = "Cambiar a tema claro"
-    }
 }
 
 SwitchCursor.onclick = function defaultCursor(){
@@ -140,6 +153,11 @@ SwitchCursor.onclick = function defaultCursor(){
             aSubMapNav.forEach(a => {
                 a.style.cursor = "pointer";
             });
+
+            aNoPointer.forEach(a => {
+                a.style.cursor = "pointer";
+            });
+
             cursorCustom = false;
         break;
         case false:
@@ -160,6 +178,11 @@ SwitchCursor.onclick = function defaultCursor(){
             aSubMapNav.forEach(a => {
                 a.style.cursor = "none";
             });
+
+            aNoPointer.forEach(a => {
+                a.style.cursor = "none";
+            });
+
             cursorCustom = true;
         break; 
     }

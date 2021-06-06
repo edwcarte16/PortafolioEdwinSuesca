@@ -29,6 +29,7 @@ p{
     pointer-events: none;
     transition: all 300ms ease;
     transition-property: background-color, transform, width;
+    cursor: none;
 }
 
 #toolTip{
@@ -412,7 +413,6 @@ footer{
         a, span{
             text-align: center;
             text-decoration: none;
-            cursor: none;
         }
     }
 }

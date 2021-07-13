@@ -166,4 +166,18 @@ header button {
     width: 100%;
   }
 }
+
+.detailsProject {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  width: 100%;
+}
+
+.detailsProject img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 /*# sourceMappingURL=styles.css.map */

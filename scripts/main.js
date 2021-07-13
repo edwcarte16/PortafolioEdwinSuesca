@@ -41,7 +41,6 @@ var posicionDePartida = 0;
 var rect1 = document.getElementById('rectangle1');
 var rect2 = document.getElementById('rectangle2');
 var rect3 = document.getElementById('rectangle3');
-var loader = document.getElementById('loader');
 var scrollBar = document.getElementById('scrollBar');
 var theme = document.getElementById("theme");
 var y = window.scrollY;

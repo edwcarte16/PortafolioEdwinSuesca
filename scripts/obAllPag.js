@@ -39,6 +39,7 @@ var colorNav = nav.style.backgroundColor;
 var toolTip = document.getElementById("toolTip");
 var ua = navigator.userAgent.toLowerCase();
 var isAndroid = ua.indexOf("android") > -1;
+var loader = document.getElementById('loader');
 console.log(themeCache);
 
 changeTheme.onclick = function(){
@@ -109,6 +110,7 @@ function toolTipFunction(e){
 }
 
 window.onload = async function(){
+    loader.style.display = "none";
     mapNav.style.left = "-400px";
     await esperar(2000);
 
